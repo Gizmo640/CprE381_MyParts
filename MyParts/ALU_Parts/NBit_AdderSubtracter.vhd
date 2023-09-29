@@ -9,7 +9,8 @@ entity NBit_AdderSubtracter is
 		BitsA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
 		BitsB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
 		Bits_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
-		OverFlow_Flag: out STD_LOGIC);
+		OverFlow_Flag: out STD_LOGIC;
+		Zero_Flag: out STD_LOGIC);
 end NBit_AdderSubtracter;
 
 architecture Design of NBit_AdderSubtracter is
@@ -22,7 +23,8 @@ architecture Design of NBit_AdderSubtracter is
 			BitsA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
 			BitsB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
 			Bits_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
-			OverFlow_Flag: out STD_LOGIC);
+			OverFlow_Flag: out STD_LOGIC;
+			Zero_Flag: out STD_LOGIC);
 	end component;
 
 	signal s_InvertedBitsB_In: STD_LOGIC_VECTOR(N-1 downto 0);
@@ -39,5 +41,6 @@ begin
 			BitsA_In,
 			s_InvertedBitsB_In,
 			Bits_Out,
-			OverFlow_Flag);
+			OverFlow_Flag,
+			Zero_Flag);
 end Design;
