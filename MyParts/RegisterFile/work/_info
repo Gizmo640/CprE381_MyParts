@@ -1,0 +1,115 @@
+m255
+K4
+z2
+!s11e vcom 2023.2_2 2023.06, Jun  9 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile
+Edff
+Z1 w1696366734
+Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 2
+R0
+Z4 8/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/DFlipFlop.vhd
+Z5 F/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/DFlipFlop.vhd
+l0
+L4 1
+Vn@]RC@joEEhbj]6FJ0miC3
+!s100 `hDOfjU0iknO>SbOgGcdj2
+Z6 OL;C;2023.2_2;77
+32
+Z7 !s110 1696369679
+!i10b 1
+Z8 !s108 1696369679.000000
+Z9 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/DFlipFlop.vhd|
+Z10 !s107 /home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/DFlipFlop.vhd|
+!i113 0
+Z11 o-work work
+Z12 tExplicit 1 CvgOpt 0
+Adesign
+R2
+R3
+DEx4 work 3 dff 0 22 n@]RC@joEEhbj]6FJ0miC3
+!i122 2
+l17
+L13 21
+V05F=_iTG;k1RbUQ3FOM1?3
+!s100 XU[Z>=`CVDzILo5BY@<<F0
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Enbit_register
+R1
+R2
+R3
+!i122 3
+R0
+Z13 8/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/NBit_Register.vhd
+Z14 F/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/NBit_Register.vhd
+l0
+L4 1
+Vca5I<W3MWOeT6RPmbA22M3
+!s100 oOD@P8`2XICU7he@IRVgh0
+R6
+32
+R7
+!i10b 1
+R8
+Z15 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/NBit_Register.vhd|
+Z16 !s107 /home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/NBit_Register.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 13 nbit_register 0 22 ca5I<W3MWOeT6RPmbA22M3
+!i122 3
+l23
+L14 20
+VOAjff<NW^ac=SmBFKBNhI0
+!s100 3A>eX@44ld7i<V4cdA3A<2
+R6
+32
+R7
+!i10b 1
+R8
+R15
+R16
+!i113 0
+R11
+R12
+Eregisterfile
+w1696369699
+R2
+R3
+!i122 5
+R0
+8/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/RegisterFile.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/RegisterFile.vhd
+l0
+L4 1
+VZ=4AM;`OT_IF3@GF1[XnJ2
+!s100 dHBm6ZIm1FcN:FhX0U@nY1
+R6
+32
+!s110 1696369704
+!i10b 1
+!s108 1696369704.000000
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/RegisterFile.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/RegisterFile/RegisterFile.vhd|
+!i113 0
+R11
+R12

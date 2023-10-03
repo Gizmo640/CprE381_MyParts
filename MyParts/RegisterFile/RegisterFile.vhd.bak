@@ -25,7 +25,7 @@ architecture Design of RegisterFile is
 	component Bit32_32t1Mux is
 		port(
 			Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
-			Input_In: in array(31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+			Input_In: in array (31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
 			Output_Out: out STD_LOGIC_VECTOR(31 downto 0));
 	end component;
 
