@@ -19,6 +19,7 @@ begin
 	end process;
 
 	TEST_CASES: process begin
+		wait for HalfCycle_CLK/2;
 
 		wait for CLK_Cycle;--20ns
 	end process;
