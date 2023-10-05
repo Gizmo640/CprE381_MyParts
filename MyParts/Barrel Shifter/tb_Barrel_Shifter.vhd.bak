@@ -14,9 +14,7 @@ architecture mixed of tb_Barrel_Shifter is
         port(
             shiftAmount : in std_logic_vector(4 downto 0); 
             BarrelInput : in std_logic_vector(31 downto 0);
-            Load_barrelInput : in std_logic;
-            Load_selectLines : in std_logic;
-            Load_BarrelOutput : std_logic;
+            LeftOrRight : in std_logic; --0 is right and 1 is left
             BarrelOutput : out std_logic_vector(31 downto 0));
     end component;
 
@@ -24,9 +22,7 @@ architecture mixed of tb_Barrel_Shifter is
     --signals
     signal s_shiftAmount : std_logic_vector(4 downto 0);
     signal s_BarrelInput : std_logic_vector(31 downto 0);
-    signal s_Load_barrelInput : std_logic;
-    signal s_Load_selectLines : std_logic;
-    signal s_Load_BarrelOutput : std_logic;
+    signal s_LeftOrRight : std_logic;
     signal s_BarrelOutput : std_logic_vector(31 downto 0);
 
 
@@ -44,9 +40,7 @@ begin
         port map(
             shiftAmount => s_shiftAmount,
             BarrelInput => s_BarrelInput,
-            Load_barrelInput => s_Load_barrelInput,
-            Load_selectLines => s_Load_selectLines,
-            Load_BarrelOutput => s_Load_BarrelOutput,
+     	    LeftOrRight => s_LeftOrRight, --0 is right and 1 is left
             BarrelOutput => s_BarrelOutput
         );
 
@@ -56,19 +50,42 @@ begin
         begin
 		wait for HalfCycle_CLK/2;
 
-    --TEST CASE 1   expected output is x"0000FFFF"
+
+    --0 is right shift and 1 is left shift
+    --TEST CASE 1  expected output is x"0000FFFF"
+    s_LeftOrRight <= '0';
     s_BarrelInput <= x"FFFFFFFF";
     s_shiftAmount <= "10000";
     wait for HalfCycle_CLK/2;
 
     --TEST CASE 2   expected output is x"8FFFFFFF"
+    s_LeftOrRight <= '0';
     s_BarrelInput <= x"FFFFFFFF";
     s_shiftAmount <= "00001";
     wait for HalfCycle_CLK/2;
 
     --TEST CASE 3   expected output is x"00001"
+    s_LeftOrRight <= '0';
     s_BarrelInput <= x"FFFFFFFF";
     s_shiftAmount <= "11111";
+    wait for HalfCycle_CLK/2;
+
+    --TEST CASE 4   expected output is x"FFFF0000"
+    s_LeftOrRight <= '1';
+    s_BarrelInput <= x"0000FFFF";
+    s_shiftAmount <= "10000";
+    wait for HalfCycle_CLK/2;
+
+    --TEST CASE 5   expected output is x"80000000"
+    s_LeftOrRight <= '1';
+    s_BarrelInput <= x"FFFFFFFF";
+    s_shiftAmount <= "10000";
+    wait for HalfCycle_CLK/2;
+ 
+    --TEST CASE 6   expected output is x"000FFFF0"
+    s_LeftOrRight <= '1';
+    s_BarrelInput <= x"0000FFFF";
+    s_shiftAmount <= "00100";
     wait for HalfCycle_CLK/2;
 
     end process;
