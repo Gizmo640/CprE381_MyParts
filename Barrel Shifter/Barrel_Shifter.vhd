@@ -35,16 +35,16 @@ architecture structure of Barrel_Shifter is
 		end component;
 
 	
-
+begin
 --STAGE 5
 	--bits 31-16 set to 0
 	Stage5Upper: for i in 31 downto 16 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => BarrelInput(i),
-								i_D1 => '0',
-								i_S => shiftAmount(4),
-								o_O => stage5MuxOutput(i)
+							i_D0 => BarrelInput(i),
+							i_D1 => '0',
+							i_S => shiftAmount(4),
+							o_0 => stage5MuxOutput(i)
 					);
 				end generate Stage5Upper;
 
@@ -52,10 +52,10 @@ architecture structure of Barrel_Shifter is
 	Stage5Lower: for i in 15 downto 0 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => BarrelInput(i),
-								i_D1 => BarrelInput(i+16),
-								i_S => shiftAmount(4),
-								o_O => stage5MuxOutput(i)
+							i_D0 => BarrelInput(i),
+							i_D1 => BarrelInput(i+16),
+							i_S => shiftAmount(4),
+							o_0 => stage5MuxOutput(i)
 					);
 					end generate Stage5Lower;		
 
@@ -65,20 +65,20 @@ architecture structure of Barrel_Shifter is
 	Stage4Upper: for i in 31 downto 24 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage5MuxOutput(i),
-								i_D1 => '0',
-								i_S => shiftAmount(3),
-								o_O => stage4MuxOutput(i)
+							i_D0 => stage5MuxOutput(i),
+							i_D1 => '0',
+							i_S => shiftAmount(3),
+							o_0 => stage4MuxOutput(i)
 					);
 					end generate Stage4Upper;
 	--bits 23-0 set equal to bits 31-4
 	Stage4Lower: for i in 23 downto 0 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage5MuxOutput(i),
-								i_D1 => stage5MuxOutput(i+8),
-								i_S => shiftAmount(3),
-								o_O => stage4MuxOutput(i)
+							i_D0 => stage5MuxOutput(i),
+							i_D1 => stage5MuxOutput(i+8),
+							i_S => shiftAmount(3),
+							o_0 => stage4MuxOutput(i)
 					);
 					end generate Stage4Lower;	
 
@@ -87,20 +87,20 @@ architecture structure of Barrel_Shifter is
 	Stage3Upper: for i in 31 downto 28 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage4MuxOutput(i),
-								i_D1 => '0',
-								i_S => shiftAmount(2),
-								o_O => stage3MuxOutput(i)
+							i_D0 => stage4MuxOutput(i),
+							i_D1 => '0',
+							i_S => shiftAmount(2),
+							o_0 => stage3MuxOutput(i)
 					);
 					end generate Stage3Upper;
 	--loop 31-24 bits set to 0 
 	Stage3Lower: for i in 27 downto 0 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage4MuxOutput(i),
-								i_D1 => stage4MuxOutput(i+4),
-								i_S => shiftAmount(2),
-								o_O => stage3MuxOutput(i)
+							i_D0 => stage4MuxOutput(i),
+							i_D1 => stage4MuxOutput(i+4),
+							i_S => shiftAmount(2),
+							o_0 => stage3MuxOutput(i)
 					);
 					end generate Stage3Lower;
 
@@ -109,10 +109,10 @@ architecture structure of Barrel_Shifter is
 	Stage2Upper: for i in 31 downto 30 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage3MuxOutput(i),
-								i_D1 => '0',
-								i_S => shiftAmount(1)
-								o_O => stage2MuxOutput(i)
+							i_D0 => stage3MuxOutput(i),
+							i_D1 => '0',
+							i_S => shiftAmount(1),
+							o_0 => stage2MuxOutput(i)
 
 					);
 					end generate Stage2Upper;
@@ -120,10 +120,10 @@ architecture structure of Barrel_Shifter is
 	Stage2Lower: for i in 29 downto 0 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage3MuxOutput(i),
-								i_D1 => stage3MuxOutput(i+2),
-								i_S => shiftAmount(1),
-								o_O => stage2MuxOutput(i)
+							i_D0 => stage3MuxOutput(i),
+							i_D1 => stage3MuxOutput(i+2),
+							i_S => shiftAmount(1),
+							o_0 => stage2MuxOutput(i)
 					);
 					end generate Stage2Lower;
 
@@ -132,18 +132,19 @@ architecture structure of Barrel_Shifter is
 	--one bit set to 0
 	Stage1UpperBit :  mux2t1
 					port map(
-								i_D0 => stage2MuxOutput(31),
-								i_D1 => '0',
-								i_S => shiftAmount(0),
-								o_O => BarrelOutput(31)
+							i_D0 => stage2MuxOutput(31),
+							i_D1 => '0',
+							i_S => shiftAmount(0),
+							o_0 => BarrelOutput(31)
 					);
 	--loop from 30 downto 0 for all shifted bit values
 	Stage1Lower: for i in 30 downto 0 generate
 			MuxCascade: mux2t1
 					port map(
-								i_D0 => stage2MuxOutput(i),
-								i_D1 => stage2MuxOutput(i+1),
-								i_S => shiftAmount(0),
-								o_O => BarrelOutput(i)
+							i_D0 => stage2MuxOutput(i),
+							i_D1 => stage2MuxOutput(i+1),
+							i_S => shiftAmount(0),
+							o_0 => BarrelOutput(i)
 					);
 					end generate Stage1Lower;
+end structure;

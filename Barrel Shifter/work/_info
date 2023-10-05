@@ -1,90 +1,353 @@
 m255
 K4
 z2
-Z0 !s12c _opt
-Z1 !s99 nomlopt
-R0
-R1
-!s11e MIXED_VERSIONS
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2023.2_2 2023.06, Jun  9 2023
 13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-Z2 d/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter
+Z1 d/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter
 T_opt
-!s110 1696372176
-VR]bWh=6@H?1;kT7Kg>H5M1
+!s110 1696533338
+VCogz31GH]A0zhLC:BU<2n3
 04 17 5 work tb_barrel_shifter mixed 1
-=1-7486e228ab8a-651c95d0-4a07c-86129
-R1
+=1-7486e228c7aa-651f0b5a-5981a-98dd3
+R0
 !s12b OEM100
 !s124 OEM100
-o-quiet -auto_acc_if_foreign -work work +acc
+o-quiet -auto_acc_if_foreign -work work
 tCvgOpt 0
 n@_opt
 OL;O;2023.2_2;77
-Ebarrel_shifter
-w1696372113
+Eandg2
+Z2 w1696365756
 Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
 !i122 6
-R2
-8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd
-F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd
+R1
+Z5 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/andg2.vhd
+Z6 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/andg2.vhd
+l0
+Z7 L23 1
+V`ZXnieNX25Iz2HDXPGzo91
+!s100 0e<Rg^QbB^Y@JP[zKSc0[3
+Z8 OL;C;2023.2_2;77
+33
+Z9 !s110 1696533246
+!i10b 1
+Z10 !s108 1696533246.000000
+Z11 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/andg2.vhd|
+Z12 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/andg2.vhd|
+!i113 0
+Z13 o-work work
+Z14 tExplicit 1 NoCoverage 1 CvgOpt 0
+Adataflow
+R3
+R4
+DEx4 work 5 andg2 0 22 `ZXnieNX25Iz2HDXPGzo91
+!i122 6
+l32
+Z15 L31 6
+VaH[`4RgPnZ4F<9<6AYHeb1
+!s100 CbBW?3Q;N[15?`QCEQ<@f2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 0
+R13
+R14
+Ebarrel_shifter
+Z16 w1696532590
+R3
+R4
+!i122 12
+R1
+Z17 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd
+Z18 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd
 l0
 L5 1
-VIO@dEPI9Rb;EK1PbOTGJS1
+VhOlNQi4_1ajYBLBSn2@:31
 !s100 6WCFVleF:O7=lCO[Nad1c3
-Z5 OL;C;2023.2_2;77
-32
-Z6 !s110 1696372166
+R8
+33
+Z19 !s110 1696533326
 !i10b 1
-Z7 !s108 1696372166.000000
-!s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd|
-!s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd|
+Z20 !s108 1696533326.000000
+Z21 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd|
+Z22 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/Barrel_Shifter.vhd|
 !i113 0
-Z8 o-work work
-Z9 tExplicit 1 CvgOpt 0
-Etb_barrel_shifter
-Z10 w1696372158
+R13
+R14
+Astructure
+R3
+R4
+DEx4 work 14 barrel_shifter 0 22 hOlNQi4_1ajYBLBSn2@:31
+!i122 12
+l38
+L18 133
+VRlhJY0Aiml7g;T2IVOCk53
+!s100 T04@RHYZ1Y`eBMANokmMN2
+R8
+33
+R19
+!i10b 1
+R20
+R21
+R22
+!i113 0
+R13
+R14
+Edffg
+R2
 R3
 R4
 !i122 7
-R2
-Z11 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd
-Z12 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd
+R1
+Z23 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/dffg.vhd
+Z24 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/dffg.vhd
 l0
-L4 1
-VkQROceN7J3U=1<egX?@c@3
-!s100 BU_Ji_B<V3OeGa=Ym7<K81
-R5
-32
-R6
-!i10b 1
 R7
-Z13 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd|
-Z14 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd|
-!i113 0
+V<4[1c^JVlXT1d_XTIVZ261
+!s100 FJQDe;FGDG0KnNV;j4DaY2
 R8
+33
 R9
+!i10b 1
+R10
+Z25 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/dffg.vhd|
+Z26 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/dffg.vhd|
+!i113 0
+R13
+R14
 Amixed
 R3
 R4
-DEx4 work 17 tb_barrel_shifter 0 22 kQROceN7J3U=1<egX?@c@3
+DEx4 work 4 dffg 0 22 <4[1c^JVlXT1d_XTIVZ261
 !i122 7
-l33
-L9 70
-V[iU[24=MQ6VKQXS5ZWjIb2
-!s100 SF_OFAGINDNLW_F6jG<1z3
-R5
-32
-R6
+l37
+L33 29
+VTEdG>g0`Ff3kSOBZ1j4FM2
+!s100 GR5ff]ZD1Yiz`>ZFVE>Hg1
+R8
+33
+R9
 !i10b 1
-R7
+R10
+R25
+R26
+!i113 0
 R13
 R14
-!i113 0
+Einvg
+R2
+R3
+R4
+!i122 8
+R1
+Z27 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/invg.vhd
+Z28 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/invg.vhd
+l0
+R7
+V^IQhB0M:TibmTX48^HJa:0
+!s100 5^0jfQ^dVk:bl_Za_KajG0
 R8
+33
 R9
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/invg.vhd|
+Z30 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/invg.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 4 invg 0 22 ^IQhB0M:TibmTX48^HJa:0
+!i122 8
+l31
+L30 6
+VGnAN1IHi;Y?=mi4968o873
+!s100 Q?`9^ToWC]zk1[=<LdPdE3
+R8
+33
+R9
+!i10b 1
+R10
+R29
+R30
+!i113 0
+R13
+R14
+Emux2t1
+R2
+R3
+R4
+!i122 9
+R1
+Z31 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/mux2t1.vhd
+Z32 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/mux2t1.vhd
+l0
+L11 1
+VFIAfQZjd5MLUhZkG<njQ73
+!s100 8W=hFbnn4FU1XJ=XLVnO<0
+R8
+33
+R9
+!i10b 1
+R10
+Z33 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/mux2t1.vhd|
+Z34 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/mux2t1.vhd|
+!i113 0
+R13
+R14
+Astructural
+R3
+R4
+DEx4 work 6 mux2t1 0 22 FIAfQZjd5MLUhZkG<njQ73
+!i122 9
+l51
+L21 56
+V64VbT7WGRZ3m`FT@ZRWFd3
+!s100 ]fGTz5<JFEE<;1JTjYe@60
+R8
+33
+R9
+!i10b 1
+R10
+R33
+R34
+!i113 0
+R13
+R14
+Eorg2
+R2
+R3
+R4
+!i122 10
+R1
+Z35 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/org2.vhd
+Z36 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/org2.vhd
+l0
+R7
+VkbW`>IOf=9G1AFX9^DNzY1
+!s100 hJAZ>EB8bm_e<^5IFaP9e1
+R8
+33
+R9
+!i10b 1
+R10
+Z37 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/org2.vhd|
+Z38 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/org2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 4 org2 0 22 kbW`>IOf=9G1AFX9^DNzY1
+!i122 10
+l32
+R15
+Vgb<e=7>XBQTJGCc<Rd:i:1
+!s100 nma>Pa=mMW`KzzjeW=1[d1
+R8
+33
+R9
+!i10b 1
+R10
+R37
+R38
+!i113 0
+R13
+R14
+Etb_barrel_shifter
+Z39 w1696372158
+R3
+R4
+!i122 13
+R1
+Z40 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd
+Z41 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd
+l0
+L4 1
+VGK]=A=@:D2h?S3UzS35GS2
+!s100 BU_Ji_B<V3OeGa=Ym7<K81
+R8
+33
+R19
+!i10b 1
+R20
+Z42 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd|
+Z43 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/Barrel Shifter/tb_Barrel_Shifter.vhd|
+!i113 0
+R13
+R14
+Amixed
+R3
+R4
+DEx4 work 17 tb_barrel_shifter 0 22 GK]=A=@:D2h?S3UzS35GS2
+!i122 13
+l33
+L9 70
+V6eNoBB^E^T8Z85;;2XI5^2
+!s100 SF_OFAGINDNLW_F6jG<1z3
+R8
+33
+R19
+!i10b 1
+R20
+R42
+R43
+!i113 0
+R13
+R14
+Exorg2
+R2
+R3
+R4
+!i122 11
+R1
+Z44 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/xorg2.vhd
+Z45 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/xorg2.vhd
+l0
+R7
+VESJV1emcX7m;an9A`9kkk3
+!s100 zGkHVGJ]HQ5RboN2N>KzN1
+R8
+33
+R9
+!i10b 1
+R10
+Z46 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/xorg2.vhd|
+Z47 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/MyParts/Basic_Components/xorg2.vhd|
+!i113 0
+R13
+R14
+Adataflow
+R3
+R4
+DEx4 work 5 xorg2 0 22 ESJV1emcX7m;an9A`9kkk3
+!i122 11
+l32
+R15
+VI5[iO;Q^1X31k599`eic[1
+!s100 2<f]d3XziROLh_[:_6mNg2
+R8
+33
+R9
+!i10b 1
+R10
+R46
+R47
+!i113 0
+R13
+R14
