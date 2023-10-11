@@ -1,0 +1,33 @@
+[N
+4
+2
+14 tb_shift_left2
+3
+5 mixed
+1
+117 /home/lincolnh/lincolnh/cpre381/Project1/MIPSSingleCycleProcessor/mips-single-cycle-processor/MyParts/FetchLogic/work
+4
+13 HalfCycle_CLK
+]
+[G
+1
+2
+3
+1
+4
+0
+0
+0
+0
+8 8
+-128
+-106
+-104
+0
+0
+0
+0
+0
+0
+0
+]
