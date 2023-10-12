@@ -56,6 +56,13 @@ architecture structure of MIPS_Processor is
   -- Required overflow signal -- for overflow exception detection
   signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
 
+  -- Required fetch logic signal -- for jump and branch instructions
+  signal s_jr           : std_logic; --jr mux select
+  signal s_jump         : std_logic; --jump mux select
+  signal s_link         : std_logic; --jal mux select
+  signal s_Branch       : std_logic; --& with s_Zero
+  signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
+
   component mem is
     generic(ADDR_WIDTH : integer;
             DATA_WIDTH : integer);
@@ -66,6 +73,8 @@ architecture structure of MIPS_Processor is
           we           : in std_logic := '1';
           q            : out std_logic_vector((DATA_WIDTH -1) downto 0));
     end component;
+
+  
 
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
