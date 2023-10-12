@@ -1,0 +1,550 @@
+m255
+K4
+z2
+!s11e vcom 2023.2_2 2023.06, Jun  9 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/jesseg64/Documents/CprE_381/SingleCycle_Processor
+Ebarrel_shifter
+Z1 w1697129857
+Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 12
+R0
+Z4 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/BarrelShifter/BarrelShifter.vhd
+Z5 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/BarrelShifter/BarrelShifter.vhd
+l0
+L5 1
+V<PDcjdl_Io?NBO^;PKI>?1
+!s100 3G_193D^DSH8Po?P2jKcE2
+Z6 OL;C;2023.2_2;77
+32
+Z7 !s110 1697134045
+!i10b 1
+Z8 !s108 1697134045.000000
+Z9 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/BarrelShifter/BarrelShifter.vhd|
+Z10 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/BarrelShifter/BarrelShifter.vhd|
+!i113 0
+Z11 o-work work
+Z12 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+DEx4 work 14 barrel_shifter 0 22 <PDcjdl_Io?NBO^;PKI>?1
+!i122 12
+l38
+L16 159
+V[0OCn1ENWeMfe@l39=7][0
+!s100 5Lj5MHR=9O`MS^Toz]2[?1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 0
+R11
+R12
+Ebit32_32t1mux
+Z13 w1697140763
+Z14 DPx4 work 9 mypackage 0 22 PEP0NSJljDSBX7CEed2Y`2
+R2
+R3
+!i122 39
+R0
+Z15 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+Z16 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+l0
+L14 1
+VSUBK^E?Th`AORbAVJFIPf3
+!s100 H5k=zg0SY9ISeQmTDFgaH3
+R6
+32
+Z17 !s110 1697140769
+!i10b 1
+Z18 !s108 1697140769.000000
+Z19 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd|
+Z20 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd|
+!i113 0
+R11
+R12
+Adesign
+R14
+R2
+R3
+DEx4 work 13 bit32_32t1mux 0 22 SUBK^E?Th`AORbAVJFIPf3
+!i122 39
+l22
+L20 38
+V9:W;S:H2a<=KhNfAbi2hW2
+!s100 K]cQNi:<DRc4<2T<0T0KJ0
+R6
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R11
+R12
+Edecoder_5t32
+Z21 w1697139136
+R2
+R3
+!i122 31
+R0
+Z22 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd
+Z23 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd
+l0
+L4 1
+V8F@B37:LIa9ngHCM@U9z10
+!s100 ;lORHnnB?O`h:PblE2lOX3
+R6
+32
+Z24 !s110 1697139138
+!i10b 1
+Z25 !s108 1697139138.000000
+Z26 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd|
+Z27 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 12 decoder_5t32 0 22 8F@B37:LIa9ngHCM@U9z10
+!i122 31
+l12
+L11 38
+V43=6^A9f9^iK`83H^LDH;2
+!s100 gJL<?1nJAl[F78ccFD0z]2
+R6
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R11
+R12
+Edff
+Z28 w1697130025
+R2
+R3
+!i122 40
+R0
+Z29 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd
+Z30 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd
+l0
+L4 1
+Vn@]RC@joEEhbj]6FJ0miC3
+!s100 `hDOfjU0iknO>SbOgGcdj2
+R6
+32
+Z31 !s110 1697140879
+!i10b 1
+Z32 !s108 1697140879.000000
+Z33 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd|
+Z34 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 3 dff 0 22 n@]RC@joEEhbj]6FJ0miC3
+!i122 40
+l17
+L13 21
+V05F=_iTG;k1RbUQ3FOM1?3
+!s100 XU[Z>=`CVDzILo5BY@<<F0
+R6
+32
+R31
+!i10b 1
+R32
+R33
+R34
+!i113 0
+R11
+R12
+Eextender_16bit
+R28
+R2
+R3
+!i122 32
+R0
+Z35 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd
+Z36 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd
+l0
+L4 1
+Vh`E<cCZ;0c`YKY8Fb9CW<3
+!s100 QAVPDa`Zf4=gzbiS]SB0o0
+R6
+32
+Z37 !s110 1697139150
+!i10b 1
+Z38 !s108 1697139150.000000
+Z39 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd|
+Z40 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 14 extender_16bit 0 22 h`E<cCZ;0c`YKY8Fb9CW<3
+!i122 32
+l24
+L11 27
+Vd88fGb4<gCPX]15iF8N<^0
+!s100 ;e1;DIhL7RD;id8im2Q3?2
+R6
+32
+R37
+!i10b 1
+R38
+R39
+R40
+!i113 0
+R11
+R12
+Efulladder
+R28
+R2
+R3
+!i122 4
+R0
+Z41 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/FullAdder.vhd
+Z42 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/FullAdder.vhd
+l0
+L4 1
+VSFn[7XO5cKBQe:0LZ]zPh2
+!s100 S:R<J0bNz?iD;>F1d_1Q>0
+R6
+32
+Z43 !s110 1697133804
+!i10b 1
+Z44 !s108 1697133804.000000
+Z45 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/FullAdder.vhd|
+Z46 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/FullAdder.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 9 fulladder 0 22 SFn[7XO5cKBQe:0LZ]zPh2
+!i122 4
+l18
+L13 14
+V`>1Se[HjFXH1O]@kjc[ZS0
+!s100 [[[G``]53YK41i:J40K2=0
+R6
+32
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 0
+R11
+R12
+Pmypackage
+R2
+R3
+!i122 46
+Z47 w1697141543
+R0
+Z48 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+Z49 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+l0
+L4 3
+VAj_0V7XMWV9HJmP^Z2`lz1
+!s100 ]mK;8?knQFPImKk^8Yj`G2
+R6
+32
+Z50 !s110 1697141546
+!i10b 1
+Z51 !s108 1697141546.000000
+Z52 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd|
+!s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd|
+!i113 0
+R11
+R12
+Enbit_2t1mux
+Z53 w1697134283
+R2
+R3
+!i122 27
+R0
+Z54 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd
+Z55 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd
+l0
+L4 1
+VkS4GHoVzL8ZMi<ZYJOA[51
+!s100 AkVnMF_N[MoiJ=3ahb8aS0
+R6
+32
+Z56 !s110 1697139051
+!i10b 1
+Z57 !s108 1697139051.000000
+Z58 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd|
+Z59 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 11 nbit_2t1mux 0 22 kS4GHoVzL8ZMi<ZYJOA[51
+!i122 27
+l14
+L13 7
+V<M3?gXz0n9j^CdD69Jn<c3
+!s100 []dMg>>c]CE5Jl[Bb5o2M1
+R6
+32
+R56
+!i10b 1
+R57
+R58
+R59
+!i113 0
+R11
+R12
+Enbit_4t1mux
+Z60 w1697134145
+R2
+R3
+!i122 28
+R0
+Z61 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd
+Z62 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd
+l0
+L4 1
+VSljJ=8oh8M0;`i`3R<=@P0
+!s100 j6oXdllSU3iRHMC`f]fFO2
+R6
+32
+Z63 !s110 1697139053
+!i10b 1
+Z64 !s108 1697139053.000000
+Z65 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd|
+Z66 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 11 nbit_4t1mux 0 22 SljJ=8oh8M0;`i`3R<=@P0
+!i122 28
+l16
+L15 9
+VSTWaDh;64=7TV51_o@R1Q0
+!s100 64i[];QC_O0K[V^X8==fP0
+R6
+32
+R63
+!i10b 1
+R64
+R65
+R66
+!i113 0
+R11
+R12
+Enbit_addersubtracter
+Z67 w1697133882
+R2
+R3
+!i122 6
+R0
+Z68 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_AdderSubtracter.vhd
+Z69 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_AdderSubtracter.vhd
+l0
+L4 1
+V6LOzm3SD9c]X4bzV^g__o1
+!s100 IN=4SnE[M1<C1QPm]5K]z1
+R6
+32
+Z70 !s110 1697133885
+!i10b 1
+Z71 !s108 1697133885.000000
+Z72 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_AdderSubtracter.vhd|
+Z73 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_AdderSubtracter.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 20 nbit_addersubtracter 0 22 6LOzm3SD9c]X4bzV^g__o1
+!i122 6
+l33
+L17 33
+VDok3KI5Zn1_PzTmZRmc;h2
+!s100 zoaFK;?3^=8f6C50bSg5[0
+R6
+32
+R70
+!i10b 1
+R71
+R72
+R73
+!i113 0
+R11
+R12
+Enbit_lookaheadadder
+Z74 w1697134022
+R2
+R3
+!i122 10
+R0
+Z75 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_LookAheadAdder.vhd
+Z76 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_LookAheadAdder.vhd
+l0
+L4 1
+Vc^:2G^a:emTmHgkYfAcV;1
+!s100 _IZ0Ba_OiT`C_SFb9T@e_1
+R6
+32
+Z77 !s110 1697134025
+!i10b 1
+Z78 !s108 1697134025.000000
+Z79 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_LookAheadAdder.vhd|
+Z80 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_LookAheadAdder.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 19 nbit_lookaheadadder 0 22 c^:2G^a:emTmHgkYfAcV;1
+!i122 10
+l23
+L17 25
+VeXc?E]]0eX<=Q14;W7>=m3
+!s100 :1U_<SQBnGd`I8QCfkIWB2
+R6
+32
+R77
+!i10b 1
+R78
+R79
+R80
+!i113 0
+R11
+R12
+Enbit_register
+Z81 w1697140920
+R2
+R3
+!i122 42
+R0
+Z82 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd
+Z83 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd
+l0
+L4 1
+Vca5I<W3MWOeT6RPmbA22M3
+!s100 oOD@P8`2XICU7he@IRVgh0
+R6
+32
+Z84 !s110 1697140923
+!i10b 1
+Z85 !s108 1697140923.000000
+Z86 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd|
+Z87 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 13 nbit_register 0 22 ca5I<W3MWOeT6RPmbA22M3
+!i122 42
+l23
+L14 20
+VcgJ:33Rhi:4Lgh]HPT65_0
+!s100 Ng?c`:A9G:@_EY9e8]UU<3
+R6
+32
+R84
+!i10b 1
+R85
+R86
+R87
+!i113 0
+R11
+R12
+Enbit_rippleadder
+R28
+R2
+R3
+!i122 11
+R0
+Z88 8/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_RippleAdder.vhd
+Z89 F/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_RippleAdder.vhd
+l0
+L4 1
+V>3ZW3c5f[5iS5h;l?>n@E2
+!s100 ]RZZXX7Lb03=W4F=PJ[2C0
+R6
+32
+Z90 !s110 1697134028
+!i10b 1
+Z91 !s108 1697134028.000000
+Z92 !s90 -reportprogress|300|-work|work|/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_RippleAdder.vhd|
+Z93 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Adder/NBit_RippleAdder.vhd|
+!i113 0
+R11
+R12
+Adesign
+R2
+R3
+DEx4 work 16 nbit_rippleadder 0 22 >3ZW3c5f[5iS5h;l?>n@E2
+!i122 11
+l31
+L17 34
+VXW>JF4`jf`T7bcm=TI8eY1
+!s100 DJf4=l00W]5Zb;Y67Z0Ll1
+R6
+32
+R90
+!i10b 1
+R91
+R92
+R93
+!i113 0
+R11
+R12
+Eregisterfile
+R47
+DPx4 work 9 mypackage 0 22 Aj_0V7XMWV9HJmP^Z2`lz1
+R2
+R3
+!i122 46
+R0
+R48
+R49
+l0
+L12 1
+Vi^`F>`5=N[1`L:ajQoZmc2
+!s100 ]jkH0KaOm?`QWh4MBmidR0
+R6
+32
+R50
+!i10b 1
+R51
+R52
+Z94 !s107 /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd|
+!i113 0
+R11
+R12

@@ -15,5 +15,5 @@ begin
 	Output_Out <=
 		InputA_In when InputSelect_Signal = '0' else
 		InputB_In when InputSelect_Signal = '1' else
-		(N-1 downto 0 => 'x');
+		(N-1 downto 0 => '0');
 end Design;

@@ -31,9 +31,9 @@ architecture Design of NBit_AdderSubtracter is
 
 	signal s_InvertedBitsB_In: STD_LOGIC_VECTOR(N-1 downto 0);
 begin
-	for i in 0 to N-1 generate
+	NotGates: for i in 0 to N-1 generate
 		s_InvertedBitsB_In(i) <= BitsB_In(i) xor AddSubtract_Signal;
-	end generate;
+	end generate NotGates;
 
 	AdderSubtracter: NBit_LookAheadAdder
 		generic map(N)

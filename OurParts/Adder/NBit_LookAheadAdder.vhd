@@ -24,13 +24,13 @@ begin
 
 	s_Carries(0) <= Carry_In;
 
-	for i in 0 to N-1 generate
+	FullAdders: for i in 0 to N-1 generate
 		s_PropagateCarry(i) <= BitsA_In(i) xor BitsB_In(i);
 		s_GenerateCarry(i) <= BitsA_In(i) and BitsB_In(i);
 		S_OutPutBits(i) <= s_PropagateCarry(i) xor s_Carries(i);
 
-		s_Carries(i+1) <= s_GenerateCarry(i) or s_PropagateCarry(i) and s_Carries(i);
-	end generate;
+		s_Carries(i+1) <= s_GenerateCarry(i) or (s_PropagateCarry(i) and s_Carries(i));
+	end generate FullAdders;
 
 	Bits_Out <= S_OutPutBits;
 	Carry_Out <= s_Carries(N);

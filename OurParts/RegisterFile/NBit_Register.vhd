@@ -21,7 +21,7 @@ architecture Design of NBit_Register is
 			OutputQ_Out: out STD_LOGIC);
 	end component;
 begin
-	for i in N-1 downto 0 generate
+	D_FlipFlops: for i in N-1 downto 0 generate
 		Register_Bits: DFF
 			port map(
 				CLK_Signal,
@@ -29,5 +29,5 @@ begin
 				WriteEnable_Signal,
 				Input_In(i),
 				Output_Out(i));
-	end generate;
+	end generate D_FlipFlops;
 end Design;

@@ -19,5 +19,5 @@ begin
 		InputB_In when InputSelect_Signal = "01" else
 		InputC_In when InputSelect_Signal = "10" else
 		InputD_In when InputSelect_Signal = "11" else
-		(N-1 downto 0 => 'x');
+		(N-1 downto 0 => '0');
 end Design;

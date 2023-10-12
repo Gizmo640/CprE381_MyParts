@@ -1,21 +1,21 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-package MyPackage is
-	type STD_LOGIC_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(31 downto 0);
-end package MyPackage;
+-- package MyPackage is
+-- 	type STD_LOGIC_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(31 downto 0);
+-- end package MyPackage;
 
-library IEEE;
-use IEEE.std_logic_1164.all;
-use work.MyPackage.all;
+-- library IEEE;
+-- use IEEE.std_logic_1164.all;
+-- use work.MyPackage.all;
 
 entity RegisterFile is
 	port(
 		Data_In: in STD_LOGIC_VECTOR(31 downto 0);
 		DataA_Out: out STD_LOGIC_VECTOR(31 downto 0);
 		DataB_Out: out STD_LOGIC_VECTOR(31 downto 0);
-		RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0);
-		DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+		RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0)
+		DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0)
 		DataB_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
 		Reset_Signal: in STD_LOGIC;
 		WriteEnable_Signal: in STD_LOGIC;
@@ -56,16 +56,16 @@ begin
 			RegisterWriteSelect_Signal,
 			s_RegisterWriteEnable);
 	
-	Registers: for i in 0 to 31 generate
+	for i in 0 to 31 generate
 		Register0: NBit_Register
 			generic map(32)
 			port map(
 				Data_In,
 				s_RegisterDataOut,
 				Reset_Signal,
-				s_RegisterWriteEnable(i),
+				s_RegisterWriteEnable,
 				CLK_Signal);
-	end generate Registers;
+	end generate;
 	for i in 0 to 31 loop
 		MuxA: Bit32_32t1Mux
 			port map(
