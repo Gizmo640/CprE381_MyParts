@@ -48,7 +48,7 @@ architecture Design of RegisterFile is
 	end component;
 
 	signal s_RegisterWriteEnable: STD_LOGIC_VECTOR(31 downto 0);
-	signal s_RegisterDataOut: STD_LOGIC_VECTOR(31 downto 0);
+	signal s_RegisterDataOut: STD_LOGIC_ARRAY(0 to 31);
 begin
 	Decoder: Decoder_5t32
 		port map(
@@ -56,28 +56,37 @@ begin
 			RegisterWriteSelect_Signal,
 			s_RegisterWriteEnable);
 	
-	Registers: for i in 0 to 31 generate
-		Register0: NBit_Register
+	s_RegisterWriteEnable(0) <= '0';
+
+	Register0: NBit_Register
+		generic map(32)
+		port map(
+			Data_In,
+			s_RegisterDataOut(0),
+			Reset_Signal,
+			s_RegisterWriteEnable(0),
+			CLK_Signal);
+	
+	Registers: for i in 1 to 31 generate
+		Register1: NBit_Register
 			generic map(32)
 			port map(
 				Data_In,
-				s_RegisterDataOut,
+				s_RegisterDataOut(i),
 				Reset_Signal,
 				s_RegisterWriteEnable(i),
 				CLK_Signal);
 	end generate Registers;
-	for i in 0 to 31 loop
-		MuxA: Bit32_32t1Mux
-			port map(
-				DataA_Select_Signal,
-				s_RegisterDataOut(i),
-				DataA_Out);
-	end loop;
-	for i in 0 to 31 loop
-		MuxB: Bit32_32t1Mux
-			port map(
-				DataB_Select_Signal,
-				s_RegisterDataOut(i),
-				DataB_Out);
-	end loop;
+
+	MuxA: Bit32_32t1Mux
+	port map(
+		DataA_Select_Signal,
+		s_RegisterDataOut,
+		DataA_Out);
+
+	MuxB: Bit32_32t1Mux
+	port map(
+		DataB_Select_Signal,
+		s_RegisterDataOut,
+		DataB_Out);
 end Design;
