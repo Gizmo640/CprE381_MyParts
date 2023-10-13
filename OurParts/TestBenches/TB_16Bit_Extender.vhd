@@ -11,9 +11,9 @@ architecture TB of TB_Extender_16Bit is
 
 	component Extender_16Bit is
 		port(
-			Immediate_In: in STD_LOGIC_VECTOR(15 downto 0);
-			ExtendedImmediate_Out: out STD_LOGIC_VECTOR(31 downto 0);
-			Immediate_SignedUnsigned_Signal: in STD_LOGIC);
+		Input_In: in STD_LOGIC_VECTOR(15 downto 0);
+		ExtendedOutput_Out: out STD_LOGIC_VECTOR(31 downto 0);
+		UnsignedSigned_Signal: in STD_LOGIC);
 	end component;
 
 	signal Immediate_In: STD_LOGIC_VECTOR(15 downto 0);
