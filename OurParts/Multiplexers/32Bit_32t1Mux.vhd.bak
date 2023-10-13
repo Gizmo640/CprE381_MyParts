@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 
 package MyPackage is
-	type STD_LOGIC_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(31 downto 0);
+	type STD_LOGIC_ARRAY is array(31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
 end package MyPackage;
 
 library IEEE;
@@ -11,9 +11,9 @@ use work.MyPackage.all;
 
 entity Bit32_32t1Mux is
 	port(
-			Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
-			Input_In: in STD_LOGIC_ARRAY(0 to 31);
-			Output_Out: out STD_LOGIC_VECTOR(31 downto 0));
+		Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+		Input_In: in STD_LOGIC_ARRAY(31 downto 0);
+		Output_Out: out STD_LOGIC_VECTOR(31 downto 0));
 end Bit32_32t1Mux;
 
 architecture Design of Bit32_32t1Mux is

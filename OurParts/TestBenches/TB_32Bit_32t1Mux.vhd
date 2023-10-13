@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+use work.MyPackage.all;
 
 
 entity TB_Bit32_32t1Mux is
@@ -12,12 +13,12 @@ architecture TB of TB_Bit32_32t1Mux is
 
 	component Bit32_32t1Mux is
 	port(
-		Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
-		Input_In: in array (31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
-		Output_Out: out STD_LOGIC_VECTOR(31 downto 0));
+			Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+			Input_In: in STD_LOGIC_ARRAY(0 to 31);
+			Output_Out: out STD_LOGIC_VECTOR(31 downto 0));
 	end component;
 
-	signal Input_In: array (31 downto 0) of STD_LOGIC_VECTOR(31 downto 0);
+	signal Input_In: STD_LOGIC_ARRAY(0 to 31);
 	signal Output_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal Select_Signal: std_logic_vector(4 downto 0);
 
@@ -80,6 +81,8 @@ begin
 		Select_Signal <= "00011";
 		wait for CLK_Cycle;--20ns
 		Select_Signal <= "00100";
+		wait for CLK_Cycle;--20ns
+		Select_Signal <= "11111";
 		wait for CLK_Cycle;--20ns
 	end process;
 end TB;

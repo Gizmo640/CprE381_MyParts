@@ -14,8 +14,8 @@ architecture TB of TB_RegisterFile is
 			Data_In: in STD_LOGIC_VECTOR(31 downto 0);
 			DataA_Out: out STD_LOGIC_VECTOR(31 downto 0);
 			DataB_Out: out STD_LOGIC_VECTOR(31 downto 0);
-			RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0)
-			DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0)
+			RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+			DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
 			DataB_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
 			Reset_Signal: in STD_LOGIC;
 			WriteEnable_Signal: in STD_LOGIC;
@@ -50,6 +50,7 @@ begin
 		Reset_Signal <= '1';
 		wait for CLK_Cycle;--20ns
 		Reset_Signal <= '0';
+		wait for CLK_Cycle;--20ns
 		
 		WriteEnable_Signal <= '1';
 		RegisterWriteSelect_Signal <= "00001";
@@ -63,6 +64,20 @@ begin
 		Data_In <= x"FFFF_0000";
 		DataA_Select_Signal <= "00001";
 		DataB_Select_Signal <= "00110";
+		wait for CLK_Cycle;--20ns
+
+		WriteEnable_Signal <= '1';
+		RegisterWriteSelect_Signal <= "00010";
+		Data_In <= x"0000_1111";
+		DataA_Select_Signal <= "00010";
+		DataB_Select_Signal <= "00110";
+		wait for CLK_Cycle;--20ns
+
+		WriteEnable_Signal <= '0';
+		RegisterWriteSelect_Signal <= "00010";
+		Data_In <= x"0000_1111";
+		DataA_Select_Signal <= "00010";
+		DataB_Select_Signal <= "00010";
 		wait for CLK_Cycle;--20ns
 	end process;
 end TB;

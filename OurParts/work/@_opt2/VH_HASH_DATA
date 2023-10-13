@@ -1,0 +1,33 @@
+[N
+4
+1
+82 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/work
+3
+2 tb
+2
+16 tb_bit32_32t1mux
+4
+13 HalfCycle_CLK
+]
+[G
+1
+2
+3
+1
+4
+0
+0
+0
+0
+8 8
+-128
+-106
+-104
+0
+0
+0
+0
+0
+0
+0
+]
