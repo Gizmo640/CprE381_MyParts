@@ -1,0 +1,437 @@
+# //  Questa Sim-64
+# //  Version 2023.2_2 linux_x86_64 Jun  9 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:23:29 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package MyPackage
+# -- Compiling entity Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(8): (vcom-1441) ARRAY ELEMENT CONSTRAINT is not defined for this version of the language.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(10): VHDL Compiler exiting
+# End time: 14:23:29 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:23:52 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# End time: 14:23:52 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:23:57 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# End time: 14:23:57 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:23:58 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# End time: 14:23:58 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:24:04 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(5): near "<>": syntax error
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(7): VHDL Compiler exiting
+# End time: 14:24:04 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+clear
+# [3J[H[2J
+clc
+# invalid command name "clc"
+clear all
+# Usage: clear [options]
+# 
+# Options:
+#   -T TERM     use this instead of $TERM
+#   -V          print curses-version
+#   -x          do not try to clear scrollback
+clear transcript
+# Usage: clear [options]
+# 
+# Options:
+#   -T TERM     use this instead of $TERM
+#   -V          print curses-version
+#   -x          do not try to clear scrollback
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:24:41 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(5): near "<>": syntax error
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(7): VHDL Compiler exiting
+# End time: 14:24:41 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:25:01 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(5): Element subtype (ieee.std_logic_1164.STD_LOGIC_VECTOR) of array type cannot be unconstrained array type.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(7): VHDL Compiler exiting
+# End time: 14:25:01 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:25:24 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(5): near "<>": syntax error
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Packages/MyPackage.vhd(7): VHDL Compiler exiting
+# End time: 14:25:24 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:29:20 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(8): near "port": syntax error
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(10): VHDL Compiler exiting
+# End time: 14:29:20 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:30:51 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_2t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NBit_2t1Mux
+# -- Compiling architecture Design of NBit_2t1Mux
+# End time: 14:30:51 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:30:53 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NBit_4t1Mux
+# -- Compiling architecture Design of NBit_4t1Mux
+# End time: 14:30:53 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:31:39 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Decoder_5t32
+# -- Compiling architecture Design of Decoder_5t32
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): (vcom-1136) Unknown identifier "N".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): (vcom-1591) Bad expression in left bound of range expression.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): Enumeration literal 'x' is type std.STANDARD.CHARACTER; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): Type error in range expression.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(48): VHDL Compiler exiting
+# End time: 14:31:39 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:31:41 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Decoder_5t32
+# -- Compiling architecture Design of Decoder_5t32
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): (vcom-1136) Unknown identifier "N".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): (vcom-1591) Bad expression in left bound of range expression.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): Enumeration literal 'x' is type std.STANDARD.CHARACTER; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(47): Type error in range expression.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd(48): VHDL Compiler exiting
+# End time: 14:31:41 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:32:18 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Decoders/5t32_Decoder.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Decoder_5t32
+# -- Compiling architecture Design of Decoder_5t32
+# End time: 14:32:18 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:32:30 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Extender/16bit_Extender.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Extender_16Bit
+# -- Compiling architecture Design of Extender_16Bit
+# End time: 14:32:30 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:33:41 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(8): near "port": syntax error
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(10): VHDL Compiler exiting
+# End time: 14:33:41 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:42:17 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(12): near "entity": (vcom-1576) expecting '[' or '.' or '(' or '\''.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(12): VHDL Compiler exiting
+# End time: 14:42:17 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:43:04 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(12): near "entity": (vcom-1576) expecting '[' or '.' or '(' or '\''.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(12): VHDL Compiler exiting
+# End time: 14:43:04 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:43:18 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(10): (vcom-1136) Unknown identifier "MyPackage".
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(12): VHDL Compiler exiting
+# End time: 14:43:18 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:43:32 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(14): (vcom-1136) Unknown identifier "STD_LOGIC_VECTOR".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(16): (vcom-1136) Unknown identifier "STD_LOGIC_VECTOR".
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(17): VHDL Compiler exiting
+# End time: 14:43:32 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:44:13 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity Bit32_32t1Mux
+# -- Compiling architecture Design of Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(23): near "is": (vcom-1576) expecting IN.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(26): VHDL Compiler exiting
+# End time: 14:44:13 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:44:27 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity Bit32_32t1Mux
+# -- Compiling architecture Design of Bit32_32t1Mux
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(23): Illegal concurrent statement.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(24): (vcom-1136) Unknown identifier "to_integer".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(24): Type error resolving infix expression "=" as type std.STANDARD.BOOLEAN.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(25): Enumeration literal 'x' is type std.STANDARD.CHARACTER; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd(27): VHDL Compiler exiting
+# End time: 14:44:27 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 14:59:29 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/32Bit_32t1Mux.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity Bit32_32t1Mux
+# -- Compiling architecture Design of Bit32_32t1Mux
+# End time: 14:59:29 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:01:19 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/DFlipFlop.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity DFF
+# -- Compiling architecture Design of DFF
+# End time: 15:01:19 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:01:22 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NBit_Register
+# -- Compiling architecture Design of NBit_Register
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd(24): FOR GENERATE statement must have a label.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd(31): VHDL Compiler exiting
+# End time: 15:01:22 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:02:03 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/NBit_Register.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity NBit_Register
+# -- Compiling architecture Design of NBit_Register
+# End time: 15:02:03 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:03:53 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity RegisterFile
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(18): (vcom-1136) Unknown identifier "DataA_Select_Signal".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(18): Bad resolution function (STD_LOGIC_VECTOR) for type (error).
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(18): near ":": (vcom-1576) expecting ';' or ')'.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(18): VHDL Compiler exiting
+# End time: 15:03:53 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:04:33 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity RegisterFile
+# -- Compiling architecture Design of RegisterFile
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(36): (vcom-1136) Unknown identifier "STD_LOGIC_ARRAY".
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(59): FOR GENERATE statement must have a label.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(66): Signal "s_RegisterWriteEnable" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(67): VHDL Compiler exiting
+# End time: 15:04:33 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 3, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:04:47 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity RegisterFile
+# -- Compiling architecture Design of RegisterFile
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(59): FOR GENERATE statement must have a label.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(66): Signal "s_RegisterWriteEnable" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(67): VHDL Compiler exiting
+# End time: 15:04:47 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:05:54 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity RegisterFile
+# -- Compiling architecture Design of RegisterFile
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(66): Signal "s_RegisterWriteEnable" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(69): Illegal concurrent statement.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(73): (vcom-1450) Actual (indexed name) for formal "Input_In" is not a static signal name.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(76): Illegal concurrent statement.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(80): (vcom-1450) Actual (indexed name) for formal "Input_In" is not a static signal name.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(83): VHDL Compiler exiting
+# End time: 15:05:54 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd
+# QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
+# Start time: 15:12:26 on Oct 12,2023
+# vcom -reportprogress 300 -work work /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling package MyPackage
+# -- Loading package MyPackage
+# -- Compiling entity RegisterFile
+# -- Compiling architecture Design of RegisterFile
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(69): Illegal concurrent statement.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(73): (vcom-1450) Actual (indexed name) for formal "Input_In" is not a static signal name.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(76): Illegal concurrent statement.
+# ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(80): (vcom-1450) Actual (indexed name) for formal "Input_In" is not a static signal name.
+# ** Note: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/RegisterFile/RegisterFile.vhd(83): VHDL Compiler exiting
+# End time: 15:12:26 on Oct 12,2023, Elapsed time: 0:00:00
+# Errors: 4, Warnings: 0
