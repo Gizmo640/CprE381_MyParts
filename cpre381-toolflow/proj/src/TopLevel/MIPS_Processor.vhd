@@ -21,7 +21,7 @@ library work;
 use work.MIPS_types.all;
 
 entity MIPS_Processor is
-  generic(N : integer := DATA_WIDTH);
+  generic(N : integer := DATA_WIDTH; N: INTEGER);
   port(iCLK            : in std_logic;
        iRST            : in std_logic;
        iInstLd         : in std_logic;
@@ -56,10 +56,10 @@ architecture structure of MIPS_Processor is
   -- Required overflow signal -- for overflow exception detection
   signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
 
-  -- Required fetch logic signal -- for jump and branch instructions
-  signal s_jr           : std_logic; --jr mux select
-  signal s_jump         : std_logic; --jump mux select
-  signal s_link         : std_logic; --jal mux select
+  -- Required fetch logic signal -- for jump and branch instructions (control)
+  signal s_Jr           : std_logic; --jr mux select
+  signal s_Jump         : std_logic; --jump mux select
+  signal s_Link         : std_logic; --jal mux select
   signal s_Branch       : std_logic; --& with s_Zero
   signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
 
@@ -80,7 +80,67 @@ architecture structure of MIPS_Processor is
 		    BarrelInput : in std_logic_vector(31 downto 0); 
 		    LeftOrRight : in std_logic; --0 is right and 1 is left
 		    BarrelOutput : out std_logic_vector(31 downto 0));
-  	end component;
+  end component;
+
+  component NBit_LookAheadAdder is
+    port(
+      Carry_In: in STD_LOGIC;
+      Carry_Out: out STD_LOGIC;
+      BitsA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
+      BitsB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
+      Bits_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
+      OverFlow_Flag: out STD_LOGIC;
+      Zero_Flag: out STD_LOGIC;
+      Carry_Flag: out STD_LOGIC);
+  end component;
+
+  component NBit_Register is
+    generic(N: INTEGER);
+    port(
+        Input_In: in STD_LOGIC_VECTOR(N-1 downto 0);
+        Output_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
+        Reset_Signal: in STD_LOGIC;
+        WriteEnable_Signal: in STD_LOGIC;
+        CLK_Signal: in STD_LOGIC);
+  end component;
+
+  component RegisterFile is
+  	port(
+      Data_In: in STD_LOGIC_VECTOR(31 downto 0);
+      DataA_Out: out STD_LOGIC_VECTOR(31 downto 0);
+      DataB_Out: out STD_LOGIC_VECTOR(31 downto 0);
+      RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0)
+      DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0)
+      DataB_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+      Reset_Signal: in STD_LOGIC;
+      WriteEnable_Signal: in STD_LOGIC;
+      CLK_Signal: in STD_LOGIC);
+  end component;
+
+  component Extender_16Bit is
+    port(
+      Input_In: in STD_LOGIC_VECTOR(15 downto 0);
+      ExtendedOutput_Out: out STD_LOGIC_VECTOR(31 downto 0);
+      UnsignedSigned_Signal: in STD_LOGIC);
+  end component;
+
+  component shift_left2 is
+    port(
+      DataIn: in std_logic_vector(25 downto 0);
+      shiftedData: out std_logic_vector(27 downto 0));
+  end component;
+
+  --ALU
+
+  --ALU_ControlUnit
+
+  component NBit_2t1Mux is
+    port(
+      InputSelect_Signal: in STD_LOGIC;
+      InputA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
+      InputB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
+      Output_Out: out STD_LOGIC_VECTOR(N-1 downto 0));
+  end component;
 
   
 

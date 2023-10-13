@@ -20,10 +20,11 @@ architecture TB of TB_LookAheadAdder is
 			BitsB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
 			Bits_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
 			OverFlow_Flag: out STD_LOGIC;
+			Carry_Flag: out STD_LOGIC;
 			Zero_Flag: out STD_LOGIC);
 	end component;
 
-	signal Carry_In, Carry_Out, OverFlow_Flag, Zero_Flag: STD_LOGIC;
+	signal Carry_In, Carry_Out, OverFlow_Flag, Carry_Flag, Zero_Flag: STD_LOGIC;
 	signal BitsA_In, BitsB_In, Bits_Out: std_logic_vector(N-1 downto 0);
 begin
 	Clock: process begin
@@ -42,6 +43,7 @@ begin
 			BitsB_In,
 			Bits_Out,
 			OverFlow_Flag,
+			Carry_Flag,
 			Zero_Flag);
 
 	TEST_CASES: process begin

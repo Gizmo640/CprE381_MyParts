@@ -1,0 +1,259 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2023.2_2 2023.06, Jun  9 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts
+T_opt
+!s110 1697141484
+VWE;c>BQJEMEdb_cFI<j<]0
+04 17 2 work tb_lookaheadadder tb 1
+=1-7486e2289de9-652852ec-3f58f-b94c4
+R0
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.2_2;77
+R1
+Efulladder
+Z2 w1697135656
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 8
+R1
+Z5 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/FullAdder.vhd
+Z6 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/FullAdder.vhd
+l0
+L4 1
+VSFn[7XO5cKBQe:0LZ]zPh2
+!s100 S:R<J0bNz?iD;>F1d_1Q>0
+Z7 OL;C;2023.2_2;77
+32
+Z8 !s110 1697141708
+!i10b 1
+Z9 !s108 1697141708.000000
+Z10 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/FullAdder.vhd|
+Z11 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/FullAdder.vhd|
+!i113 0
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Adesign
+R3
+R4
+DEx4 work 9 fulladder 0 22 SFn[7XO5cKBQe:0LZ]zPh2
+!i122 8
+l18
+L13 14
+V`>1Se[HjFXH1O]@kjc[ZS0
+!s100 [[[G``]53YK41i:J40K2=0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Enbit_2t1mux
+R2
+R3
+R4
+!i122 12
+R1
+8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_2t1Mux.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_2t1Mux.vhd
+l0
+L4 1
+VkS4GHoVzL8ZMi<ZYJOA[51
+!s100 AkVnMF_N[MoiJ=3ahb8aS0
+R7
+32
+Z14 !s110 1697141715
+!i10b 1
+Z15 !s108 1697141715.000000
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_2t1Mux.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_2t1Mux.vhd|
+!i113 0
+R12
+R13
+Enbit_4t1mux
+R2
+R3
+R4
+!i122 13
+R1
+8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_4t1Mux.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_4t1Mux.vhd
+l0
+L4 1
+VSljJ=8oh8M0;`i`3R<=@P0
+!s100 j6oXdllSU3iRHMC`f]fFO2
+R7
+32
+R14
+!i10b 1
+R15
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_4t1Mux.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Multiplexers/NBit_4t1Mux.vhd|
+!i113 0
+R12
+R13
+Enbit_addersubtracter
+R2
+R3
+R4
+!i122 9
+R1
+8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_AdderSubtracter.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_AdderSubtracter.vhd
+l0
+L4 1
+V6LOzm3SD9c]X4bzV^g__o1
+!s100 IN=4SnE[M1<C1QPm]5K]z1
+R7
+32
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_AdderSubtracter.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_AdderSubtracter.vhd|
+!i113 0
+R12
+R13
+Enbit_lookaheadadder
+R2
+R3
+R4
+!i122 10
+R1
+8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_LookAheadAdder.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_LookAheadAdder.vhd
+l0
+L4 1
+Vc^:2G^a:emTmHgkYfAcV;1
+!s100 _IZ0Ba_OiT`C_SFb9T@e_1
+R7
+32
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_LookAheadAdder.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_LookAheadAdder.vhd|
+!i113 0
+R12
+R13
+Enbit_rippleadder
+R2
+R3
+R4
+!i122 11
+R1
+Z16 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_RippleAdder.vhd
+Z17 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_RippleAdder.vhd
+l0
+L4 1
+V>3ZW3c5f[5iS5h;l?>n@E2
+!s100 ]RZZXX7Lb03=W4F=PJ[2C0
+R7
+32
+R8
+!i10b 1
+R9
+Z18 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_RippleAdder.vhd|
+Z19 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/Adder/NBit_RippleAdder.vhd|
+!i113 0
+R12
+R13
+Adesign
+R3
+R4
+DEx4 work 16 nbit_rippleadder 0 22 >3ZW3c5f[5iS5h;l?>n@E2
+!i122 11
+l31
+L17 34
+VXW>JF4`jf`T7bcm=TI8eY1
+!s100 DJf4=l00W]5Zb;Y67Z0Ll1
+R7
+32
+R8
+!i10b 1
+R9
+R18
+R19
+!i113 0
+R12
+R13
+Etb_lookaheadadder
+Z20 w1697141463
+R3
+R4
+!i122 7
+R1
+Z21 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_LookAheadAdder.vhd
+Z22 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_LookAheadAdder.vhd
+l0
+L4 1
+VQD8cDcZM7V7o>Gz>jng6d0
+!s100 4HVoDMPO9z<XoQk`o4NF<1
+R7
+32
+Z23 !s110 1697141700
+!i10b 1
+Z24 !s108 1697141700.000000
+Z25 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_LookAheadAdder.vhd|
+Z26 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_LookAheadAdder.vhd|
+!i113 0
+R12
+R13
+Atb
+R3
+R4
+DEx4 work 17 tb_lookaheadadder 0 22 QD8cDcZM7V7o>Gz>jng6d0
+!i122 7
+l29
+L8 61
+VINnlL3Vn@@LJbTE4RlSB^0
+!s100 4VcN5j1c?lN3_?:lN4aPG0
+R7
+32
+R23
+!i10b 1
+R24
+R25
+R26
+!i113 0
+R12
+R13
+Etb_registerfile
+R2
+R3
+R4
+!i122 6
+R1
+8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_RegisterFile.vhd
+F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_RegisterFile.vhd
+l0
+L4 1
+V]3bHEe6n:O5;6WG]6gGK72
+!s100 HXzhh:mWJ=m8cciZJGcQR0
+R7
+32
+!s110 1697141566
+!i10b 1
+!s108 1697141566.000000
+!s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_RegisterFile.vhd|
+!s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_RegisterFile.vhd|
+!i113 0
+R12
+R13
