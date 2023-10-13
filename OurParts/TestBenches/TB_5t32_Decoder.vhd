@@ -59,5 +59,15 @@ begin
 		Enable_Signal <= '0';
 		Input_In <= "11111";
 		wait for CLK_Cycle;--20ns
+
+		Enable_Signal <= '1';
+		Input_In <= "11111";
+		wait for CLK_Cycle;--20ns
+
+		--expect 512
+		Enable_Signal <= '1';
+		Input_In <= "01001";
+		wait for CLK_Cycle;--20ns
+		
 	end process;
 end TB;
