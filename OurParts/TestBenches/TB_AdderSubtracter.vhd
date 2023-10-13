@@ -56,13 +56,13 @@ begin
 		wait for CLK_Cycle;
 
 		AddSubtract_Signal <= '0';
-		BitsA_In <= "10";
+		BitsA_In <= "01";
 		BitsB_In <= "10";
 		wait for CLK_Cycle;
 
 		AddSubtract_Signal <= '0';
-		BitsA_In <= "00";
-		BitsB_In <= "10";
+		BitsA_In <= "10";
+		BitsB_In <= "01";
 		wait for CLK_Cycle;
 
 	end process;
