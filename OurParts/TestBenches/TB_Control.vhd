@@ -115,6 +115,9 @@ architecture mixed of TB_Control is
           Opcode <= "000011"; --jal
         wait for CLK_Cycle;--20ns
 
+        Opcode <= "000000"; --jr
+        wait for CLK_Cycle;--20ns
+
 	end process;
 
 
