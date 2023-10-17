@@ -82,7 +82,6 @@ architecture structure of MIPS_Processor is
 		    BarrelOutput : out std_logic_vector(31 downto 0));
   	end component;
 
-  
 
 
   -- TODO: You may add any additional signals or components your implementation 

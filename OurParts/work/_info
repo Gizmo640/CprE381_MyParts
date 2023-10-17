@@ -3,6 +3,8 @@ K4
 z2
 Z0 !s12c _opt1
 Z1 !s99 nomlopt
+R0
+R1
 Z2 !s12c _opt
 R1
 R2
@@ -39,10 +41,10 @@ n@_opt
 Z9 OL;O;2023.2_2;77
 R4
 T_opt1
-!s110 1697490801
-Vnm3F1V=;mJ>NK3YgPh5Cm0
+!s110 1697504922
+V;cGSm=1QXGI:`N[C[bM9a1
 04 10 5 work tb_control mixed 1
-=1-6805ca47c68c-652da771-b7304-22f971
+=1-6805ca47c68c-652dde99-e4b9a-231db3
 R1
 R5
 R6
@@ -110,7 +112,7 @@ Econtrol
 Z24 w1697490611
 R12
 R13
-!i122 40
+!i122 46
 Z25 d/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts
 Z26 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/Control/Control.vhd
 Z27 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/Control/Control.vhd
@@ -120,9 +122,9 @@ VffnR9DI?b7Vfec;03c:`>0
 !s100 bSh9R0fXC;YfVI>`@8IS`0
 R17
 33
-Z28 !s110 1697490614
+Z28 !s110 1697504897
 !i10b 1
-Z29 !s108 1697490614.000000
+Z29 !s108 1697504897.000000
 Z30 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/Control/Control.vhd|
 Z31 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/Control/Control.vhd|
 !i113 0
@@ -132,7 +134,7 @@ Adataflow
 R12
 R13
 DEx4 work 7 control 0 22 ffnR9DI?b7Vfec;03c:`>0
-!i122 40
+!i122 46
 l28
 L27 52
 V==?PS__I6d=OI9GCoanIf3
@@ -379,10 +381,10 @@ R65
 R22
 R23
 Etb_control
-Z66 w1697490757
+Z66 w1697504824
 R12
 R13
-!i122 45
+!i122 47
 R25
 Z67 8/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_Control.vhd
 Z68 F/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_Control.vhd
@@ -392,9 +394,9 @@ VR5[XaPQ8LW65cli8l^ca>3
 !s100 <:IgM@XWRUBGCeaZT2lhE1
 R17
 33
-Z69 !s110 1697490759
+Z69 !s110 1697504906
 !i10b 1
-Z70 !s108 1697490758.000000
+Z70 !s108 1697504906.000000
 Z71 !s90 -reportprogress|300|-work|work|/home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_Control.vhd|
 Z72 !s107 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/TestBenches/TB_Control.vhd|
 !i113 0
@@ -404,11 +406,11 @@ Amixed
 R12
 R13
 DEx4 work 10 tb_control 0 22 R5[XaPQ8LW65cli8l^ca>3
-!i122 45
+!i122 47
 l49
-L10 114
-V:bz]1HHo7LjI46_@_`Te>1
-!s100 YaF^@AcmVi712^^=Sg1IB2
+L10 117
+VTFaELFNo9HdP^fYGLV0W[0
+!s100 Z_nZ^ZbXZ3g@4VHDWScB>3
 R17
 33
 R69
