@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------
--- Henry Duwe
+-- Lincoln Hatelstad & Doyle Chism & Jesse Giligham
 -- Department of Electrical and Computer Engineering
 -- Iowa State University
 -------------------------------------------------------------------------
@@ -20,6 +20,7 @@ use IEEE.std_logic_1164.all;
 library work;
 use work.MIPS_types.all;
 
+--check inputs and ouputs to make sure it is mapped correctly
 entity MIPS_Processor is
   generic(N : integer := DATA_WIDTH; N: INTEGER);
   port(iCLK            : in std_logic;
@@ -34,35 +35,7 @@ end  MIPS_Processor;
 
 architecture structure of MIPS_Processor is
 
-  -- Required data memory signals
-  signal s_DMemWr       : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
-  signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input
-  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
-  signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
- 
-  -- Required register file signals 
-  signal s_RegWr        : std_logic; -- TODO: use this signal as the final active high write enable input to the register file
-  signal s_RegWrAddr    : std_logic_vector(4 downto 0); -- TODO: use this signal as the final destination register address input
-  signal s_RegWrData    : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
-
-  -- Required instruction memory signals
-  signal s_IMemAddr     : std_logic_vector(N-1 downto 0); -- Do not assign this signal, assign to s_NextInstAddr instead
-  signal s_NextInstAddr : std_logic_vector(N-1 downto 0); -- TODO: use this signal as your intended final instruction memory address input.
-  signal s_Inst         : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the instruction signal 
-
-  -- Required halt signal -- for simulation
-  signal s_Halt         : std_logic;  -- TODO: this signal indicates to the simulation that intended program execution has completed. (Opcode: 01 0100)
-
-  -- Required overflow signal -- for overflow exception detection
-  signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
-
-  -- Required fetch logic signal -- for jump and branch instructions (control)
-  signal s_Jr           : std_logic; --jr mux select
-  signal s_Jump         : std_logic; --jump mux select
-  signal s_Link         : std_logic; --jal mux select
-  signal s_Branch       : std_logic; --& with s_Zero
-  signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
-
+  --Memory that is used for DMEM and IMEM
   component mem is
     generic(ADDR_WIDTH : integer;
             DATA_WIDTH : integer);
@@ -74,6 +47,7 @@ architecture structure of MIPS_Processor is
           q            : out std_logic_vector((DATA_WIDTH -1) downto 0));
     end component;
 
+  --Can shift left or right N Bits 
   component BarrelShifter is
   	port(
 		    shiftAmount : in std_logic_vector(4 downto 0); 
@@ -82,6 +56,7 @@ architecture structure of MIPS_Processor is
 		    BarrelOutput : out std_logic_vector(31 downto 0));
   end component;
 
+  --Adder for Processor 
   component NBit_LookAheadAdder is
     port(
       Carry_In: in STD_LOGIC;
@@ -94,6 +69,7 @@ architecture structure of MIPS_Processor is
       Carry_Flag: out STD_LOGIC);
   end component;
 
+  --NBit Register size
   component NBit_Register is
     generic(N: INTEGER);
     port(
@@ -104,6 +80,7 @@ architecture structure of MIPS_Processor is
         CLK_Signal: in STD_LOGIC);
   end component;
 
+  --Register File 
   component RegisterFile is
   	port(
       Data_In: in STD_LOGIC_VECTOR(31 downto 0);
@@ -117,6 +94,7 @@ architecture structure of MIPS_Processor is
       CLK_Signal: in STD_LOGIC);
   end component;
 
+  --Sign Extender
   component Extender_16Bit is
     port(
       Input_In: in STD_LOGIC_VECTOR(15 downto 0);
@@ -124,16 +102,56 @@ architecture structure of MIPS_Processor is
       UnsignedSigned_Signal: in STD_LOGIC);
   end component;
 
+  --shifted left 2 bits
   component shift_left2 is
     port(
       DataIn: in std_logic_vector(25 downto 0);
       shiftedData: out std_logic_vector(27 downto 0));
   end component;
+  
+  --Control Unit(should be operational)
+  component Control is
+        port(
+        Opcode: in std_logic_vector(5 downto 0);
+      --  ControlOut: std_logic_vector(11 downto 0);
+        Jump: out std_logic; --bit 0
+        Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
+        Branch: out std_logic;   --bit 2
+        Link: out std_logic;     --bit 3
+        MemRead: out std_logic;  --bit 4
+        MemWrite: out std_logic; --bit 5
+        MemtoReg: out std_logic; --bit 6
+        ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
+        ALUSrc: out std_logic;   --bit 9
+        RegWrite: out std_logic; --bit 10
+        RegDst: out std_logic  --bit 11
+    );
+  end component;
 
-  --ALU
+  --ALU(could need adjustments)
+  component ALU is
+    port(
+    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
+		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0);
+		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0);
+		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
+		OverFlow_Flag: out STD_LOGIC;
+		Zero_Flag: out STD_LOGIC;
+		Carry_Flag: out STD_LOGIC);
+    end component;
 
-  --ALU_ControlUnit
+  --ALU_ControlUnit(could need adjustments)
+  component ALU_ControlUnit is 
+    port(
+    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(&* downto 0)
+		AddSubtract_Signal_Out: out STD_LOGIC;
+		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
+		InvertSelect_Signal_Out: out STD_LOGIC;
+		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
+		Shift_LeftRight_Signal_Out: out STD_LOGIC);
+    end component;
 
+  --NBit MUX
   component NBit_2t1Mux is
     port(
       InputSelect_Signal: in STD_LOGIC;
@@ -144,9 +162,63 @@ architecture structure of MIPS_Processor is
 
   
 
+  --SIGNALS FOR MAPPING
+  -- Required data memory signals
+  signal s_DMemWr       : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
+  signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input
+  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+  signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
+ 
+  -- Required register file signals 
+  signal s_RegWr        : std_logic; -- TODO: use this signal as the final active high write enable input to the register file
+  signal s_RegWrAddr    : std_logic_vector(4 downto 0); -- TODO: use this signal as the final destination register address input
+  signal s_RegWrData    : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+
+  -- Required Instruction memory signals
+  signal s_IMemAddr     : std_logic_vector(N-1 downto 0); -- Do not assign this signal, assign to s_NextInstAddr instead
+  signal s_NextInstAddr : std_logic_vector(N-1 downto 0); -- TODO: use this signal as your intended final instruction memory address input.
+  signal s_Inst         : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the instruction signal 
+
+  -- Required halt signal -- for simulation
+  signal s_Halt         : std_logic;  -- TODO: this signal indicates to the simulation that intended program execution has completed. (Opcode: 01 0100)
+
+  -- Required overflow signal -- for overflow exception detection
+  signal s_Ovfl         : std_logic;  -- TODO: this signal indicates an overflow exception would have been initiated
 
   -- TODO: You may add any additional signals or components your implementation 
   --       requires below this comment
+  --ALU signals
+  signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
+  
+
+  --mapping signals
+  signal s_PCAdderOut   : std_logic_vector(31 downto 0);
+  signal s_RegDstMuxOut : std_logic_vector(4 downto 0); --output of the mux controlled by reg destination
+  signal s_LinkMuxOut   : std_logic_vector(4 downto 0); --output of the mux controlled by link signal
+  signal s_ExtendedOut  : std_logic_vector(31 downto 0);
+  signal s_Read1        : std_logic_vector(31 downto 0); --register outputs
+  signal s_Read2        : std_logic_vector(31 downto 0); --^
+  signal s_ALUSrcMuxOut : std_logic_vector(31 downto 0); --alu input B
+  signal s_BranchAndOut : std_logic; --controls 
+  signal s_shiftedInstructionBits : std_logic_vector(27 downto 0);
+  signal s_shiftedSignExtenderOut : std_logic_vector(31 downto 0);--double check the size
+  signal s_shiftedAdderOut : std_logic_vector(31 downto 0); -- double check size
+  signal s_ANDsignalMuxOut : std_logic_vector(31 downto 0);
+  signal s_JumpSignalMuxOut : std_logic_vector(31 downto 0);
+  
+  -- Required fetch logic signal -- for jump and branch instructions (control)
+  --signals for the output of the Control Signal Block
+  signal s_Jr           : std_logic; --jr mux select
+  signal s_Jump         : std_logic; --jump mux select
+  signal s_Link         : std_logic; --jal mux select
+  signal s_Branch       : std_logic; --& with s_Zero
+  signal s_ALUSrc       : std_logic; --PUT THIS IS LAB REPORT
+  signal s_DestinationReg : std_logic; --reg dest 
+  signal s_MemtoReg : std_logic; --output of Control Unit
+  signal s_MemRead : std_logic; --mem read output 
+  signal s_ALUOp : std_logic_vector(1 downto 0);
+  signal s_MemWrite : std_logic;
+
 
 begin
 
@@ -155,7 +227,7 @@ begin
     s_IMemAddr <= s_NextInstAddr when '0',
       iInstAddr when others;
 
-
+  --Given data don't mess with
   IMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -164,7 +236,7 @@ begin
              data => iInstExt,
              we   => iInstLd,
              q    => s_Inst);
-  
+  --Given data don't mess with
   DMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -176,8 +248,177 @@ begin
 
   -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
-
   -- TODO: Implement the rest of your processor below this comment! 
+  --REGISTER/ALU/DMEM LOGIC
+
+  RegDstMux: NBit_2t1Mux
+    --generic
+    port map(
+      InputSelect_Signal => RegDst,
+      InputA_In => s_Inst(20 downto 16),
+      InputB_In => s_Inst(15 downto  11),
+      Output_Out => s_RegDstMuxOut
+    );
+
+  LinkMux: NBit_2t1Mux
+    --generic
+      port map(
+        InputSelect_Signal => Link,
+        InputA_In => s_RegDstMuxOut,
+        InputB_In => b"11111",
+        Output_Out => s_LinkMuxOut
+      );
+
+  Registers: RegisterFile
+    port map(
+      Data_In => s_RegWrData,
+      DataA_Out => , --idk
+      DataB_Out => , --idk
+      RegisterWriteSelect_Signal => s_RegWrAddr,
+      DataA_Select_Signal => s_Inst(25 downto 21),
+      DataB_Select_Signal => s_Inst(20 downto 16),
+      Reset_Signal => iRST,
+      WriteEnable_Signal => s_RegWr;
+      CLK_Signal  => iCLK);
+
+  SignExtender: Extender_16Bit
+    port map(
+      Input_In => s_Inst(15 downto 0),
+      ExtendedOutput_Out  => s_ExtendedOut,
+      UnsignedSigned_Signal => --idk
+    );
+  --MUX NAMED BASED ON SELECT LINE
+  ALUSrcMux: NBit_2t1Mux
+    --generic
+    port map(
+      InputSelect_Signal => s_ALUSrc,
+      InputA_In => s_Read2,
+      InputB_In => s_ExtendedOut,
+      Output_Out => s_ALUSrcMuxOut
+    );
+
+  --alu control and alu
+  ALUControl: ALU_ControlUnit
+    port map(
+      ALU_ControlUnit_In => ,                            --in STD_LOGIC_VECTOR(&* downto 0)
+      AddSubtract_Signal_Out => ,                        --out STD_LOGIC;
+      LogicSelect_Signal_Out => ,                        --out STD_LOGIC_VECTOR(1 downto 0);
+      InvertSelect_Signal_Out => ,                       --out STD_LOGIC;
+      ArithmeticLogicSelect_Signal_Out => ,              --out STD_LOGIC;
+      Shift_LeftRight_Signal_Out =>                      --out STD_LOGIC);
+    );
+
+  ALU_Unit: ALU
+    port map(
+      ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
+		BitsA_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
+		BitsB_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
+		Bits_Out => ,                             --out STD_LOGIC_VECTOR(31 downto 0);
+		OverFlow_Flag => ,                        --out STD_LOGIC;
+		Zero_Flag => ,                            --out STD_LOGIC;
+		Carry_Flag =>                             --out STD_LOGIC
+    );
+
+  s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
+
+  DMemMux: NBit_2t1Mux
+    port map(
+      InputSelect_Signal => s_MemtoReg,
+      InputA_In => s_DMemOut,
+      InputB_In => ,--ALU ouput signal
+      Output_Out => s_RegWrData -- write data input
+    );
+
+
+  --CONTROL LOGIC
+    ControlUnit : Control 
+    port map(
+      Opcode => s_Inst(31 downto 26), --in std_logic_vector(5 downto 0);
+      --  ControlOut: std_logic_vector(11 downto 0);
+      Jump => s_Jump, --bit 0
+      Jr => s_Jr,  --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
+      Branch => s_Branch,  --bit 2
+      Link => s_Link,    --bit 3
+      MemRead => s_MemRead--bit 4
+      MemWrite => s_MemWrite--bit 5
+      MemtoReg => s_MemtoReg, --bit 6
+      ALUOp => s_ALUOp, --bit 8, bit 7
+      ALUSrc => s_ALUSrc, --bit 9
+      RegWrite => s_RegWr,--bit 10
+      RegDst => s_DestinationReg, --bit 11
+        --Halt??
+
+      );
+
+
+  --FETCH LOGIC BELOW
+
+    ShiftInstructionTwoBits: shift_left2
+      port map(
+        DataIn => s_Inst(25 downto 0),
+        shiftedData => s_shiftedInstructionBits
+      );
+
+    ShiftSignExtender: shift_left2
+      port map(
+        DataIn => s_ExtendedOut,
+        shiftedData => s_shiftedSignExtenderOut
+      );
+
+    --UNSURE ABOUT MAJORITY OF INPUTS FOR THE ADDER(EXCEPT BITS A, BITS B, BITS OUT)
+    PCAdder: NBit_LookAheadAdder
+      --generic map(N => DATA_WIDTH)
+      port map(
+        Carry_In => '0',--??
+        Carry_Out => TODOsignal,--??
+        BitsA_In => s_IMemAddr,
+        BitsB_In => "00_0000_0100",
+        Bits_Out => s_PCAdderOut, --4 highest bits concatted to end of jump address, also connects to branch adder
+        OverFlow_Flag => null, -- idk
+        Zero_Flag => null, --idk
+        Carry_Flag => null --idk
+      );
+
+    AdderWithShiftedBits: NBit_LookAheadAdder
+      port map(
+        Carry_In => '0',--??
+        Carry_Out => TODOsignal,--??
+        BitsA_In => s_PCAdderOut, --adder ouput
+        BitsB_In => s_shiftedSignExtenderOut, -- shifted input
+        Bits_Out => s_shiftedAdderOut, -- signal for ouput(check how the output is being used)
+        OverFlow_Flag => null, --idk
+        Zero_Flag => null, --idk
+        Carry_Flag => null --idk
+      );
+
+  --MUXS LABELED BASED ON THEIR SELECT LINE OF FETCH LOGIC
+  MUXAndSelectSignal: NBit_2t1Mux
+    port map(
+      InputSelect_Signal => s_BranchAndOut,--output of the and gate
+		  InputA_In => s_PCAdderOut, -- have to check if this is working properly
+		  InputB_In => s_shiftedAdderOut, --adder output 
+		  Output_Out => s_ANDsignalMuxOut;
+    );
+
+  MUXJumpSelectSignal: NBit_2t1Mux
+    port map(
+      InputSelect_Signal => s_Jump,--from control unit
+		  InputA_In => ,--need to determine the difference between the Adder Output and the shifted values 
+		  InputB_In => s_ANDsignalMuxOut,
+		  Output_Out => s_JumpSignalMuxOut
+    );
+
+  MUXJrSelectSignal: NBit_2t1Mux
+    port map(
+      InputSelect_Signal => s_Jr,--from control unit
+		  InputA_In => s_Read1,
+		  InputB_In => s_JumpSignalMuxOut,
+		  Output_Out => oALUOut,--Read in the next instruction(not sure the name for it)
+    );
+
+
+
+
 
 end structure;
 
