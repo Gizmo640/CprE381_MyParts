@@ -20,6 +20,7 @@ entity Control is
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
         RegDst: out std_logic  --bit 11
+        --Halt??
     );
 end Control;
 
