@@ -19,24 +19,26 @@ entity Control is
         ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
-        RegDst: out std_logic;  --bit 11
+        RegDst: out std_logic  --bit 11
     );
 end Control;
 
 
 architecture dataflow of Control is
+    begin
+
     Jump <=
     '1' when (Opcode = "000010") else '0';
 
-    Jr <=
-    '1' when (Opcode = "000000") else '0';
+    Jr <= --how to do for jr
+    '1' when (Opcode = "000000") else '0'; --rtype
 
     Branch <=
-    '1' when (Opcode = "000010") else
-    '1' when (Opcode = "000101") else '0';
+    '1' when (Opcode = "000010") else --beq
+    '1' when (Opcode = "000101") else '0'; --bne
 
     Link <=
-    '1' when (Opcode = "000011") else '0';
+    '1' when (Opcode = "000011") else '0'; --jal
 
     MemRead <=
     '1' when (Opcode = "100011") else '0'; --lw
@@ -47,8 +49,14 @@ architecture dataflow of Control is
     MemtoReg <=
     '1' when (Opcode = "100011") else '0'; --lw
 
- --   ALUOp <=
-
+    ALUOp <=
+    "10" when (Opcode = "000000") else  --rtype
+    "00" when (Opcode = "100011") else  --lw
+    "00" when (Opcode = "101011") else  --sw
+    "01" when (Opcode = "000100") else --beq
+    "01" when (Opcode = "000101") else --bne
+    "11"; --for I type (how do we choose which function?)
+    
     ALUSrc <=
     '0' when (Opcode = "000000") else
     '0' when (Opcode = "000100") else
@@ -56,12 +64,15 @@ architecture dataflow of Control is
     '0' when (Opcode = "000010") else
     '0' when (Opcode = "000011") else '1';
 
-    -- RegWrite <= --how to do jal
-    -- '0' when (Opcode = )
+    RegWrite <= --what do we do for jr???
+    '0' when (Opcode = "101011") else --sw
+    '0' when (Opcode = "000100") else --beq
+    '0' when (Opcode = "000101") else --bne
+    '0' when (Opcode = "000010") else --j
+    '0' when (Opcode = "000000") else '1'; --we only want to set this for jr
+
 
     RegDst <=
-    '1' when (Opcode = "000000") else
-    '1' when (Opcode = "000100") else
-    '1' when (Opcode = "000101") else '0';
+    '1' when (Opcode = "000000") else '0'; --rtype
 
 end dataflow;

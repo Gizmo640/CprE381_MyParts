@@ -1,18 +1,12 @@
 [N
-7
-3
-6 design
-5
-16 tb_nbit_register
 4
-1 N
-1
-82 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/OurParts/work
 2
-13 nbit_register
-6
-2 tb
-7
+10 tb_control
+3
+5 mixed
+1
+83 /home/dchism03/Documents/CPRE381/Project1/mips-single-cycle-processor/OurParts/work
+4
 13 HalfCycle_CLK
 ]
 [G
@@ -21,20 +15,6 @@
 3
 1
 4
-1
-0
-32
-0
-0 0
-0
-0
-]
-[G
-1
-5
-6
-1
-7
 0
 0
 0
