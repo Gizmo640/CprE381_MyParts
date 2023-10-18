@@ -20,6 +20,7 @@ use IEEE.std_logic_1164.all;
 library work;
 use work.MIPS_types.all;
 
+--check inputs and ouputs to make sure it is mapped correctly
 entity MIPS_Processor is
   generic(N : integer := DATA_WIDTH; N: INTEGER);
   port(iCLK            : in std_logic;
@@ -34,6 +35,7 @@ end  MIPS_Processor;
 
 architecture structure of MIPS_Processor is
 
+  --Memory that is used for DMEM and IMEM
   component mem is
     generic(ADDR_WIDTH : integer;
             DATA_WIDTH : integer);
@@ -45,6 +47,7 @@ architecture structure of MIPS_Processor is
           q            : out std_logic_vector((DATA_WIDTH -1) downto 0));
     end component;
 
+  --Can shift left or right N Bits 
   component BarrelShifter is
   	port(
 		    shiftAmount : in std_logic_vector(4 downto 0); 
@@ -53,6 +56,7 @@ architecture structure of MIPS_Processor is
 		    BarrelOutput : out std_logic_vector(31 downto 0));
   end component;
 
+  --Adder for Processor 
   component NBit_LookAheadAdder is
     port(
       Carry_In: in STD_LOGIC;
@@ -65,6 +69,7 @@ architecture structure of MIPS_Processor is
       Carry_Flag: out STD_LOGIC);
   end component;
 
+  --NBit Register size
   component NBit_Register is
     generic(N: INTEGER);
     port(
@@ -75,6 +80,7 @@ architecture structure of MIPS_Processor is
         CLK_Signal: in STD_LOGIC);
   end component;
 
+  --Register File 
   component RegisterFile is
   	port(
       Data_In: in STD_LOGIC_VECTOR(31 downto 0);
@@ -88,6 +94,7 @@ architecture structure of MIPS_Processor is
       CLK_Signal: in STD_LOGIC);
   end component;
 
+  --Sign Extender
   component Extender_16Bit is
     port(
       Input_In: in STD_LOGIC_VECTOR(15 downto 0);
@@ -113,10 +120,30 @@ architecture structure of MIPS_Processor is
     );
   end component;
 
-  --ALU needed
+  --ALU(could need adjustments)
+  component ALU is
+    port(
+    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
+		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0);
+		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0);
+		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
+		OverFlow_Flag: out STD_LOGIC;
+		Zero_Flag: out STD_LOGIC;
+		Carry_Flag: out STD_LOGIC);
+    end component;
 
-  --ALU_ControlUnit needed
+  --ALU_ControlUnit(could need adjustments)
+  component ALU_ControlUnit is 
+    port(
+    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(&* downto 0)
+		AddSubtract_Signal_Out: out STD_LOGIC;
+		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
+		InvertSelect_Signal_Out: out STD_LOGIC;
+		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
+		Shift_LeftRight_Signal_Out: out STD_LOGIC);
+    end component;
 
+  --NBit MUX
   component NBit_2t1Mux is
     port(
       InputSelect_Signal: in STD_LOGIC;
@@ -258,7 +285,7 @@ begin
       ExtendedOutput_Out  => s_ExtendedOut,
       UnsignedSigned_Signal => '0';
     );
-
+  --MUX NAMED BASED ON SELECT LINE
   ALUSrcMux: NBit_2t1Mux
     generic map(N => 32);
     port map(
@@ -271,13 +298,24 @@ begin
   --TODO ALU CONTROL AND ALU
   ALUControl: ALU_ControlUnit
     port map(
-
+      ALU_ControlUnit_In => ,                            --in STD_LOGIC_VECTOR(&* downto 0)
+      AddSubtract_Signal_Out => ,                        --out STD_LOGIC;
+      LogicSelect_Signal_Out => ,                        --out STD_LOGIC_VECTOR(1 downto 0);
+      InvertSelect_Signal_Out => ,                       --out STD_LOGIC;
+      ArithmeticLogicSelect_Signal_Out => ,              --out STD_LOGIC;
+      Shift_LeftRight_Signal_Out =>                      --out STD_LOGIC);
     );
 
   --TODO
   ALU_Unit: ALU
     port map(
-
+      ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
+		BitsA_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
+		BitsB_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
+		Bits_Out => ,                             --out STD_LOGIC_VECTOR(31 downto 0);
+		OverFlow_Flag => ,                        --out STD_LOGIC;
+		Zero_Flag => ,                            --out STD_LOGIC;
+		Carry_Flag =>                             --out STD_LOGIC
     );
 
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
@@ -322,9 +360,9 @@ begin
         BitsA_In => s_IMemAddr, --PC
         BitsB_In => x"00000004", --hard code 4
         Bits_Out => s_PCAdderOut, --4 highest bits concatted to end of jump address, also connects to branch adder
-        OverFlow_Flag => null,
-        Zero_Flag => null,
-        Carry_Flag => null
+        OverFlow_Flag => null, -- idk
+        Zero_Flag => null, --idk
+        Carry_Flag => null --idk
       );
 
     s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2
