@@ -53,19 +53,17 @@ begin
 		"1001" when (ALUOp is "0001" && Funct is "000011") else	--sra
 		"1010" when (ALUOp is "0001" && Funct is "100010") else	--sub
 		"1010" when (ALUOp is "0001" && Funct is "100011") else	--subu	
-		--"0010" when (ALUOp is "0001" && Funct is "001000") else	--jr	
 		"0001" when (ALUOp is "0010") else --addi
 		"0001" when (ALUOp is "0011") else --addiu
-		--TODO EVERYTHING BELOW
-		"0001" when (ALUOp is "0011") else --andi
-		"0001" when (ALUOp is "0011") else --lui
-		"0001" when (ALUOp is "0011") else --lw
-		"0001" when (ALUOp is "0011") else --sw
-		"0001" when (ALUOp is "0011") else --xori
-		"0001" when (ALUOp is "0011") else --slti
-		"0001" when (ALUOp is "0011") else --or
-		"0001" when (ALUOp is "0011") else --beq
-		"0001" when (ALUOp is "0011") else --bne
+		"0010" when (ALUOp is "0011") else --andi
+		"1101" when (ALUOp is "0011") else --lui --does lui really have its own code?
+		"0000" when (ALUOp is "0011") else --lw
+		"0000" when (ALUOp is "0011") else --sw
+		"0100" when (ALUOp is "0011") else --xori
+		"0110" when (ALUOp is "0011") else --slti
+		"0101" when (ALUOp is "0011") else --or
+		"1011" when (ALUOp is "0011") else --beq
+		"1100" when (ALUOp is "0011") else --bne
 		
 
 end Design;
