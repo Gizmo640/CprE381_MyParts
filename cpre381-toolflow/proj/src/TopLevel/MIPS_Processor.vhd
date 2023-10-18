@@ -116,7 +116,8 @@ architecture structure of MIPS_Processor is
         ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
-        RegDst: out std_logic  --bit 11
+        RegDst: out std_logic;  --bit 11
+        Halt: out std_logic
     );
   end component;
 
@@ -346,7 +347,7 @@ begin
       ALUSrc => s_ALUSrc, --bit 9
       RegWrite => s_RegWr,--bit 10
       RegDst => s_DestinationReg, --bit 11
-      --Halt => s_Halt
+      Halt => s_Halt
       );
 
   --FETCH LOGIC
