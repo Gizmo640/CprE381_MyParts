@@ -250,6 +250,7 @@ begin
   --REGISTER/ALU/DMEM LOGIC
 
   RegDstMux: NBit_2t1Mux
+    generic map(5) 
     port map(
       InputSelect_Signal => s_RegDst,
       InputA_In => s_Inst(20 downto 16),
@@ -258,6 +259,7 @@ begin
     );
 
   LinkMux: NBit_2t1Mux
+    generic map(5) 
     port map(
       InputSelect_Signal => s_Link,
       InputA_In => s_RegDstMuxOut,
