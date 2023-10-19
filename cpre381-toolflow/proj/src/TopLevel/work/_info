@@ -323,28 +323,28 @@ R54
 R4
 R5
 Emips_processor
-w1697696340
+w1697698749
 Z55 DPx4 work 10 mips_types 0 22 hZBUW]HhDM2h1hJhif=>>3
 R1
 R2
-!i122 18
+!i122 43
 R0
 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd
 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd
 l0
 L24 1
-V=UCi3g=m?a2FHdj292lMY1
+VF10_DM4=OnPl:gVIN=a?A0
 !s100 lGHYfPBoU@_XX7>dz7Wc<0
 R3
-32
-!s110 1697696341
+33
+!s110 1697698750
 !i10b 1
-!s108 1697696341.000000
+!s108 1697698750.000000
 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd|
 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/MIPS_Processor.vhd|
 !i113 0
 R4
-R5
+tExplicit 1 NoCoverage 1 CvgOpt 0
 Pmips_types
 R1
 R2
