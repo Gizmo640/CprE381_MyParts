@@ -312,7 +312,7 @@ begin
       Bits_Out => s_ALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
       OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
       Zero_Flag => s_Zero,                            --out STD_LOGIC;
-      Carry_Flag => s_Carry_Out --new sig??                            --out STD_LOGIC
+      Carry_Flag => open --new sig??                            --out STD_LOGIC
     );
 
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
