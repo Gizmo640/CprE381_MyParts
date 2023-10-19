@@ -163,7 +163,7 @@ architecture structure of MIPS_Processor is
   -- Required data memory signals
   signal s_DMemWr       : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
   signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input
-  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input (ALSO ALU OUT)
   signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
  
   -- Required register file signals 
@@ -216,7 +216,6 @@ architecture structure of MIPS_Processor is
   signal s_ALUOp : std_logic_vector(3 downto 0);
   signal s_MemWrite : std_logic;
   signal s_ALUControlOut: std_logic_vector(7 downto 0);
-  signal s_ALUOut: std_logic_vector(31 downto 0);
   signal s_FinalAddress: std_logic_vector(31 downto 0);
 
 
@@ -236,7 +235,8 @@ begin
              data => iInstExt,
              we   => iInstLd,
              q    => s_Inst);
-  --Given data don't mess with
+  
+  --Need to map the alu into this (ALU out should be s_DMemAddr)(s_DMemDatat is Read2/rt)
   DMem: mem
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
@@ -279,6 +279,9 @@ begin
       WriteEnable_Signal => s_RegWr,
       CLK_Signal  => iCLK);
 
+  --We need to pass this into the DMem
+  s_DMemData <= s_Read2;
+
   SignExtender: Extender_16Bit
     port map(
       Input_In => s_Inst(15 downto 0),
@@ -294,26 +297,14 @@ begin
       Output_Out => s_ALUSrcMuxOut --ALU input B
     );
 
-  --ALU conrol and ALU
-  -- ALUControl: ALU_ControlUnit
-  --   port map(
-  --     ALU_ControlUnit_In => s_ALUOp,
-  --     AddSubtract_Signal_Out => s_ALUControlOut(0),
-  --     LogicSelect_Signal_Out => s_ALUControlOut(2 downto 1),
-  --     InvertSelect_Signal_Out => s_ALUControlOut(3),
-  --     ArithmeticLogicSelect_Signal_Out => s_ALUControlOut(4),
-  --     Shift_RightLeft_Signal_Out => s_ALUControlOut(5),
-  --     ALUShifterSelect_Signal_Out => s_ALUControlOut(6),
-  --     Signed_Signal_Out => s_ALUControlOut(7)         --out STD_LOGIC);
-  --   );
-
+  --ALU
   ALU_Unit: ALU
     port map(
       ALU_Op => s_ALUOp,    --ALUOp is inputted
       ShiftAmount => s_Inst(10 downto 6),                        --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
       BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
-      Bits_Out => s_ALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
+      Bits_Out => s_DMemAddr,                             --out STD_LOGIC_VECTOR(31 downto 0);
       OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
       Zero_Flag => s_Zero,                            --out STD_LOGIC;
       Carry_Flag => open --new sig??                            --out STD_LOGIC
@@ -325,7 +316,7 @@ begin
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemOut,
-      InputB_In => s_ALUOut, --ALU ouput signal
+      InputB_In => s_DMemData, --ALU ouput signal
       Output_Out => s_RegWrData -- write data input
     );
 
