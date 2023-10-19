@@ -48,15 +48,6 @@ architecture Design of ALU is
 			Output_Out: out STD_LOGIC_VECTOR(N-1 downto 0));
 	end component;
 
-	component NBit_2t1Mux is
-		generic(N: INTEGER);
-		port(
-			InputSelect_Signal: in STD_LOGIC;
-			InputA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
-			InputB_In: in STD_LOGIC_VECTOR(N-1 downto 0);
-			Output_Out: out STD_LOGIC_VECTOR(N-1 downto 0));
-	end component;
-
 	component Barrel_Shifter is
 		port(
 			shiftAmount : in std_logic_vector(4 downto 0);
@@ -86,6 +77,8 @@ architecture Design of ALU is
 	signal s_Signed_Signal: STD_LOGIC;
 
 	signal s_OverFlow_Out: STD_LOGIC;
+	signal s_Zero_Out: STD_LOGIC;
+	signal s_Carry_Out: STD_LOGIC;
 
 	signal s_AND_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_OR_Out: STD_LOGIC_VECTOR(31 downto 0);
@@ -99,6 +92,9 @@ architecture Design of ALU is
 
 	signal s_ArithmeticLogicMux_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_ALUShifterMux_Out: STD_LOGIC_VECTOR(31 downto 0);
+
+	signal s_ZeroOneSelect_Signal: STD_LOGIC;
+	signal s_SLT_Out: STD_LOGIC_VECTOR(31 downto 0);
 begin
 	ALU_ControlUnit: ALU_ControlUnit
 		port map(
@@ -127,10 +123,22 @@ begin
 			s_Arithmetic_Out,
 			Carry_Out,
 			s_OverFlow_Out,
-			Zero_Flag,
-			Carry_Flag);
+			s_Zero_Out,
+			s_Carry_Out);
 
 	OverFlow_Flag <= s_OverFlow_Out and s_Signed_Signal;
+	Zero_Flag <= s_Zero_Out;
+	Carry_Flag <= s_Carry_Out;
+
+	s_ZeroOneSelect_Signal <= s_Carry_Out and (not s_Zero_Out);
+
+	STL_Mux: NBit_2t1Mux
+		generic map(32)
+		port map(
+			s_ZeroOneSelect_Signal,
+			x"00000000",
+			x"00000001",
+			s_SLT_Out);
 
 	s_AND_Out <= BitsA_In and BitsB_In;
 	s_OR_Out <= BitsA_In or BitsB_In;
@@ -140,7 +148,7 @@ begin
 		generic map(32)
 		port map(
 			s_LogicSelect_Signal,
-			(31 downto 0 => '0'),
+			s_SLT_Out,
 			s_AND_Out,
 			s_OR_Out,
 			s_XOR_Out,
