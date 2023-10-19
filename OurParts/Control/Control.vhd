@@ -9,6 +9,8 @@ entity Control is
     port(
         Opcode: in std_logic_vector(5 downto 0);
         Funct: in std_logic_vector(5 downto 0);
+        --ShamtIn: in std_logic_vector(5 downto 0);
+        --ShamtOut: out std_logic_vector(5 downto 0);
         Jump: out std_logic; --bit 0
         Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
         Branch: out std_logic;   --bit 2

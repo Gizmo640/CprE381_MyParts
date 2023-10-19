@@ -22,7 +22,7 @@ use work.MIPS_types.all;
 
 --check inputs and ouputs to make sure it is mapped correctly
 entity MIPS_Processor is
-  generic(N : integer := DATA_WIDTH; N: INTEGER);
+  generic(N : integer := DATA_WIDTH);
   port(iCLK            : in std_logic;
        iRST            : in std_logic;
        iInstLd         : in std_logic;
@@ -214,7 +214,6 @@ architecture structure of MIPS_Processor is
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(1 downto 0);
   signal s_MemWrite : std_logic;
-  --signal s_Unsigned : std_logic; --might need this sig for addiu and subu
 
 
 begin
@@ -357,13 +356,13 @@ begin
     generic map(N => 32);
       port map(
         Carry_In => '0',--??
-        Carry_Out => TODOsignal,--?? can we just null?
+        Carry_Out => open,
         BitsA_In => s_IMemAddr, --PC
         BitsB_In => x"00000004", --hard code 4
         Bits_Out => s_PCAdderOut, --4 highest bits concatted to end of jump address, also connects to branch adder
-        OverFlow_Flag => null, -- idk
-        Zero_Flag => null, --idk
-        Carry_Flag => null --idk
+        OverFlow_Flag => open, -- idk
+        Zero_Flag => open, --idk
+        Carry_Flag => open --idk
       );
 
     s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2 (sig has bit width of 28)
@@ -376,13 +375,13 @@ begin
       generic map(N => 32);
       port map(
         Carry_In => '0',--??
-        Carry_Out => TODOsignal,--??
+        Carry_Out => open,--??
         BitsA_In => s_PCAdderOut, --adder ouput
         BitsB_In => s_shiftedSignExtenderOut, -- shifted output of the extender
         Bits_Out => s_branchAdderOut, -- signal for ouput 
-        OverFlow_Flag => null,
-        Zero_Flag => null,
-        Carry_Flag => null
+        OverFlow_Flag => open,
+        Zero_Flag => open,
+        Carry_Flag => open
       );
 
   --SHOULD WE JUST DO MUX1 MUX2 MUX3 ?
