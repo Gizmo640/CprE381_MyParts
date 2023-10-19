@@ -86,8 +86,8 @@ architecture structure of MIPS_Processor is
       Data_In: in STD_LOGIC_VECTOR(31 downto 0);
       DataA_Out: out STD_LOGIC_VECTOR(31 downto 0);
       DataB_Out: out STD_LOGIC_VECTOR(31 downto 0);
-      RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0);
-      DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
+      RegisterWriteSelect_Signal: in STD_LOGIC_VECTOR(4 downto 0)
+      DataA_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0)
       DataB_Select_Signal: in STD_LOGIC_VECTOR(4 downto 0);
       Reset_Signal: in STD_LOGIC;
       WriteEnable_Signal: in STD_LOGIC;
