@@ -49,6 +49,8 @@ end component;
 -- := '0' or := (others => '0') just make all the signals start at an initial value of zero
 signal CLK, reset : std_logic := '0';
 
+signal reset_done : std_logic := '0';
+
 signal alu_out : std_logic_vector(N-1 downto 0);
 
 begin
@@ -86,6 +88,7 @@ begin
 	reset <= '1';
     wait for gCLK_HPER*2;
 	reset <= '0';
+        reset_done <= '1';
 	wait;
   end process;  
   
@@ -111,7 +114,7 @@ begin
 
   begin
 
-      if (rising_edge(CLK) and (reset /= '1')) then
+      if (rising_edge(CLK) and (reset_done = '1')) then
 
         if (regWr) then
           write(my_line, string'("In clock cycle: "));
@@ -143,6 +146,7 @@ begin
             write(my_line, string'("Execution is stopping! Clock Cycle: "));
             write(my_line, cycle_cnt);
             writeline(my_dump, my_line);
+            file_close(my_dump);
             stop(2);
         end if;
         cycle_cnt := cycle_cnt + 1;

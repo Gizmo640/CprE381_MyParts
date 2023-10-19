@@ -38,7 +38,7 @@ def main():
 
     config, env = config_parser.read_config(options.config)
 
-    Updater();
+    # Updater();
 
 
     missing_file = check_project_files_exist()
@@ -63,7 +63,12 @@ def main():
     if not options.nocompile:
         compile_success = ms.compile('internal/ModelSimContainer/work', "internal/ModelSimContainer/vcom.log")
         if not compile_success:
-            print("VHDL Compile Failed")
+            print("VHDL Compile Failed -- Errors:")
+            shutil.copyfile("internal/ModelSimContainer/vcom.log", "output/vcom.log")
+            print("-" * 80)
+            print_compile_errors("output/vcom.log")
+            print("-" * 80)
+            print("See output/vcom.log for more information")
             exit(1)
         else:
             print("All VHDL src files compiled successfully")
@@ -71,6 +76,13 @@ def main():
         print('Skipping compilation')
 
     parrallel_run(options.files, options, config, env)
+
+def print_compile_errors(path):
+    with open(path, "r") as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith("**"):
+                print("\t" + line)
 
 def parrallel_run(asm_paths, options, config, env):
     jobs = options.jobs
@@ -160,12 +172,24 @@ class SimWorker:
         modelsim_msg = self.ms.sim(self.container, "ms.trace", "vsim.log", timeout=self.options.sim_timeout)
         compare, compare_out, inst, cycles = compare_dumps(self.options, self.container, self.container / "ms.trace", self.container / 'mars.trace')
 
-        try: 
-            shutil.rmtree(f'output/{pathlib.Path(asm_path).name}')
-        except FileNotFoundError: 
-            pass
+        inc_num = 1
+        inc_str = ""
 
-        shutil.copytree(self.container, f'output/{pathlib.Path(asm_path).name}', ignore=shutil.ignore_patterns('modelsim_framework.do', 'transcript'))
+        while True:
+            results.dest_path = f'output/{pathlib.Path(asm_path).name}{inc_str}'
+
+            try: 
+                shutil.rmtree(results.dest_path)
+                break
+            except FileNotFoundError: 
+                break
+            except:
+                print(f'Failed to remove output/{pathlib.Path(asm_path).name}. Is questasim open?')
+                inc_str = f'_{inc_num}'
+                inc_num += 1
+                print(f'Saving instead to "output/{pathlib.Path(asm_path).name}{inc_str}"') 
+
+        shutil.copytree(self.container, results.dest_path, ignore=shutil.ignore_patterns('modelsim_framework.do', 'transcript'))
 
         results.modelsim_pass = True if not modelsim_msg else False
         results.modelsim_errs = modelsim_msg
@@ -175,7 +199,6 @@ class SimWorker:
         results.mars_inst = inst
         results.proc_cycles = cycles
 
-        results.dest_path = f'output/{pathlib.Path(asm_path).name}'
 
         return results
 
@@ -263,7 +286,7 @@ def warn_tb_checksum():
     Assumes file exists. Allows both LF and CRLF line endings.
     '''
     expected = {
-        b'\x8d\x95\xbb6\x1cQ\x89\xd5\xfe\xb3\x8b\n\x0f1yk'
+        b'\x9499\xd6\xbb\xa6\xfb\x8a\x0c\xc9y\x9bm\xaa`\xe0'
         }
 
     # copy these lines to generate new expected checksums

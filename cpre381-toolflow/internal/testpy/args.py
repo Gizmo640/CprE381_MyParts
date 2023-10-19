@@ -1,4 +1,5 @@
 import os
+import argparse
 
 def set_args(parser):
     parser.add_argument('files', type=check_asm_file, nargs='+', help='Assembly files to run. 1 or more files are accepted, including wildcards. preface a filename with @filename to use as a list of files.')

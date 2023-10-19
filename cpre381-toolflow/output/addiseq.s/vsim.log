@@ -1,0 +1,491 @@
+Reading pref.tcl
+
+# 2023.2_2
+
+# vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
+# Start time: 15:10:15 on Oct 19,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(250): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(259): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(287): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(323): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(355): (vopt-1251) Generic "N" of entity "NBit_LookAheadAdder" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(374): (vopt-1251) Generic "N" of entity "NBit_LookAheadAdder" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(389): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(398): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(407): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(54): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Upper(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(65): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage5Lower(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(78): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Upper(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(88): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage4Lower(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(100): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Upper(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(100): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Upper(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(100): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Upper(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(100): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Upper(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(110): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage3Lower(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(122): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Upper(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(122): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Upper(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(133): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage2Lower(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(145): (vopt-3473) Component instance "Stage1UpperBit : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(154): (vopt-3473) Component instance "MuxCascade : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/Stage1Lower(0)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(31)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(30)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(29)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(28)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(27)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(26)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(25)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(24)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(23)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(22)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(21)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(20)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(19)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(18)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(17)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(16)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(15)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(14)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(13)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(12)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(11)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(10)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(9)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(8)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(7)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(6)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(5)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(4)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(3)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(2)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(1)
+# ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
+#         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(0)
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(254): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputA_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputB_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1549) At instance RegDstMux the actual expression and the port 'Output_Out' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(263): (vopt-1549) At instance LinkMux the actual expression and the port 'InputA_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(264): (vopt-1549) At instance LinkMux the actual expression and the port 'InputB_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(265): (vopt-1549) At instance LinkMux the actual expression and the port 'Output_Out' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(254): (vopt-1272) Length of formal "InputA_In" is 32; length of slice name is 5.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1272) Length of formal "InputB_In" is 32; length of slice name is 5.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1272) Length of formal "Output_Out" is 32; length of actual is 5.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(263): (vopt-1272) Length of formal "InputA_In" is 32; length of actual is 5.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(265): (vopt-1272) Length of formal "Output_Out" is 32; length of actual is 5.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(264): (vopt-1272) Length of expected is 32; length of actual is 5.
+# ** Note: ../../proj/src/TopLevel/MIPS_Processor.vhd(420): Vopt Compiler exiting
+# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=7, Warnings=240.
+# Error loading design
+Error loading design
+# End time: 15:10:16 on Oct 19,2023, Elapsed time: 0:00:01
+# Errors: 7, Warnings: 240

@@ -1,2 +1,0 @@
-Revisit All the Muxes and make it so the out put is not 0 or 1 when the select pins are not any of the given options.
-Check: # ** Error: /home/jesseg64/Documents/CprE_381/SingleCycle_Processor/OurParts/Multiplexers/NBit_4t1Mux.vhd(22): Enumeration literal 'u' is type std.STANDARD.CHARACTER; expecting type ieee.std_logic_1164.STD_LOGIC.
