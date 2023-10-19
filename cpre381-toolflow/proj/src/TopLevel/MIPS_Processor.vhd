@@ -28,7 +28,7 @@ entity MIPS_Processor is
        iInstLd         : in std_logic;
        iInstAddr       : in std_logic_vector(N-1 downto 0);
        iInstExt        : in std_logic_vector(N-1 downto 0);
-       oALUOut         : out std_logic_vector(N-1 downto 0)); -- TODO: Hook this up to the output of the ALU. It is important for synthesis that you have this output that can effectively be impacted by all other components so they are not optimized away.
+       oALUOut         : out std_logic_vector(N-1 downto 0)); -- Hook this up to the output of the ALU. It is important for synthesis that you have this output that can effectively be impacted by all other components so they are not optimized away.
 
 end  MIPS_Processor;
 
@@ -301,11 +301,14 @@ begin
       ShiftAmount => s_Inst(10 downto 6),                        --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
       BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
-      Bits_Out => s_DMemAddr,                             --out STD_LOGIC_VECTOR(31 downto 0);
+      Bits_Out => oALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
       OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
       Zero_Flag => s_Zero,                            --out STD_LOGIC;
       Carry_Flag => open --new sig??                            --out STD_LOGIC
     );
+
+  --DMem address is the ALU output
+  s_DMemAddr <= oALUOut;
 
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
 
@@ -344,7 +347,7 @@ begin
       port map(
         Carry_In => '0',--??
         Carry_Out => open,
-        BitsA_In => s_IMemAddr, --PC
+        BitsA_In => s_NextInstAddr, --PC
         BitsB_In => x"00000004", --hard code 4
         Bits_Out => s_PC_plus_4, --4 highest bits concatted to end of jump address, also connects to branch adder
         OverFlow_Flag => open, -- idk
@@ -401,7 +404,7 @@ begin
     port map(
       CLK_Signal => iCLK,
       Reset_Signal => iRST,
-      WriteEnable_Signal => iInstLd, --always update PC
+      WriteEnable_Signal => iInstLd,
       InputD_In => s_PCIn,
       OutputQ_Out => s_NextInstAddr
     );
