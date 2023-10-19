@@ -124,9 +124,10 @@ architecture structure of MIPS_Processor is
   --ALU(could need adjustments)
   component ALU is
     port(
-    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(8 downto 0);--Might add more
-		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0);
-		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0);
+		ALU_Op: in STD_LOGIC_VECTOR(3 downto 0); --ALUop
+		ShiftAmount : in std_logic_vector(4 downto 0);
+		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0); --rs
+		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0); --rt
 		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
 		OverFlow_Flag: out STD_LOGIC;
 		Zero_Flag: out STD_LOGIC;
@@ -136,12 +137,14 @@ architecture structure of MIPS_Processor is
   --ALU_ControlUnit(could need adjustments)
   component ALU_ControlUnit is 
     port(
-    ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0);
-		AddSubtract_Signal_Out: out STD_LOGIC;
-		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
-		InvertSelect_Signal_Out: out STD_LOGIC;
-		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
-		Shift_LeftRight_Signal_Out: out STD_LOGIC);
+		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0);
+		AddSubtract_Signal_Out: out STD_LOGIC; --bit 0
+		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0); --bits 1-2
+		InvertSelect_Signal_Out: out STD_LOGIC; --bit 3
+		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC; --bit 4
+		Shift_RightLeft_Signal_Out: out STD_LOGIC; --bit 5
+		ALUShifterSelect_Signal_Out: out STD_LOGIC; --bit 6
+		Signed_Signal_Out: out STD_LOGIC); --bit 7
     end component;
 
   --NBit MUX
@@ -306,7 +309,7 @@ begin
   ALU_Unit: ALU
     port map(
       ALU_Op => s_ALUOp,    --ALUOp is inputted
-      ShiftAmount => TODOsig,                        --in std_logic_vector(4 downto 0);
+      ShiftAmount => s_Inst(10 downto 6),                        --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
       BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
       Bits_Out => s_ALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
@@ -322,7 +325,7 @@ begin
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemOut,
-      InputB_In => ,--ALU ouput signal
+      InputB_In => s_ALUOut, --ALU ouput signal
       Output_Out => s_RegWrData -- write data input
     );
 

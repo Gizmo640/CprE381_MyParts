@@ -68,7 +68,7 @@ architecture dataflow of Control is
     "1100" when (Opcode = "001111") else   -- lui
     "1101" when (Opcode = "100011") else   -- lw
     "1110" when (Opcode = "000100") else   -- beq
-    "xxxx"; --useless
+    "1111"; --idc
 
     ALUSrc <=
     '0' when (Opcode = "000000") else
