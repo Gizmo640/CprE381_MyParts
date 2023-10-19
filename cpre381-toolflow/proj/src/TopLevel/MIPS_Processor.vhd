@@ -366,11 +366,11 @@ begin
         Carry_Flag => null --idk
       );
 
-    s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2
+    s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2 (sig has bit width of 28)
 
     s_JumpAddress <= sInst(25 downto 0) & s_PCAdderOut(31 downto 28);
 
-    s_shiftedSignExtenderOut <= s_ExtendedOut & "00"; --shift left 2
+    s_shiftedSignExtenderOut <= s_ExtendedOut & "00"; --shift left 2 (sig has bitwidth of 32)
 
     BranchAdder: NBit_LookAheadAdder --second adder in schematic
       generic map(N => 32);
