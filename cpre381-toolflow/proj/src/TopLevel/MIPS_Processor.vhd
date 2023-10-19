@@ -315,8 +315,8 @@ begin
   DMemMux: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_MemtoReg,
-      InputA_In => s_DMemOut,
-      InputB_In => s_DMemAddr, --ALU ouput signal
+      InputA_In => s_DMemAddr, --ALU ouput signal
+      InputB_In => s_DMemOut, --
       Output_Out => s_RegWrData -- write data input
     );
 
