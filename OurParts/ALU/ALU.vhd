@@ -73,15 +73,19 @@ architecture Design of ALU is
 			InvertSelect_Signal_Out: out STD_LOGIC;
 			ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
 			Shift_RightLeft_Signal_Out: out STD_LOGIC;
-			ALUShifterSelect_Signal_Out: out STD_LOGIC);
+			ALUShifterSelect_Signal_Out: out STD_LOGIC;
+			Signed_Signal_Out: out STD_LOGIC);
 	end component;
 
 	signal s_AddSubtract_Signal: STD_LOGIC;
 	signal s_LogicSelect_Signal: STD_LOGIC_VECTOR(1 downto 0);
 	signal s_InvertSelect_Signal: STD_LOGIC;
 	signal s_ArithmeticLogicSelect_Signal: STD_LOGIC;
-	signal s_Shift_LeftRight_Signal: STD_LOGIC;
+	signal s_Shift_RightLeft_Signal: STD_LOGIC;
 	signal s_ALUShifterSelect_Signal: STD_LOGIC;
+	signal s_Signed_Signal: STD_LOGIC;
+
+	signal s_OverFlow_Out: STD_LOGIC;
 
 	signal s_AND_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_OR_Out: STD_LOGIC_VECTOR(31 downto 0);
@@ -98,18 +102,19 @@ architecture Design of ALU is
 begin
 	ALU_ControlUnit: ALU_ControlUnit
 		port map(
-			ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0)
-			AddSubtract_Signal_Out: out STD_LOGIC;
-			LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
-			InvertSelect_Signal_Out: out STD_LOGIC;
-			ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
-			Shift_RightLeft_Signal_Out: out STD_LOGIC;
-			ALUShifterSelect_Signal_Out: out STD_LOGIC);
+			ALU_ControlUnit_In,
+			s_AddSubtract_Signal,
+			s_LogicSelect_Signal,
+			s_InvertSelect_Signal,
+			s_ArithmeticLogicSelect_Signal,
+			s_Shift_RightLeft_Signal,
+			s_ALUShifterSelect_Signal,
+			s_Signed_Signal);
 
 	Shifter: Barrel_Shifter
 		port is(
 			ShiftAmount,
-			s_Shift_LeftRight_Signal,
+			s_Shift_RightLeft_Signal,
 			InputB_In,
 			s_Shifter_Out);
 
@@ -121,9 +126,11 @@ begin
 			BitsB_In,
 			s_Arithmetic_Out,
 			Carry_Out,
-			OverFlow_Flag,
+			s_OverFlow_Out,
 			Zero_Flag,
 			Carry_Flag);
+
+	OverFlow_Flag <= s_OverFlow_Out and s_Signed_Signal;
 
 	s_AND_Out <= BitsA_In and BitsB_In;
 	s_OR_Out <= BitsA_In or BitsB_In;
@@ -133,7 +140,7 @@ begin
 		generic map(32)
 		port map(
 			s_LogicSelect_Signal,
-			BitsA_In,
+			(31 downto 0 => '0'),
 			s_AND_Out,
 			s_OR_Out,
 			s_XOR_Out,
