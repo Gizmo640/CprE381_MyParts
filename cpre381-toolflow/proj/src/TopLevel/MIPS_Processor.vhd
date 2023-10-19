@@ -58,6 +58,7 @@ architecture structure of MIPS_Processor is
 
   --Adder for Processor 
   component NBit_LookAheadAdder is
+    generic(N : integer := 32);
     port(
       Carry_In: in STD_LOGIC;
       Carry_Out: out STD_LOGIC;
@@ -69,15 +70,14 @@ architecture structure of MIPS_Processor is
       Carry_Flag: out STD_LOGIC);
   end component;
 
-  --NBit Register size
-  component NBit_Register is
-    generic(N: INTEGER);
-    port(
-        Input_In: in STD_LOGIC_VECTOR(N-1 downto 0);
-        Output_Out: out STD_LOGIC_VECTOR(N-1 downto 0);
-        Reset_Signal: in STD_LOGIC;
-        WriteEnable_Signal: in STD_LOGIC;
-        CLK_Signal: in STD_LOGIC);
+  --PC register
+  component PC_Register
+  	port(
+      CLK_Signal: in STD_LOGIC;
+      Reset_Signal: in STD_LOGIC;
+      WriteEnable_Signal: in STD_LOGIC;
+      InputD_In: in STD_LOGIC_VECTOR(31 downto 0);
+      OutputQ_Out: out STD_LOGIC_VECTOR(31 downto 0));
   end component;
 
   --Register File 
@@ -149,6 +149,7 @@ architecture structure of MIPS_Processor is
 
   --NBit MUX
   component NBit_2t1Mux is
+    generic(N : integer := 32);
     port(
       InputSelect_Signal: in STD_LOGIC;
       InputA_In: in STD_LOGIC_VECTOR(N-1 downto 0);
@@ -216,6 +217,7 @@ architecture structure of MIPS_Processor is
   signal s_MemWrite : std_logic;
   signal s_ALUControlOut: std_logic_vector(7 downto 0);
   signal s_ALUOut: std_logic_vector(31 downto 0);
+  signal s_FinalAddress: std_logic_vector(31 downto 0);
 
 
 begin
@@ -248,7 +250,6 @@ begin
   --REGISTER/ALU/DMEM LOGIC
 
   RegDstMux: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_RegDst,
       InputA_In => s_Inst(20 downto 16),
@@ -257,7 +258,6 @@ begin
     );
 
   LinkMux: NBit_2t1Mux
-    --eneric map(N => 32)
     port map(
       InputSelect_Signal => s_Link,
       InputA_In => s_RegDstMuxOut,
@@ -285,7 +285,6 @@ begin
     );
   --MUX NAMED BASED ON SELECT LINE
   ALUSrcMux: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_ALUSrc,
       InputA_In => s_Read2,
@@ -321,7 +320,6 @@ begin
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
 
   DMemMux: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemOut,
@@ -353,7 +351,6 @@ begin
 
     --UNSURE ABOUT MAJORITY OF INPUTS FOR THE ADDER(EXCEPT BITS A, BITS B, BITS OUT)
     PCAdder: NBit_LookAheadAdder -- first adder in schematic
-    --generic map(N => 32)
       port map(
         Carry_In => '0',--??
         Carry_Out => open,
@@ -372,7 +369,6 @@ begin
     s_shiftedSignExtenderOut <= s_ExtendedOut(29 downto 0) & "00"; --shift left 2 (sig has bitwidth of 32)
 
     BranchAdder: NBit_LookAheadAdder --second adder in schematic
-      --generic map(N => 32)
       port map(
         Carry_In => '0',--??
         Carry_Out => open,--??
@@ -387,7 +383,6 @@ begin
   --SHOULD WE JUST DO MUX1 MUX2 MUX3 ?
   --TODO MAP TO A 32bit 4t1 Mux instead (OPTIONAL)
   MUXAndSelectSignal: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_BranchAndOut,--output of the and gate
 		  InputA_In => s_PCAdderOut, -- have to check if this is working properly
@@ -396,7 +391,6 @@ begin
     );
 
   MUXJumpSelectSignal: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_Jump,--from control unit
 		  InputA_In => s_JumpAddress,--think I figured out figured out concatonation
@@ -405,17 +399,22 @@ begin
     );
 
   MUXJrSelectSignal: NBit_2t1Mux
-    --generic map(N => 32)
     port map(
       InputSelect_Signal => s_Jr,--from control unit
 		  InputA_In => s_Read1,
 		  InputB_In => s_JumpSignalMuxOut,
-		  Output_Out => s_NextInstAddr
+		  Output_Out => s_FinalAddress
     );
 
-
-
-
+  --PC (just a 32 bit dff)
+  PC: PC_Register
+    port map(
+      CLK_Signal => iCLK,
+      Reset_Signal => iRST,
+      WriteEnable_Signal => iInstLd, --always update PC
+      InputD_In => s_FinalAddress,
+      OutputQ_Out => s_NextInstAddr
+    );
 
 end structure;
 
