@@ -16,7 +16,7 @@ entity Control is
         MemRead: out std_logic;  --bit 4
         MemWrite: out std_logic; --bit 5
         MemtoReg: out std_logic; --bit 6
-        ALUOp: out std_logic_vector(3 downto 0); --bit 8, bit 7
+        ALUOp: out std_logic_vector(3 downto 0);
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
         RegDst: out std_logic;  --bit 11

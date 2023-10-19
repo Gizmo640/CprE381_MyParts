@@ -105,7 +105,7 @@ architecture structure of MIPS_Processor is
   component Control is
         port(
         Opcode: in std_logic_vector(5 downto 0);
-      --  ControlOut: std_logic_vector(11 downto 0);
+        Funct:  in std_logic_vector(5 downto 0);
         Jump: out std_logic; --bit 0
         Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
         Branch: out std_logic;   --bit 2
@@ -113,7 +113,7 @@ architecture structure of MIPS_Processor is
         MemRead: out std_logic;  --bit 4
         MemWrite: out std_logic; --bit 5
         MemtoReg: out std_logic; --bit 6
-        ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
+        ALUOp: out std_logic_vector(3 downto 0); --bit 8, bit 7
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
         RegDst: out std_logic;  --bit 11
@@ -335,7 +335,7 @@ begin
     ControlUnit : Control 
     port map(
       Opcode => s_Inst(31 downto 26), --in std_logic_vector(5 downto 0);
-      --  ControlOut: std_logic_vector(11 downto 0);
+      Funct => s_Inst(5 downto 0),
       Jump => s_Jump, --bit 0
       Jr => s_Jr,  --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
       Branch => s_Branch,  --bit 2
