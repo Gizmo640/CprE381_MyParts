@@ -19,8 +19,8 @@ entity Control is
         ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
-        RegDst: out std_logic  --bit 11
-        --Halt??
+        RegDst: out std_logic;  --bit 11
+        Halt: out std_logic
     );
 end Control;
 
@@ -75,5 +75,8 @@ architecture dataflow of Control is
 
     RegDst <=
     '1' when (Opcode = "000000") else '0'; --rtype
+
+    Halt <=
+    '1' when (Opcode = "010100") else '0';
 
 end dataflow;

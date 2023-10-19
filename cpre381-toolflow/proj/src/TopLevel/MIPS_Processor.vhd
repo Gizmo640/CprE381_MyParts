@@ -102,14 +102,6 @@ architecture structure of MIPS_Processor is
       UnsignedSigned_Signal: in STD_LOGIC);
   end component;
 
-  --shifted left 2 bits
-  component shift_left2 is
-    port(
-      DataIn: in std_logic_vector(25 downto 0);
-      shiftedData: out std_logic_vector(27 downto 0));
-  end component;
-  
-  --Control Unit(should be operational)
   component Control is
         port(
         Opcode: in std_logic_vector(5 downto 0);
@@ -124,7 +116,8 @@ architecture structure of MIPS_Processor is
         ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
         ALUSrc: out std_logic;   --bit 9
         RegWrite: out std_logic; --bit 10
-        RegDst: out std_logic  --bit 11
+        RegDst: out std_logic;  --bit 11
+        Halt: out std_logic
     );
   end component;
 
@@ -192,19 +185,22 @@ architecture structure of MIPS_Processor is
   
 
   --mapping signals
-  signal s_PCAdderOut   : std_logic_vector(31 downto 0);
+  signal s_PCAdderOut   : std_logic_vector(31 downto 0); --PC+4
   signal s_RegDstMuxOut : std_logic_vector(4 downto 0); --output of the mux controlled by reg destination
   signal s_LinkMuxOut   : std_logic_vector(4 downto 0); --output of the mux controlled by link signal
   signal s_ExtendedOut  : std_logic_vector(31 downto 0);
   signal s_Read1        : std_logic_vector(31 downto 0); --register outputs
   signal s_Read2        : std_logic_vector(31 downto 0); --^
   signal s_ALUSrcMuxOut : std_logic_vector(31 downto 0); --alu input B
-  signal s_BranchAndOut : std_logic; --controls 
+  signal s_BranchAndOut : std_logic; --decides beq or bne
   signal s_shiftedInstructionBits : std_logic_vector(27 downto 0);
+  signal s_JumpAddress  : std_logic_vector(31 downto 0); --s_shiftedInstructionBits with 4 bits from PC+4 concatonated to it
   signal s_shiftedSignExtenderOut : std_logic_vector(31 downto 0);--double check the size
-  signal s_shiftedAdderOut : std_logic_vector(31 downto 0); -- double check size
+  signal s_branchAdderOut : std_logic_vector(31 downto 0); -- double check size
   signal s_ANDsignalMuxOut : std_logic_vector(31 downto 0);
   signal s_JumpSignalMuxOut : std_logic_vector(31 downto 0);
+  signal s_InstShift26t28   : std_logic_vector(28 downt0 0); --this is the output of the "shift left 2" component in our schematic, we will concat this with the 4 highest bits of PC+4
+  signal s_JumpSignalMuxOut : std_logic_vector(31 downto 0); --the jump address is calculated from shifted inst bits being concatonated with the highest bits of PC+4 (goes into JumpMux)
   
   -- Required fetch logic signal -- for jump and branch instructions (control)
   --signals for the output of the Control Signal Block
@@ -218,6 +214,7 @@ architecture structure of MIPS_Processor is
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(1 downto 0);
   signal s_MemWrite : std_logic;
+  --signal s_Unsigned : std_logic; --might need this sig for addiu and subu
 
 
 begin
@@ -247,33 +244,35 @@ begin
              q    => s_DMemOut);
 
   -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
+  -- add s_Halt to Control?
+
   -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
   -- TODO: Implement the rest of your processor below this comment! 
   --REGISTER/ALU/DMEM LOGIC
 
   RegDstMux: NBit_2t1Mux
-    --generic
+    generic map(N => 32);
     port map(
       InputSelect_Signal => RegDst,
       InputA_In => s_Inst(20 downto 16),
-      InputB_In => s_Inst(15 downto  11),
+      InputB_In => s_Inst(15 downto 11),
       Output_Out => s_RegDstMuxOut
     );
 
   LinkMux: NBit_2t1Mux
-    --generic
-      port map(
-        InputSelect_Signal => Link,
-        InputA_In => s_RegDstMuxOut,
-        InputB_In => b"11111",
-        Output_Out => s_LinkMuxOut
+    generic map(N => 32);
+    port map(
+      InputSelect_Signal => Link,
+      InputA_In => s_RegDstMuxOut,
+      InputB_In => b"11111", --hard coded 31
+      Output_Out => s_LinkMuxOut
       );
 
   Registers: RegisterFile
     port map(
       Data_In => s_RegWrData,
-      DataA_Out => , --idk
-      DataB_Out => , --idk
+      DataA_Out => s_Read1, --ALU input A, also in jrMux
+      DataB_Out => s_Read2,
       RegisterWriteSelect_Signal => s_RegWrAddr,
       DataA_Select_Signal => s_Inst(25 downto 21),
       DataB_Select_Signal => s_Inst(20 downto 16),
@@ -285,19 +284,19 @@ begin
     port map(
       Input_In => s_Inst(15 downto 0),
       ExtendedOutput_Out  => s_ExtendedOut,
-      UnsignedSigned_Signal => --idk
+      UnsignedSigned_Signal => '0';
     );
   --MUX NAMED BASED ON SELECT LINE
   ALUSrcMux: NBit_2t1Mux
-    --generic
+    generic map(N => 32);
     port map(
       InputSelect_Signal => s_ALUSrc,
       InputA_In => s_Read2,
       InputB_In => s_ExtendedOut,
-      Output_Out => s_ALUSrcMuxOut
+      Output_Out => s_ALUSrcMuxOut --ALU input B
     );
 
-  --alu control and alu
+  --TODO ALU CONTROL AND ALU
   ALUControl: ALU_ControlUnit
     port map(
       ALU_ControlUnit_In => ,                            --in STD_LOGIC_VECTOR(&* downto 0)
@@ -308,6 +307,7 @@ begin
       Shift_LeftRight_Signal_Out =>                      --out STD_LOGIC);
     );
 
+  --TODO
   ALU_Unit: ALU
     port map(
       ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
@@ -322,6 +322,7 @@ begin
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
 
   DMemMux: NBit_2t1Mux
+    generic map(N => 32);
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemOut,
@@ -346,74 +347,71 @@ begin
       ALUSrc => s_ALUSrc, --bit 9
       RegWrite => s_RegWr,--bit 10
       RegDst => s_DestinationReg, --bit 11
-        --Halt??
-
+      Halt => s_Halt
       );
 
-
-  --FETCH LOGIC BELOW
-
-    ShiftInstructionTwoBits: shift_left2
-      port map(
-        DataIn => s_Inst(25 downto 0),
-        shiftedData => s_shiftedInstructionBits
-      );
-
-    ShiftSignExtender: shift_left2
-      port map(
-        DataIn => s_ExtendedOut,
-        shiftedData => s_shiftedSignExtenderOut
-      );
+  --FETCH LOGIC
 
     --UNSURE ABOUT MAJORITY OF INPUTS FOR THE ADDER(EXCEPT BITS A, BITS B, BITS OUT)
-    PCAdder: NBit_LookAheadAdder
-      --generic map(N => DATA_WIDTH)
+    PCAdder: NBit_LookAheadAdder -- first adder in schematic
+    generic map(N => 32);
       port map(
         Carry_In => '0',--??
-        Carry_Out => TODOsignal,--??
-        BitsA_In => s_IMemAddr,
-        BitsB_In => "00_0000_0100",
+        Carry_Out => TODOsignal,--?? can we just null?
+        BitsA_In => s_IMemAddr, --PC
+        BitsB_In => x"00000004", --hard code 4
         Bits_Out => s_PCAdderOut, --4 highest bits concatted to end of jump address, also connects to branch adder
         OverFlow_Flag => null, -- idk
         Zero_Flag => null, --idk
         Carry_Flag => null --idk
       );
 
-    AdderWithShiftedBits: NBit_LookAheadAdder
+    s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2
+
+    s_JumpAddress <= sInst(25 downto 0) & s_PCAdderOut(31 downto 28);
+
+    s_shiftedSignExtenderOut <= s_ExtendedOut & "00"; --shift left 2
+
+    BranchAdder: NBit_LookAheadAdder --second adder in schematic
+      generic map(N => 32);
       port map(
         Carry_In => '0',--??
         Carry_Out => TODOsignal,--??
         BitsA_In => s_PCAdderOut, --adder ouput
-        BitsB_In => s_shiftedSignExtenderOut, -- shifted input
-        Bits_Out => s_shiftedAdderOut, -- signal for ouput(check how the output is being used)
-        OverFlow_Flag => null, --idk
-        Zero_Flag => null, --idk
-        Carry_Flag => null --idk
+        BitsB_In => s_shiftedSignExtenderOut, -- shifted output of the extender
+        Bits_Out => s_branchAdderOut, -- signal for ouput 
+        OverFlow_Flag => null,
+        Zero_Flag => null,
+        Carry_Flag => null
       );
 
-  --MUXS LABELED BASED ON THEIR SELECT LINE OF FETCH LOGIC
+  --SHOULD WE JUST DO MUX1 MUX2 MUX3 ?
+  --TODO MAP TO A 32bit 4t1 Mux instead (OPTIONAL)
   MUXAndSelectSignal: NBit_2t1Mux
+    generic map(N => 32);
     port map(
       InputSelect_Signal => s_BranchAndOut,--output of the and gate
 		  InputA_In => s_PCAdderOut, -- have to check if this is working properly
-		  InputB_In => s_shiftedAdderOut, --adder output 
+		  InputB_In => s_branchAdderOut, --adder output 
 		  Output_Out => s_ANDsignalMuxOut;
     );
 
   MUXJumpSelectSignal: NBit_2t1Mux
+    generic map(N => 32);
     port map(
       InputSelect_Signal => s_Jump,--from control unit
-		  InputA_In => ,--need to determine the difference between the Adder Output and the shifted values 
+		  InputA_In => s_JumpAddress,--think I figured out figured out concatonation
 		  InputB_In => s_ANDsignalMuxOut,
 		  Output_Out => s_JumpSignalMuxOut
     );
 
   MUXJrSelectSignal: NBit_2t1Mux
+    generic map(N => 32);
     port map(
       InputSelect_Signal => s_Jr,--from control unit
 		  InputA_In => s_Read1,
 		  InputB_In => s_JumpSignalMuxOut,
-		  Output_Out => oALUOut,--Read in the next instruction(not sure the name for it)
+		  Output_Out => s_NextInstAddr
     );
 
 
