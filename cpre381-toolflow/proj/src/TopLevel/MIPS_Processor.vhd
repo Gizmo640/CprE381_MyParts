@@ -391,8 +391,8 @@ begin
   MUXJrSelectSignal: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_Jr,--from control unit
-		  InputA_In => s_Read1,
-		  InputB_In => s_JumpSignalMuxOut,
+		  InputA_In => s_JumpSignalMuxOut, --0
+		  InputB_In => s_Read1, --1 chooses the register (read1)
 		  Output_Out => s_PCIn
     );
 
