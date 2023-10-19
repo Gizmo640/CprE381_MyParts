@@ -214,8 +214,6 @@ architecture structure of MIPS_Processor is
   signal s_MemtoReg : std_logic; --output of Control Unit
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(3 downto 0);
-  signal s_MemWrite : std_logic;
-  signal s_ALUControlOut: std_logic_vector(7 downto 0);
   signal s_FinalAddress: std_logic_vector(31 downto 0);
 
 
@@ -241,10 +239,10 @@ begin
     generic map(ADDR_WIDTH => ADDR_WIDTH,
                 DATA_WIDTH => N)
     port map(clk  => iCLK,
-             addr => s_DMemAddr(11 downto 2),
-             data => s_DMemData,
-             we   => s_DMemWr,
-             q    => s_DMemOut);
+             addr => s_DMemAddr(11 downto 2), --gets ALU output
+             data => s_DMemData, --gets output Read2 from registers
+             we   => s_DMemWr, --gets output from control signal MemWrite
+             q    => s_DMemOut); --mapped to MemToRegMux
 
   -- TODO: Implement the rest of your processor below this comment! 
   --REGISTER/ALU/DMEM LOGIC
@@ -331,7 +329,7 @@ begin
       Branch => s_Branch,  --bit 2
       Link => s_Link,    --bit 3
       MemRead => s_MemRead,--bit 4
-      MemWrite => s_MemWrite,--bit 5
+      MemWrite => s_DMemWr,--bit 5
       MemtoReg => s_MemtoReg, --bit 6
       ALUOp => s_ALUOp, --bit 8, bit 7
       ALUSrc => s_ALUSrc, --bit 9
