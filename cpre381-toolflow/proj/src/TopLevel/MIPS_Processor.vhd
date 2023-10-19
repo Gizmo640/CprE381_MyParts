@@ -190,7 +190,6 @@ architecture structure of MIPS_Processor is
   --mapping signals
   signal s_PCAdderOut   : std_logic_vector(31 downto 0); --PC+4
   signal s_RegDstMuxOut : std_logic_vector(4 downto 0); --output of the mux controlled by reg destination
-  signal s_LinkMuxOut   : std_logic_vector(4 downto 0); --output of the mux controlled by link signal
   signal s_ExtendedOut  : std_logic_vector(31 downto 0);
   signal s_Read1        : std_logic_vector(31 downto 0); --register outputs
   signal s_Read2        : std_logic_vector(31 downto 0); --^
@@ -240,7 +239,7 @@ begin
                 DATA_WIDTH => N)
     port map(clk  => iCLK,
              addr => s_DMemAddr(11 downto 2), --gets ALU output
-             data => s_DMemData, --gets output Read2 from registers
+             data => s_DMemData,
              we   => s_DMemWr, --gets output from control signal MemWrite
              q    => s_DMemOut); --mapped to MemToRegMux
 
@@ -262,7 +261,7 @@ begin
       InputSelect_Signal => s_Link,
       InputA_In => s_RegDstMuxOut,
       InputB_In => b"11111", --hard coded 31
-      Output_Out => s_LinkMuxOut
+      Output_Out => s_RegWrAddr --final register write address
       );
 
   Registers: RegisterFile
