@@ -188,7 +188,7 @@ architecture structure of MIPS_Processor is
   signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
 
   --mapping signals
-  signal s_PCAdderOut   : std_logic_vector(31 downto 0); --PC+4
+  signal s_PC_plus_4   : std_logic_vector(31 downto 0); --PC+4
   signal s_RegDstMuxOut : std_logic_vector(4 downto 0); --output of the mux controlled by reg destination
   signal s_ExtendedOut  : std_logic_vector(31 downto 0);
   signal s_Read1        : std_logic_vector(31 downto 0); --register outputs
@@ -213,7 +213,7 @@ architecture structure of MIPS_Processor is
   signal s_MemtoReg : std_logic; --output of Control Unit
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(3 downto 0);
-  signal s_FinalAddress: std_logic_vector(31 downto 0);
+  signal s_PCIn: std_logic_vector(31 downto 0);
 
 
 begin
@@ -221,7 +221,7 @@ begin
   -- TODO: This is required to be your final input to your instruction memory. This provides a feasible method to externally load the memory module which means that the synthesis tool must assume it knows nothing about the values stored in the instruction memory. If this is not included, much, if not all of the design is optimized out because the synthesis tool will believe the memory to be all zeros.
   with iInstLd select
     s_IMemAddr <= s_NextInstAddr when '0',
-      iInstAddr when others;
+      iInstAddr when others; --TODO set this signal
 
   --Given data don't mess with
   IMem: mem
@@ -313,7 +313,7 @@ begin
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemOut,
-      InputB_In => s_DMemData, --ALU ouput signal
+      InputB_In => s_DMemAddr, --ALU ouput signal
       Output_Out => s_RegWrData -- write data input
     );
 
@@ -346,7 +346,7 @@ begin
         Carry_Out => open,
         BitsA_In => s_IMemAddr, --PC
         BitsB_In => x"00000004", --hard code 4
-        Bits_Out => s_PCAdderOut, --4 highest bits concatted to end of jump address, also connects to branch adder
+        Bits_Out => s_PC_plus_4, --4 highest bits concatted to end of jump address, also connects to branch adder
         OverFlow_Flag => open, -- idk
         Zero_Flag => open, --idk
         Carry_Flag => open --idk
@@ -354,7 +354,7 @@ begin
 
     s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2 (sig has bit width of 28)
 
-    s_JumpAddress <= s_Inst(27 downto 0) & s_PCAdderOut(31 downto 28);
+    s_JumpAddress <= s_Inst(27 downto 0) & s_PC_plus_4(31 downto 28);
 
     s_shiftedSignExtenderOut <= s_ExtendedOut(29 downto 0) & "00"; --shift left 2 (sig has bitwidth of 32)
 
@@ -362,7 +362,7 @@ begin
       port map(
         Carry_In => '0',--??
         Carry_Out => open,--??
-        BitsA_In => s_PCAdderOut, --adder ouput
+        BitsA_In => s_PC_plus_4, --adder ouput
         BitsB_In => s_shiftedSignExtenderOut, -- shifted output of the extender
         Bits_Out => s_branchAdderOut, -- signal for ouput 
         OverFlow_Flag => open,
@@ -375,7 +375,7 @@ begin
   MUXAndSelectSignal: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_BranchAndOut,--output of the and gate
-		  InputA_In => s_PCAdderOut, -- have to check if this is working properly
+		  InputA_In => s_PC_plus_4, -- have to check if this is working properly
 		  InputB_In => s_branchAdderOut, --adder output 
 		  Output_Out => s_ANDsignalMuxOut
     );
@@ -393,7 +393,7 @@ begin
       InputSelect_Signal => s_Jr,--from control unit
 		  InputA_In => s_Read1,
 		  InputB_In => s_JumpSignalMuxOut,
-		  Output_Out => s_FinalAddress
+		  Output_Out => s_PCIn
     );
 
   --PC (just a 32 bit dff)
@@ -402,7 +402,7 @@ begin
       CLK_Signal => iCLK,
       Reset_Signal => iRST,
       WriteEnable_Signal => iInstLd, --always update PC
-      InputD_In => s_FinalAddress,
+      InputD_In => s_PCIn,
       OutputQ_Out => s_NextInstAddr
     );
 
