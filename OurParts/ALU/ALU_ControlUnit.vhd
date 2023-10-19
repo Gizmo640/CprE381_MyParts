@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity ALU_ControlUnit is
 	port(
-		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0)
+		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0);
 		AddSubtract_Signal_Out: out STD_LOGIC; --bit 0
 		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0); --bits 1-2
 		InvertSelect_Signal_Out: out STD_LOGIC; --bit 3
@@ -32,7 +32,7 @@ begin
 		"10001001" when "1010",
 		"10001000" when "1011",
 		"00000010" when "1100",
-		"xxxxxxxx" when others;
+		"11111111" when others;
 
 	AddSubtract_Signal_Out <= s_ControlBits(7);
 	LogicSelect_Signal_Out <= s_ControlBits(6 downto 5);

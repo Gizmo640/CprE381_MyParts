@@ -291,21 +291,21 @@ begin
     );
 
   --ALU conrol and ALU
-  ALUControl: ALU_ControlUnit
-    port map(
-      ALU_ControlUnit_In => s_ALUOp,
-      AddSubtract_Signal_Out => s_ALUControlOut(0),
-      LogicSelect_Signal_Out => s_ALUControlOut(2 downto 1),
-      InvertSelect_Signal_Out => s_ALUControlOut(3),
-      ArithmeticLogicSelect_Signal_Out => s_ALUControlOut(4),
-      Shift_RightLeft_Signal_Out => s_ALUControlOut(5),
-      ALUShifterSelect_Signal_Out => s_ALUControlOut(6),
-      Signed_Signal_Out => s_ALUControlOut(7)         --out STD_LOGIC);
-    );
+  -- ALUControl: ALU_ControlUnit
+  --   port map(
+  --     ALU_ControlUnit_In => s_ALUOp,
+  --     AddSubtract_Signal_Out => s_ALUControlOut(0),
+  --     LogicSelect_Signal_Out => s_ALUControlOut(2 downto 1),
+  --     InvertSelect_Signal_Out => s_ALUControlOut(3),
+  --     ArithmeticLogicSelect_Signal_Out => s_ALUControlOut(4),
+  --     Shift_RightLeft_Signal_Out => s_ALUControlOut(5),
+  --     ALUShifterSelect_Signal_Out => s_ALUControlOut(6),
+  --     Signed_Signal_Out => s_ALUControlOut(7)         --out STD_LOGIC);
+  --   );
 
   ALU_Unit: ALU
     port map(
-      ALU_ControlUnit_In => s_ALUControlOut,                 --what??
+      ALU_Op => s_ALUOp,    --ALUOp is inputted
       ShiftAmount => TODOsig,                        --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
       BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);

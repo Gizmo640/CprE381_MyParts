@@ -3,10 +3,10 @@ use IEEE.std_logic_1164.all;
 
 entity ALU is
 	port(
-		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(7 downto 0); --should match the output size of the ALUControl
+		ALU_Op: in STD_LOGIC_VECTOR(3 downto 0); --ALUop
 		ShiftAmount : in std_logic_vector(4 downto 0);
-		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0);
-		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0);
+		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0); --rs
+		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0); --rt
 		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
 		OverFlow_Flag: out STD_LOGIC;
 		Zero_Flag: out STD_LOGIC;
@@ -58,7 +58,7 @@ architecture Design of ALU is
 
 	component ALU_ControlUnit
 		port(
-			ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0)
+			ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0);
 			AddSubtract_Signal_Out: out STD_LOGIC;
 			LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
 			InvertSelect_Signal_Out: out STD_LOGIC;
@@ -76,8 +76,11 @@ architecture Design of ALU is
 	signal s_ALUShifterSelect_Signal: STD_LOGIC;
 	signal s_Signed_Signal: STD_LOGIC;
 
-	signal s_OverFlow_Out: STD_LOGIC;
-	signal s_Zero_Out: STD_LOGIC;
+	--flags
+	signal s_OverFlow_Flag: STD_LOGIC;
+	signal s_Zero_Flag: STD_LOGIC;
+	signal s_Carry_Flag: STD_LOGIC;
+
 	signal s_Carry_Out: STD_LOGIC;
 
 	signal s_AND_Out: STD_LOGIC_VECTOR(31 downto 0);
@@ -96,9 +99,9 @@ architecture Design of ALU is
 	signal s_ZeroOneSelect_Signal: STD_LOGIC;
 	signal s_SLT_Out: STD_LOGIC_VECTOR(31 downto 0);
 begin
-	ALU_ControlUnit: ALU_ControlUnit
+	ALUControl: ALU_ControlUnit
 		port map(
-			ALU_ControlUnit_In,
+			ALU_Op,
 			s_AddSubtract_Signal,
 			s_LogicSelect_Signal,
 			s_InvertSelect_Signal,
@@ -108,10 +111,10 @@ begin
 			s_Signed_Signal);
 
 	Shifter: Barrel_Shifter
-		port is(
+		port map(
 			ShiftAmount,
+			BitsB_In, --is rt correct?
 			s_Shift_RightLeft_Signal,
-			InputB_In,
 			s_Shifter_Out);
 
 	AdderSubtracter: NBit_AdderSubtracter
@@ -121,16 +124,16 @@ begin
 			BitsA_In,
 			BitsB_In,
 			s_Arithmetic_Out,
-			Carry_Out,
-			s_OverFlow_Out,
-			s_Zero_Out,
-			s_Carry_Out);
+			s_Carry_Out, --error, wrong sig
+			s_OverFlow_Flag,
+			s_Zero_Flag,
+			s_Carry_Flag);
 
-	OverFlow_Flag <= s_OverFlow_Out and s_Signed_Signal;
-	Zero_Flag <= s_Zero_Out;
-	Carry_Flag <= s_Carry_Out;
+	OverFlow_Flag <= s_OverFlow_Flag and s_Signed_Signal;
+	Zero_Flag <= s_Zero_Flag;
+	Carry_Flag <= s_Carry_Flag;
 
-	s_ZeroOneSelect_Signal <= s_Carry_Out and (not s_Zero_Out);
+	s_ZeroOneSelect_Signal <= s_Carry_Flag and (not s_Zero_Flag);
 
 	STL_Mux: NBit_2t1Mux
 		generic map(32)
@@ -161,7 +164,7 @@ begin
 		port map(
 			s_InvertSelect_Signal,
 			s_Logic_Out,
-			s_InvertedLogic_Out
+			s_InvertedLogic_Out,
 			s_Inverter_Out);
 
 	ArithmeticLogic_Mux: NBit_2t1Mux
