@@ -1,5 +1,5 @@
 QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-Start time: 15:50:17 on Oct 19,2023
+Start time: 16:02:45 on Oct 19,2023
 vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd internal/testpy/tb.vhd proj/src/MIPS_types.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/MIPS_Processor.vhd proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd proj/src/TopLevel/RegisterFile/NBit_Register.vhd proj/src/TopLevel/RegisterFile/RegisterFile.vhd proj/src/TopLevel/RegisterFile/DFlipFlop.vhd proj/src/TopLevel/Decoders/5t32_Decoder.vhd proj/src/TopLevel/PC Register/PC_Register.vhd proj/src/TopLevel/Extender/16bit_Extender.vhd proj/src/TopLevel/Adder/FullAdder.vhd proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd proj/src/TopLevel/Adder/NBit_RippleAdder.vhd proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd proj/src/TopLevel/Control/Control.vhd proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd proj/src/TopLevel/ALU/ALU_ControlUnit.vhd proj/src/TopLevel/ALU/ALU.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -37,11 +37,57 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd interna
 -- Compiling entity Decoder_5t32
 -- Compiling architecture Design of Decoder_5t32
 -- Compiling entity PC_Register
-** Warning: proj/src/TopLevel/PC Register/PC_Register.vhd(13): (vcom-1615) Existing architecture 'DFF(Design)' at proj/src/TopLevel/RegisterFile/DFlipFlop.vhd(13) will be overwritten.
--- Compiling architecture Design of DFF
--- Loading entity DFF
-** Error: proj/src/TopLevel/PC Register/PC_Register.vhd(21): Signal [mode IN port] "InputD_In" is type ieee.std_logic_1164.STD_LOGIC; expecting type ieee.std_logic_1164.STD_LOGIC_VECTOR.
-** Error: proj/src/TopLevel/PC Register/PC_Register.vhd(32): Signal "s_OutputQ" is type ieee.std_logic_1164.STD_LOGIC_VECTOR; expecting type ieee.std_logic_1164.STD_LOGIC.
-** Note: proj/src/TopLevel/PC Register/PC_Register.vhd(33): VHDL Compiler exiting
-End time: 15:50:17 on Oct 19,2023, Elapsed time: 0:00:00
-Errors: 2, Warnings: 3
+-- Compiling architecture Design of PC_Register
+-- Compiling entity Extender_16Bit
+-- Compiling architecture Design of Extender_16Bit
+-- Compiling entity FullAdder
+-- Compiling architecture Design of FullAdder
+-- Compiling entity NBit_LookAheadAdder
+-- Compiling architecture Design of NBit_LookAheadAdder
+-- Compiling entity NBit_RippleAdder
+-- Compiling architecture Design of NBit_RippleAdder
+-- Compiling entity NBit_AdderSubtracter
+-- Compiling architecture Design of NBit_AdderSubtracter
+-- Compiling entity Control
+-- Compiling architecture dataflow of Control
+-- Compiling entity Barrel_Shifter
+-- Compiling architecture structure of Barrel_Shifter
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(45): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(46): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(48): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(57): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(58): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(60): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(68): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(69): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(71): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(81): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(82): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(84): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(91): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(92): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(94): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(103): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(104): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(106): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(113): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(114): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(116): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(125): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(126): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(128): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(136): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(137): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(139): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(148): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(149): Enumeration literal '0' is not of type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(151): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(157): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(158): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(160): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(168): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(169): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Error: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(171): Cannot resolve indexed name (type ieee.std_logic_1164.STD_ULOGIC) as type ieee.std_logic_1164.STD_LOGIC_VECTOR.
+** Note: proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(175): VHDL Compiler exiting
+End time: 16:02:45 on Oct 19,2023, Elapsed time: 0:00:00
+Errors: 36, Warnings: 2
