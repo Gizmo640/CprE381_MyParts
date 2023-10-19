@@ -383,8 +383,8 @@ begin
   MUXJumpSelectSignal: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_Jump,--from control unit
-		  InputA_In => s_JumpAddress,--think I figured out figured out concatonation
-		  InputB_In => s_ANDsignalMuxOut,
+		  InputA_In => s_ANDsignalMuxOut,--0
+		  InputB_In => s_JumpAddress, --1
 		  Output_Out => s_JumpSignalMuxOut
     );
 
