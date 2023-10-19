@@ -1,13 +1,10 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-package MyPackage is
-	type STD_LOGIC_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(31 downto 0);
-end package MyPackage;
 
 library IEEE;
 use IEEE.std_logic_1164.all;
-use work.MyPackage.all;
+use work.MIPS_types.all;
 
 entity Bit32_32t1Mux is
 	port(

@@ -1,6 +1,6 @@
 QuestaSim-64 vcom 2023.2_2 Compiler 2023.06 Jun  9 2023
-Start time: 15:23:49 on Oct 19,2023
-vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd internal/testpy/tb.vhd proj/src/MIPS_types.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/MIPS_Processor.vhd proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd proj/src/TopLevel/RegisterFile/NBit_Register.vhd proj/src/TopLevel/RegisterFile/RegisterFile.vhd proj/src/TopLevel/RegisterFile/DFlipFlop.vhd proj/src/TopLevel/Decoders/5t32_Decoder.vhd proj/src/TopLevel/Extender/16bit_Extender.vhd proj/src/TopLevel/Adder/FullAdder.vhd proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd proj/src/TopLevel/Adder/NBit_RippleAdder.vhd proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd proj/src/TopLevel/Control/Control.vhd proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd proj/src/TopLevel/ALU/ALU_ControlUnit.vhd proj/src/TopLevel/ALU/ALU.vhd 
+Start time: 15:50:40 on Oct 19,2023
+vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd internal/testpy/tb.vhd proj/src/MIPS_types.vhd proj/src/TopLevel/mem.vhd proj/src/TopLevel/MIPS_Processor.vhd proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd proj/src/TopLevel/RegisterFile/NBit_Register.vhd proj/src/TopLevel/RegisterFile/RegisterFile.vhd proj/src/TopLevel/RegisterFile/DFlipFlop.vhd proj/src/TopLevel/Decoders/5t32_Decoder.vhd proj/src/TopLevel/PC Register/PC_Register.vhd proj/src/TopLevel/Extender/16bit_Extender.vhd proj/src/TopLevel/Adder/FullAdder.vhd proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd proj/src/TopLevel/Adder/NBit_RippleAdder.vhd proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd proj/src/TopLevel/Control/Control.vhd proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd proj/src/TopLevel/ALU/ALU_ControlUnit.vhd proj/src/TopLevel/ALU/ALU.vhd 
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
@@ -13,7 +13,7 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd interna
 -- Compiling architecture mixed of tb
 ** Warning: proj/src/MIPS_types.vhd(15): (vcom-1615) Existing package 'MIPS_types' at line 15 will be overwritten.
 -- Compiling package MIPS_types
-** Warning: proj/src/MIPS_types.vhd(29): (vcom-1615) Existing package body 'MIPS_types(body)' at line 29 will be overwritten.
+** Warning: proj/src/MIPS_types.vhd(31): (vcom-1615) Existing package body 'MIPS_types(body)' at line 31 will be overwritten.
 -- Compiling package body MIPS_types
 -- Loading package MIPS_types
 -- Loading package NUMERIC_STD
@@ -22,44 +22,22 @@ vcom -2008 -work internal/ModelSimContainer/work proj/src/MIPS_types.vhd interna
 -- Loading package MIPS_types
 -- Compiling entity MIPS_Processor
 -- Compiling architecture structure of MIPS_Processor
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(250): (vcom-1624) Component instance MIPS_Processor(structure).RegDstMux has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(259): (vcom-1624) Component instance MIPS_Processor(structure).LinkMux has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(287): (vcom-1624) Component instance MIPS_Processor(structure).ALUSrcMux has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(323): (vcom-1624) Component instance MIPS_Processor(structure).DMemMux has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(355): (vcom-1624) Component instance MIPS_Processor(structure).PCAdder has a generic map clause and the component NBit_LookAheadAdder has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(374): (vcom-1624) Component instance MIPS_Processor(structure).BranchAdder has a generic map clause and the component NBit_LookAheadAdder has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(389): (vcom-1624) Component instance MIPS_Processor(structure).MUXAndSelectSignal has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(398): (vcom-1624) Component instance MIPS_Processor(structure).MUXJumpSelectSignal has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
-** Warning: proj/src/TopLevel/MIPS_Processor.vhd(407): (vcom-1624) Component instance MIPS_Processor(structure).MUXJrSelectSignal has a generic map clause and the component NBit_2t1Mux has no generics.
-Generic map will be ignored.
 -- Compiling entity NBit_4t1Mux
 -- Compiling architecture Design of NBit_4t1Mux
 -- Compiling entity NBit_2t1Mux
 -- Compiling architecture Design of NBit_2t1Mux
-** Warning: proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd(4): (vcom-1615) Existing package 'MyPackage' at /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/RegisterFile/RegisterFile.vhd(4) will be overwritten.
--- Compiling package MyPackage
--- Loading package MyPackage
 -- Compiling entity Bit32_32t1Mux
 -- Compiling architecture Design of Bit32_32t1Mux
 -- Compiling entity NBit_Register
 -- Compiling architecture Design of NBit_Register
-** Warning: proj/src/TopLevel/RegisterFile/RegisterFile.vhd(4): (vcom-1615) Existing package 'MyPackage' at proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd(4) will be overwritten.
--- Compiling package MyPackage
--- Loading package MyPackage
 -- Compiling entity RegisterFile
 -- Compiling architecture Design of RegisterFile
 -- Compiling entity DFF
 -- Compiling architecture Design of DFF
 -- Compiling entity Decoder_5t32
 -- Compiling architecture Design of Decoder_5t32
+-- Compiling entity PC_Register
+-- Compiling architecture Design of PC_Register
 -- Compiling entity Extender_16Bit
 -- Compiling architecture Design of Extender_16Bit
 -- Compiling entity FullAdder
@@ -78,5 +56,5 @@ Generic map will be ignored.
 -- Compiling architecture Design of ALU_ControlUnit
 -- Compiling entity ALU
 -- Compiling architecture Design of ALU
-End time: 15:23:50 on Oct 19,2023, Elapsed time: 0:00:01
-Errors: 0, Warnings: 13
+End time: 15:50:40 on Oct 19,2023, Elapsed time: 0:00:00
+Errors: 0, Warnings: 2

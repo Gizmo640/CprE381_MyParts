@@ -10,7 +10,7 @@ entity PC_Register is
 		OutputQ_Out: out STD_LOGIC_VECTOR(31 downto 0));
 end PC_Register;
 
-architecture Design of DFF is
+architecture Design of PC_Register is
 
 	signal s_InputD: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_OutputQ: STD_LOGIC_VECTOR(31 downto 0);

@@ -3,19 +3,10 @@ Reading pref.tcl
 # 2023.2_2
 
 # vsim -postsimdataflow -debugdb -c -voptargs=""+acc"" tb -do "modelsim_framework.do" -gOUTPUT_TRACE=ms.trace 
-# Start time: 15:23:51 on Oct 19,2023
+# Start time: 15:50:41 on Oct 19,2023
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Note: (vsim-8611) Generating debug db.
 # ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(250): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(259): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(287): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(323): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(355): (vopt-1251) Generic "N" of entity "NBit_LookAheadAdder" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(374): (vopt-1251) Generic "N" of entity "NBit_LookAheadAdder" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(389): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(398): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(407): (vopt-1251) Generic "N" of entity "NBit_2t1Mux" is not in the component being instantiated.
 # ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
 #         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT(31)
 # ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(42): (vopt-3473) Component instance "MuxLorR1 : mux2t1" is not bound.
@@ -464,28 +455,33 @@ Reading pref.tcl
 #         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(1)
 # ** Warning: ../../proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd(165): (vopt-3473) Component instance "MuxLorR2 : mux2t1" is not bound.
 #         Region: /tb/MyMips/ALU_Unit/Shifter/LEFT_OR_RIGHT_OUTPUT(0)
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(254): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputA_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputA_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/RegDstMux
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputB_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputA_In' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/RegDstMux
-# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1549) At instance RegDstMux the actual expression and the port 'Output_Out' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputB_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1549) At instance RegDstMux the actual expression and the port 'InputB_In' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(257): (vopt-1549) At instance RegDstMux the actual expression and the port 'Output_Out' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/RegDstMux
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(257): (vopt-1549) At instance RegDstMux the actual expression and the port 'Output_Out' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/RegDstMux
 # ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(263): (vopt-1549) At instance LinkMux the actual expression and the port 'InputA_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/LinkMux
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(263): (vopt-1549) At instance LinkMux the actual expression and the port 'InputA_In' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
 # ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(264): (vopt-1549) At instance LinkMux the actual expression and the port 'InputB_In' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(264): (vopt-1549) At instance LinkMux the actual expression and the port 'InputB_In' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/LinkMux
 # ** Warning: ../../proj/src/TopLevel/MIPS_Processor.vhd(265): (vopt-1549) At instance LinkMux the actual expression and the port 'Output_Out' of component 'work.MIPS_Processor(structure).NBit_2t1Mux' have different sizes:  ([5,32]).
 #         Region: /tb/MyMips/LinkMux
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(254): (vopt-1272) Length of formal "InputA_In" is 32; length of slice name is 5.
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(255): (vopt-1272) Length of formal "InputB_In" is 32; length of slice name is 5.
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(256): (vopt-1272) Length of formal "Output_Out" is 32; length of actual is 5.
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(263): (vopt-1272) Length of formal "InputA_In" is 32; length of actual is 5.
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(265): (vopt-1272) Length of formal "Output_Out" is 32; length of actual is 5.
-# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(264): (vopt-1272) Length of expected is 32; length of actual is 5.
-# ** Note: ../../proj/src/TopLevel/MIPS_Processor.vhd(420): Vopt Compiler exiting
-# ** Error: (vopt-2064) Compiler back-end code generation process terminated with code 2.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=7, Warnings=240.
+# ** Error (suppressible): ../../proj/src/TopLevel/MIPS_Processor.vhd(265): (vopt-1549) At instance LinkMux the actual expression and the port 'Output_Out' of entity 'work.NBit_2t1Mux' have different sizes:  ([5,32]).
+#         Region: /tb/MyMips/LinkMux
+# Optimization failed
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=6, Warnings=231.
 # Error loading design
 Error loading design
-# End time: 15:23:51 on Oct 19,2023, Elapsed time: 0:00:00
-# Errors: 7, Warnings: 240
+# End time: 15:50:42 on Oct 19,2023, Elapsed time: 0:00:01
+# Errors: 6, Warnings: 231
