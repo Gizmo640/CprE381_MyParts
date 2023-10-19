@@ -182,7 +182,6 @@ architecture structure of MIPS_Processor is
   --       requires below this comment
   --ALU signals
   signal s_Zero         : std_logic; --a single bit from the ALU output dictating whether its beq or bne
-  
 
   --mapping signals
   signal s_PCAdderOut   : std_logic_vector(31 downto 0); --PC+4
@@ -212,6 +211,8 @@ architecture structure of MIPS_Processor is
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(3 downto 0);
   signal s_MemWrite : std_logic;
+  signal s_ALUControlOut: std_logic_vector(7 downto 0);
+  signal s_ALUOut: std_logic_vector(31 downto 0);
 
 
 begin
@@ -240,10 +241,6 @@ begin
              we   => s_DMemWr,
              q    => s_DMemOut);
 
-  -- TODO: Ensure that s_Halt is connected to an output control signal produced from decoding the Halt instruction (Opcode: 01 0100)
-  -- add s_Halt to Control?
-
-  -- TODO: Ensure that s_Ovfl is connected to the overflow output of your ALU
   -- TODO: Implement the rest of your processor below this comment! 
   --REGISTER/ALU/DMEM LOGIC
 
@@ -293,27 +290,29 @@ begin
       Output_Out => s_ALUSrcMuxOut --ALU input B
     );
 
-  --TODO ALU CONTROL AND ALU
+  --ALU conrol and ALU
   ALUControl: ALU_ControlUnit
     port map(
-      ALU_ControlUnit_In => ,                            --in STD_LOGIC_VECTOR(&* downto 0)
-      AddSubtract_Signal_Out => ,                        --out STD_LOGIC;
-      LogicSelect_Signal_Out => ,                        --out STD_LOGIC_VECTOR(1 downto 0);
-      InvertSelect_Signal_Out => ,                       --out STD_LOGIC;
-      ArithmeticLogicSelect_Signal_Out => ,              --out STD_LOGIC;
-      Shift_LeftRight_Signal_Out =>                      --out STD_LOGIC);
+      ALU_ControlUnit_In => s_ALUOp,
+      AddSubtract_Signal_Out => s_ALUControlOut(0),
+      LogicSelect_Signal_Out => s_ALUControlOut(2 downto 1),
+      InvertSelect_Signal_Out => s_ALUControlOut(3),
+      ArithmeticLogicSelect_Signal_Out => s_ALUControlOut(4),
+      Shift_RightLeft_Signal_Out => s_ALUControlOut(5),
+      ALUShifterSelect_Signal_Out => s_ALUControlOut(6),
+      Signed_Signal_Out => s_ALUControlOut(7)         --out STD_LOGIC);
     );
 
-  --TODO
   ALU_Unit: ALU
     port map(
-      ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
-		BitsA_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
-		BitsB_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
-		Bits_Out => ,                             --out STD_LOGIC_VECTOR(31 downto 0);
-		OverFlow_Flag => ,                        --out STD_LOGIC;
-		Zero_Flag => ,                            --out STD_LOGIC;
-		Carry_Flag =>                             --out STD_LOGIC
+      ALU_ControlUnit_In => s_ALUControlOut,                 --what??
+      ShiftAmount => TODOsig,                        --in std_logic_vector(4 downto 0);
+      BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
+      BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
+      Bits_Out => s_ALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
+      OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
+      Zero_Flag => s_Zero,                            --out STD_LOGIC;
+      Carry_Flag => s_Carry_Out --new sig??                            --out STD_LOGIC
     );
 
   s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
@@ -344,7 +343,7 @@ begin
       ALUSrc => s_ALUSrc, --bit 9
       RegWrite => s_RegWr,--bit 10
       RegDst => s_RegDst, --bit 11
-      Halt => s_Halt
+      Halt => s_Halt --halt bit connected
       );
 
   --FETCH LOGIC

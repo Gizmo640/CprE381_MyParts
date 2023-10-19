@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 
 entity ALU is
 	port(
-		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0);
+		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(7 downto 0); --should match the output size of the ALUControl
 		ShiftAmount : in std_logic_vector(4 downto 0);
 		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0);
 		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0);

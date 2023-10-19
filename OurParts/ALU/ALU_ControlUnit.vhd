@@ -4,13 +4,13 @@ use IEEE.std_logic_1164.all;
 entity ALU_ControlUnit is
 	port(
 		ALU_ControlUnit_In: in STD_LOGIC_VECTOR(3 downto 0)
-		AddSubtract_Signal_Out: out STD_LOGIC;
-		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0);
-		InvertSelect_Signal_Out: out STD_LOGIC;
-		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC;
-		Shift_RightLeft_Signal_Out: out STD_LOGIC;
-		ALUShifterSelect_Signal_Out: out STD_LOGIC;
-		Signed_Signal_Out: out STD_LOGIC);
+		AddSubtract_Signal_Out: out STD_LOGIC; --bit 0
+		LogicSelect_Signal_Out: out STD_LOGIC_VECTOR(1 downto 0); --bits 1-2
+		InvertSelect_Signal_Out: out STD_LOGIC; --bit 3
+		ArithmeticLogicSelect_Signal_Out: out STD_LOGIC; --bit 4
+		Shift_RightLeft_Signal_Out: out STD_LOGIC; --bit 5
+		ALUShifterSelect_Signal_Out: out STD_LOGIC; --bit 6
+		Signed_Signal_Out: out STD_LOGIC); --bit 7
 end ALU_ControlUnit;
 
 architecture Design of ALU_ControlUnit is
