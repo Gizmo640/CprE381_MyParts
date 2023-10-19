@@ -167,9 +167,9 @@ architecture structure of MIPS_Processor is
   signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
  
   -- Required register file signals 
-  signal s_RegWr        : std_logic; -- TODO: use this signal as the final active high write enable input to the register file
-  signal s_RegWrAddr    : std_logic_vector(4 downto 0); -- TODO: use this signal as the final destination register address input
-  signal s_RegWrData    : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
+  signal s_RegWr        : std_logic; -- use this signal as the final active high write enable input to the register file
+  signal s_RegWrAddr    : std_logic_vector(4 downto 0); -- use this signal as the final destination register address input
+  signal s_RegWrData    : std_logic_vector(N-1 downto 0); -- use this signal as the final data register data input
 
   -- Required Instruction memory signals
   signal s_IMemAddr     : std_logic_vector(N-1 downto 0); -- Do not assign this signal, assign to s_NextInstAddr instead
@@ -404,7 +404,7 @@ begin
     port map(
       CLK_Signal => iCLK,
       Reset_Signal => iRST,
-      WriteEnable_Signal => iInstLd,
+      WriteEnable_Signal => '1',
       InputD_In => s_PCIn,
       OutputQ_Out => s_NextInstAddr
     );
