@@ -9,8 +9,7 @@ entity Control is
     port(
         Opcode: in std_logic_vector(5 downto 0);
         Funct: in std_logic_vector(5 downto 0);
-        --ShamtIn: in std_logic_vector(5 downto 0);
-        --ShamtOut: out std_logic_vector(5 downto 0);
+        Sign: out std_logic;
         Jump: out std_logic; --bit 0
         Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
         Branch: out std_logic;   --bit 2
@@ -29,6 +28,11 @@ end Control;
 
 architecture dataflow of Control is
     begin
+
+    Sign <=
+    '0' when (Opcode = "001100") else --andi
+    '0' when (Opcode = "001101") else --ori
+    '1'; --everything else uses signed extension
 
     Jump <=
     '1' when (Opcode = "000010") else '0'; --jump

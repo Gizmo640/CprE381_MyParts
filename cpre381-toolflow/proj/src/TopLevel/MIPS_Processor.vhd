@@ -106,6 +106,7 @@ architecture structure of MIPS_Processor is
         port(
         Opcode: in std_logic_vector(5 downto 0);
         Funct:  in std_logic_vector(5 downto 0);
+        Sign: out std_logic;
         Jump: out std_logic; --bit 0
         Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
         Branch: out std_logic;   --bit 2
@@ -197,11 +198,12 @@ architecture structure of MIPS_Processor is
   signal s_BranchAndOut : std_logic; --decides beq or bne
   signal s_JumpAddress  : std_logic_vector(31 downto 0); --s_shiftedInstructionBits with 4 bits from PC+4 concatonated to it
   signal s_shiftedSignExtenderOut : std_logic_vector(31 downto 0);--double check the size
-  signal s_branchAdderOut : std_logic_vector(31 downto 0); -- double check size
+  signal s_branchAdderOut : std_logic_vector(31 downto 0);
   signal s_ANDsignalMuxOut : std_logic_vector(31 downto 0);
   signal s_InstShift26t28   : std_logic_vector(27 downto 0); --this is the output of the "shift left 2" component in our schematic, we will concat this with the 4 highest bits of PC+4
   signal s_JumpSignalMuxOut : std_logic_vector(31 downto 0); --the jump address is calculated from shifted inst bits being concatonated with the highest bits of PC+4 (goes into JumpMux)
-  
+  signal s_ZeroSign     : std_logic; --used in our sign extender (0 for zeroext and 1 for signext)
+
   -- Required fetch logic signal -- for jump and branch instructions (control)
   --signals for the output of the Control Signal Block
   signal s_Jr           : std_logic; --jr mux select
@@ -283,8 +285,9 @@ begin
     port map(
       Input_In => s_Inst(15 downto 0),
       ExtendedOutput_Out  => s_ExtendedOut,
-      UnsignedSigned_Signal => '0'
+      UnsignedSigned_Signal => s_Sign
     );
+
   --MUX NAMED BASED ON SELECT LINE
   ALUSrcMux: NBit_2t1Mux
     port map(
@@ -297,14 +300,14 @@ begin
   --ALU
   ALU_Unit: ALU
     port map(
-      ALU_Op => s_ALUOp,    --ALUOp is inputted
-      ShiftAmount => s_Inst(10 downto 6),                        --in std_logic_vector(4 downto 0);
+      ALU_Op => s_ALUOp,                               --ALUOp is inputted
+      ShiftAmount => s_Inst(10 downto 6),              --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
-      BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
+      BitsB_In => s_ALUSrcMuxOut,                      --in STD_LOGIC_VECTOR(31 downto 0);
       ALU_Out => oALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
       OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
       Zero_Flag => s_Zero,                            --out STD_LOGIC;
-      Carry_Flag => open --new sig??                            --out STD_LOGIC
+      Carry_Flag => open                              --out STD_LOGIC
     );
 
   --DMem address is the ALU output
@@ -327,6 +330,7 @@ begin
     port map(
       Opcode => s_Inst(31 downto 26), --in std_logic_vector(5 downto 0);
       Funct => s_Inst(5 downto 0),
+      Sign => s_Sign,
       Jump => s_Jump, --bit 0
       Jr => s_Jr,  --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
       Branch => s_Branch,  --bit 2
