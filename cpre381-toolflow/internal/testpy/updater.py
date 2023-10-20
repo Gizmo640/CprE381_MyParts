@@ -43,29 +43,29 @@ class Updater():
     mars_header = {"PRIVATE-TOKEN": MARS_P_TOK}
     tf_header = {"PRIVATE-TOKEN": TF_P_TOK}
 
-    def __init__(self, force=False, toolflow=True):
-        if toolflow:
-            self.remote_tf_v = self.get_remote_tf_version()
-            self.curr_tf_v = self.get_current_tf_version()
-            
-            if (not self.tf_version_cmp()):
-                print("Toolflow update available")
-                self.print_tf_vers()
-                if (self.y_n_req("Would you like to update The toolflow?")):
-                    self.download_tf()
+  #  def __init__(self, force=False, toolflow=True):
+   #     if toolflow:
+    #        self.remote_tf_v = self.get_remote_tf_version()
+     #       self.curr_tf_v = self.get_current_tf_version()
+      #      
+       #     if (not self.tf_version_cmp()):
+        #        print("Toolflow update available")
+         #       self.print_tf_vers()
+          #      if (self.y_n_req("Would you like to update The toolflow?")):
+           #         self.download_tf()
 
-        self.remote_mars_v = self.get_remote_mars_version() # This must be called first to update the MARS url
+     #   self.remote_mars_v = self.get_remote_mars_version() # This must be called first to update the MARS url
 
-        if force: # CICD Hack... this allows us to force install the latest MARS for packaging the toolflow
-            self.download_mars()
+    #    if force: # CICD Hack... this allows us to force install the latest MARS for packaging the toolflow
+     #       self.download_mars()
 
-        self.curr_mars_v = self.get_current_mars_version()
-
-        if (not self.mars_version_cmp()):
-            print("MARS update available")
-            self.print_mars_vers()
-            if (self.y_n_req("Would you like to update MARS?")):
-                self.download_mars()
+     #   self.curr_mars_v = self.get_current_mars_version()
+#
+     #   if (not self.mars_version_cmp()):
+      #      print("MARS update available")
+      #      self.print_mars_vers()
+       #     if (self.y_n_req("Would you like to update MARS?")):
+        #        self.download_mars()
 
     def mars_version_cmp(self):
         """ Compares the current version to the compared version of mars
