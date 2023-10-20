@@ -41,8 +41,8 @@ begin
 	LEFT_OR_RIGHT: for i in 31 downto 0 generate
 		MuxLorR1: mux2t1
 			port map(
-				i_D0	=>	BarrelInput(i),
-				i_D1	=>  BarrelInput(31-i),
+				i_D0	=>	BarrelInput(31-i),
+				i_D1	=>  BarrelInput(i),
 				i_S		=>  LeftOrRight,
 				o_0		=>  s_MuxLorR(i)
 			);
@@ -164,8 +164,8 @@ begin
 	LEFT_OR_RIGHT_OUTPUT: for i in 31 downto 0 generate
 		MuxLorR2: mux2t1
 			port map(
-				i_D0	=>	stage1MuxOutput(i),
-				i_D1	=>  stage1MuxOutput(31-i),
+				i_D0	=>	stage1MuxOutput(31-i),
+				i_D1	=>  stage1MuxOutput(i),
 				i_S		=>  LeftOrRight,
 				o_0		=>  BarrelOutput(i)
 			);

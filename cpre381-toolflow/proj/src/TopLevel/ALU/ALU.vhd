@@ -100,9 +100,10 @@ architecture Design of ALU is
 	signal s_ArithmeticLogicMux_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_ALUShifterMux_Out: STD_LOGIC_VECTOR(31 downto 0);
 
-	-- huh??
+	
 	signal s_ZeroOneSelect_Signal: STD_LOGIC;
 	signal s_SLT_Out: STD_LOGIC_VECTOR(31 downto 0);
+	signal s_ShiftAmount: STD_LOGIC_VECTOR(4 downto 0); --differentiates lui from other shifts
 
 begin
 
@@ -117,10 +118,14 @@ begin
 			s_ALUShifterSelect_Signal,
 			s_Signed_Signal);
 
+	--for lui
+	s_ShiftAmount <=
+	"10000" when (ALU_Op = "1100") else ShiftAmount;
+
 	Shifter: Barrel_Shifter --BACKWARDS??
 		port map(
-			ShiftAmount,
-			BitsB_In,
+			s_ShiftAmount,
+			BitsB_In, --ALUSrc mux output (rt or immediate are shifted, never rs)
 			s_Shift_RightLeft_Signal,
 			s_Shifter_Out);
 

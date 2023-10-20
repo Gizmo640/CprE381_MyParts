@@ -5,7 +5,7 @@
 1
 95 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/work
 2
-6 tb_alu
+17 tb_barrel_shifter
 4
 13 HalfCycle_CLK
 ]
