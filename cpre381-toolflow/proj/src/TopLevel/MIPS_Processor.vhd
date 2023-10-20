@@ -285,7 +285,7 @@ begin
     port map(
       Input_In => s_Inst(15 downto 0),
       ExtendedOutput_Out  => s_ExtendedOut,
-      UnsignedSigned_Signal => s_Sign
+      UnsignedSigned_Signal => s_ZeroSign
     );
 
   --MUX NAMED BASED ON SELECT LINE
@@ -330,7 +330,7 @@ begin
     port map(
       Opcode => s_Inst(31 downto 26), --in std_logic_vector(5 downto 0);
       Funct => s_Inst(5 downto 0),
-      Sign => s_Sign,
+      Sign => s_ZeroSign,
       Jump => s_Jump, --bit 0
       Jr => s_Jr,  --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
       Branch => s_Branch,  --bit 2
