@@ -1,1 +1,0 @@
-proj/mips/fa2022/base/addi_01.s

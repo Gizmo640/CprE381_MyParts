@@ -330,7 +330,7 @@ begin
     port map(
       Opcode => s_Inst(31 downto 26), --in std_logic_vector(5 downto 0);
       Funct => s_Inst(5 downto 0),
-      Sign => s_ZeroSign,
+      ZeroSign => s_ZeroSign,
       Jump => s_Jump, --bit 0
       Jr => s_Jr,  --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
       Branch => s_Branch,  --bit 2
