@@ -1,0 +1,65 @@
+In clock cycle: 0
+Register Write to Reg: 0x1F Val: 0x00002248
+In clock cycle: 1
+Register Write to Reg: 0x1F Val: 0x00004248
+In clock cycle: 2
+Register Write to Reg: 0x1F Val: 0x00006248
+In clock cycle: 3
+Register Write to Reg: 0x1F Val: 0x00008248
+In clock cycle: 4
+Register Write to Reg: 0x1F Val: 0x0000A248
+In clock cycle: 5
+Register Write to Reg: 0x1F Val: 0x0000C248
+In clock cycle: 6
+Register Write to Reg: 0x1F Val: 0x0000E248
+In clock cycle: 7
+Register Write to Reg: 0x1F Val: 0x00010248
+In clock cycle: 8
+Register Write to Reg: 0x1F Val: 0x00012248
+In clock cycle: 9
+Register Write to Reg: 0x1F Val: 0x00014248
+In clock cycle: 10
+Register Write to Reg: 0x1F Val: 0x00016248
+In clock cycle: 11
+Register Write to Reg: 0x1F Val: 0x00018248
+In clock cycle: 12
+Register Write to Reg: 0x1F Val: 0x0001A248
+In clock cycle: 13
+Register Write to Reg: 0x1F Val: 0x0001C248
+In clock cycle: 14
+Register Write to Reg: 0x1F Val: 0x0001E248
+In clock cycle: 15
+Register Write to Reg: 0x1F Val: 0x00020248
+In clock cycle: 16
+Register Write to Reg: 0x1F Val: 0x00022248
+In clock cycle: 17
+Register Write to Reg: 0x1F Val: 0x00024248
+In clock cycle: 18
+Register Write to Reg: 0x1F Val: 0x00026248
+In clock cycle: 19
+Register Write to Reg: 0x1F Val: 0x00028248
+In clock cycle: 20
+Register Write to Reg: 0x1F Val: 0x0002A248
+In clock cycle: 21
+Register Write to Reg: 0x1F Val: 0x0002C248
+In clock cycle: 22
+Register Write to Reg: 0x1F Val: 0x0002E248
+In clock cycle: 23
+Register Write to Reg: 0x1F Val: 0x00030248
+In clock cycle: 24
+Register Write to Reg: 0x1F Val: 0x00032248
+In clock cycle: 25
+Register Write to Reg: 0x1F Val: 0x00034248
+In clock cycle: 26
+Register Write to Reg: 0x1F Val: 0x00036248
+In clock cycle: 27
+Register Write to Reg: 0x1F Val: 0x00038248
+In clock cycle: 28
+Register Write to Reg: 0x1F Val: 0x0003A248
+In clock cycle: 29
+Register Write to Reg: 0x1F Val: 0x0003C248
+In clock cycle: 30
+Register Write to Reg: 0x1F Val: 0x0003E248
+In clock cycle: 31
+Register Write to Reg: 0x00 Val: 0x00000000
+Execution is stopping! Clock Cycle: 31
