@@ -310,7 +310,7 @@ begin
   --TODO
   ALU_Unit: ALU
     port map(
-      ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
+    ALU_ControlUnit_In => ,                 --in STD_LOGIC_VECTOR(&* downto 0);--Size Needed
 		BitsA_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
 		BitsB_In => ,                             --in STD_LOGIC_VECTOR(31 downto 0);
 		Bits_Out => ,                             --out STD_LOGIC_VECTOR(31 downto 0);
