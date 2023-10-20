@@ -106,7 +106,7 @@ architecture structure of MIPS_Processor is
         port(
         Opcode: in std_logic_vector(5 downto 0);
         Funct:  in std_logic_vector(5 downto 0);
-        Sign: out std_logic;
+        ZeroSign: out std_logic;
         Jump: out std_logic; --bit 0
         Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
         Branch: out std_logic;   --bit 2
