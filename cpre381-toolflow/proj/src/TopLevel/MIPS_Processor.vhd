@@ -128,7 +128,7 @@ architecture structure of MIPS_Processor is
 		ShiftAmount : in std_logic_vector(4 downto 0);
 		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0); --rs
 		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0); --rt
-		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
+		ALU_Out: out STD_LOGIC_VECTOR(31 downto 0);
 		OverFlow_Flag: out STD_LOGIC;
 		Zero_Flag: out STD_LOGIC;
 		Carry_Flag: out STD_LOGIC);
