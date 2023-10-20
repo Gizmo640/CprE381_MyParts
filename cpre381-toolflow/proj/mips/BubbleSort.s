@@ -1,93 +1,51 @@
 
+#Doyle Chism
+.data
+array:  .word 2,6,3,9,1   
 
+.text
+.globl main
+main:
+    # Initialize
+    la $t0, array         # load array
+    li $t1, 8             # num elements 
+    li $t2, 4             
 
-bubbleSort:
-        addiu  	$sp,$sp,-48
-        sw      $fp,40($sp) #changed 
-        add    	$fp,$sp, $zero #check
-        sw      $4,16($fp)  # changed 
-        add    	$2,$5,$zero # check
-        sll     $2,$2,0
-        sw      $2,24($fp)
-        sw      $0,0($fp)
-        b       .L2 	#changed 
-        add 	$0, $0, $0 #nop #change 
+outer_loop:
+    # Initialize inner loop variables
+    li $t3, 0             #  i = 0
+    li $t4, 0             #  j = 0
 
-.L6:
-        sw      $0,4($fp)
-        b       .L3 #change 
-       	add 	$0, $0, $0		 #nop #change
+inner_loop:
+    #  array[j] and array[j+1] addresses
+    sll $t5, $t4, 2       
+    sll $t6, $t4, 2       
+    add $t5, $t0, $t5     # t5 = &array[j]
+    add $t6, $t0, $t6     # t6 = &array[j+1]
 
-.L5:
-        lw      $2,4($fp)
-        sll    	$2,$2,2
-        lw      $3,16($fp) #changed 
-        addu   	$2,$3,$2
-        lw      $3,0($2)
-        lw      $2,4($fp)
-        addiu  	$2,$2,1
-        sll    	$2,$2,2
-        lw      $4,16($fp) #changed 
-        addu   	$2,$4,$2
-        lw      $2,0($2)
-        slt     $2,$2,$3
-        beq     $2,$0,.L4
-        add 	$0, $0, $0#nop #change 
+    # Load array[j] and array[j+1] into $t7 and $t8
+    lw $t7, 0($t5)        # $t7 = array[j]
+    lw $t8, 0($t6)        # $t8 = array[j+1]
 
-        lw      $2,4($fp)
-        sll    	$2,$2,2
-        lw      $3,16($fp)#changed 
-        addu  	$2,$3,$2
-        lw      $2,0($2)
-        sw      $2,8($fp)
-        lw      $2,4($fp)
-        addiu  	$2,$2,1
-        sll    	$2,$2,2
-        lw      $3,16($fp)#changed 
-        addu   	$3,$3,$2
-        lw      $2,4($fp)
-        sll    	$2,$2,2
-        lw      $4,16($fp)#changed 
-        addu  	 $2,$4,$2
-        lw      $3,0($3)
-        sw      $3,0($2)
-        lw      $2,4($fp)
-        addiu  	$2,$2,1
-        sll    	$2,$2,2
-        lw      $3,16($fp)#changed 
-        addu   	$2,$3,$2
-        lw      $3,8($fp)
-        sw      $3,0($2)
-.L4:
-        lw      $2,4($fp)
-        addiu   $2,$2,1
-        sw      $2,4($fp)
-.L3:
-        lw      $3,24($fp)
-        lw      $2,0($fp)
-        subu    $2,$3,$2
-       	addiu   $2,$2,-1
-        lw      $3,4($fp)
-        slt     $2,$3,$2
-        bne     $2,$0,.L5
-        add 	$0, $0, $0	#nop #change 
+    sub $t9, $t7, $t8     # $t9 = array[j] - array[j+1]
 
-        lw      $2,0($fp)
-        addiu   $2,$2,1
-        sw      $2,0($fp)
-.L2:
-        lw      $2,24($fp)
-        addiu   $2,$2,-1
-        lw      $3,0($fp)
-        slt     $2,$3,$2
-        bne     $2,$0,.L6 
-        add 	$0, $0, $0	#nop #change 
+    bne $t9, $zero, bubbleSort_instructions  # Check $t9 value
 
-        add 	$0, $0, $0	#nop#change 
-        add 	$0, $0, $0	#nop #change 
-        add    $sp,$fp, $zero	#change 
-        lw      $fp,40($sp)	#change 
-        addiu  $sp,$sp,48
-        jr      $31
-        add 	$0, $0, $0	#nop #change 
-        
+    # Swap array[j] and array[j+1]
+    sw $t7, 0($t6)        # array[j+1] = $t7
+    sw $t8, 0($t5)        # array[j] = $t8
+
+bubbleSort_instructions:
+  
+    addi $t4, $t4, 1      # j++
+    sub $t9, $t1, $t3     # $t9 = (size - i - 1)
+
+    bne $t4, $t9, inner_loop #  if $t4 is less than $t9
+
+    addi $t3, $t3, 1      # i++
+    sub $t9, $t1, 1       # t9 = (size - 1)
+
+    bne $t3, $t9, outer_loop  # Check if $t3 is less than $t9
+    add $zero, $zero, $zero
+    li $v0, 10             # Exit code
+    syscall
