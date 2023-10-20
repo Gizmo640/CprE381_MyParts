@@ -40,7 +40,7 @@ class Output_Writer():
         cpi = result.proc_cycles /  result.mars_inst 
 
         if self.summary:
-            print(f' {str(result.asm_path):28} |  {mars}  |   {modelsim}    |    {passed}     | {cpi:5.03} | {str(result.dest_path)}')
+            print(f' {str(result.asm_path)[-28:]:28} |  {mars}  |   {modelsim}    |    {passed}     | {cpi:5.03} | {str(result.dest_path)}')
         else:
             print(f'Testing file: {result.asm_path}')
             print(f'Mars simulation: {mars}')

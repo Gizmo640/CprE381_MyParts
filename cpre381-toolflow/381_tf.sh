@@ -93,6 +93,16 @@ elif [ "$1" == "submit" ]; then
         echo -e "${GREEN}Making Project 2 Submission${NC}"
     else
         proj1=1
+
+        if [ -f "proj/"*".xls" ]; then
+            echo -e "${GREEN}Found possible .xls file for control signals${NC}"
+        elif [ -f "proj/"*".xlsx" ]; then
+            echo -e "${GREEN}Found possible .xlsx file for control signals${NC}"
+        elif [ -f "proj/"*".csv" ]; then
+            echo -e "${GREEN}Found possible .csv file for control signals${NC}"
+        else
+            echo -e "${ORANGE}Did not find a .xls, .xlsx, or .csv file for control signals.\nPlease include this file, or ignore if you already included it in your report."
+        fi
         suff=_proj1
         echo -e "${GREEN}Making Project 1 Submission${NC}"
 
@@ -106,7 +116,10 @@ elif [ "$1" == "submit" ]; then
     cp -r "proj/src" "submissions"
     cp -r "proj/mips" "submissions"
     cp -r "proj/test" "submissions"
-    cp  "proj/"*".pdf" "submissions"
+    cp  "proj/"*".pdf" "submissions" 2>/dev/null
+    cp  "proj/"*".xls" "submissions" 2>/dev/null
+    cp  "proj/"*".csv" "submissions" 2>/dev/null
+    cp  "proj/"*".xlsx" "submissions" 2>/dev/null
     (cd "submissions" && zip --quiet -r "submit${suff}.zip" *)
     rm -rf "submissions/src"
     rm -rf "submissions/mips"

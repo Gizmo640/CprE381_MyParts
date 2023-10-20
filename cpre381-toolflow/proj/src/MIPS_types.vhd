@@ -24,8 +24,11 @@ package MIPS_types is
     reg_to_mem : std_logic;
   end record control_t;
 
+  type STD_LOGIC_ARRAY is array(natural range <>) of STD_LOGIC_VECTOR(31 downto 0);
+
 end package MIPS_types;
 
 package body MIPS_types is
   -- Probably won't need anything here... function bodies, etc.
 end package body MIPS_types;
+

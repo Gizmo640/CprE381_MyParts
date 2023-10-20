@@ -16,8 +16,9 @@ register_write_re = re.compile(r'Register Write to Reg: (?P<reg>[0-9A-Fa-fxX]+) 
 memory_write_re = re.compile(r'Memory Write to Addr: (?P<addr>[0-9A-Fa-fxX]+) Val: (?P<val>[0-9A-Fa-fxX]+)')
 ovf_re = re.compile(r'Arithmetic Overflow Detected')
 nop_re = re.compile(r'Register Write to Reg: 0x00.*')
+
 student_done_re = re.compile(r'Execution is stopping! Clock Cycle: (?P<cycle>[0-9]+)')
-mars_done_re = re.compile(r'[inst #5] halt')
+mars_done_re = re.compile(r'\[inst #(?P<inst>\d+)\] halt')
 
 def main():
     max_mismatches = 2
@@ -76,18 +77,20 @@ class StudentReader:
                 # File is over
                 return None, None, None
 
-            cycle = student_firstline_re.search(self.buff.pop(0))
+            cycle = student_firstline_re.search(self.buff[0])
 
             if not cycle:
                 # We didn't read a valid cycle, skip and move on
                 student_done = student_done_re.search(self.buff.pop(0))
                 if student_done:
-                    self.cyc_num = int(student_done.group("cycle")) - 1
+                    self.cyc_num = int(student_done.group("cycle")) + 1 # Add 1 because cycle count starts at zero
                     return None, None, None
 
                 return self.read_next()
+            else:
+                self.buff.pop(0)
 
-            self.cyc_num = cycle.group("cycle")
+            self.cyc_num = int(cycle.group("cycle")) + 1
 
             # Do we have a register or memory write next?
             acc = memory_write_re.search(self.buff[0])
@@ -145,11 +148,19 @@ class MarsReader:
                 # File is over
                 return None, None, None
 
-            inst = mars_firstline_re.search(self.buff.pop(0))
+            inst = mars_firstline_re.search(self.buff[0])
+
+
 
             if not inst:
                 # We didn't read a valid cycle, skip and move on
+                mars_done = mars_done_re.search(self.buff.pop(0))
+                if mars_done:
+                    self.inst_num = int(mars_done.group("inst"))
+                    return None, None, None
                 return self.read_next()
+            else:
+                self.buff.pop(0)
 
             self.inst_num = inst.group("num")
 
