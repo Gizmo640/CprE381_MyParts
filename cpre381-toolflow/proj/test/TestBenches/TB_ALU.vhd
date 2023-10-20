@@ -5,7 +5,7 @@ entity TB_ALU is
 	generic(HalfCycle_CLK: time := 10 ns);
 end TB_ALU;
 
-architecture TB of TB_ALU is
+architecture mixed of TB_ALU is
 	constant CLK_Cycle: time := HalfCycle_CLK*2;--20ns
 	signal CLK: std_logic;
 	constant N: INTEGER := 32;
@@ -56,50 +56,156 @@ begin
 		wait for HalfCycle_CLK/2;
 
 
-        --DOYLE MAKE SOME TEST CASES
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0000"; --add
+        s_BitsA_In <= x"0000000F";
+        s_BitsB_In <= x"000000F0";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"00000001";
-        BitsB_In <= x"00000000";
-		wait for CLK_Cycle;--20ns
-        
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0000"; --add
+        s_BitsA_In <= x"FFFFFFF1";
+        s_BitsB_In <= x"FFFFFFFF";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0000"; --add
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"00000000";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0001"; --addu
+        s_BitsA_In <= x"00000002";
+        s_BitsB_In <= x"00000001";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0001"; --addu
+        s_BitsA_In <= x"00000001";
+        s_BitsB_In <= x"00000001";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0010"; --and
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0010"; --and
+        s_BitsA_In <= x"01010101";
+        s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "0000";
-        BitsA_In <= x"0000000F";
-        BitsB_In <= x"000000F0";
+        s_ALU_Op <= "0011"; --or
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0011"; --or
+        s_BitsA_In <= x"FFFFFFFF";
+        s_BitsB_In <= x"FFFFFFFF";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0100"; --nor
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0100"; --nor
+        s_BitsA_In <= x"FFFFFFFF";
+        s_BitsB_In <= x"00000000";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0101"; --xor
+        s_BitsA_In <= x"00001111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0101"; --xor
+        s_BitsA_In <= x"FFFFFFFF";
+        s_BitsB_In <= x"FFFFFFFF";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0110"; --slt
+        s_BitsA_In <= x"00000001";
+        s_BitsB_In <= x"00000000";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0110"; --slt
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"00000001";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0111"; --sll
+        s_ShiftAmount <= "00001";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0111"; --sll
+        s_ShiftAmount <= "11111";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1000"; --srl
+        s_ShiftAmount <= "00001";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1000"; --srl
+        s_ShiftAmount <= "11111";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1001"; --sra
+        s_ShiftAmount <= "11111";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1001"; --sra
+        s_ShiftAmount <= "00001";
+        s_BitsA_In <= x"11111111";
+        s_BitsB_In <= x"11111111";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1010"; --sub
+        s_BitsA_In <= x"00000002";
+        s_BitsB_In <= x"00000001";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1010"; --sub
+        s_BitsA_In <= x"00000001";
+        s_BitsB_In <= x"00000002";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1010"; --sub
+        s_BitsA_In <= x"00000002";
+        s_BitsB_In <= x"00000002";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1011"; --subu
+        s_BitsA_In <= x"00000001";
+        s_BitsB_In <= x"00000002";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1010"; --subu
+        s_BitsA_In <= x"00000002";
+        s_BitsB_In <= x"00000002";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1010"; --subu
+        s_BitsA_In <= x"FFFFFFFF";
+        s_BitsB_In <= x"00000001";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1011"; --lui
+        s_BitsA_In <= x"00000000";
+        s_BitsB_In <= x"00000001";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "1011"; --lui
+        s_BitsA_In <= x"FFFFFFFF";
+        s_BitsB_In <= x"00000001";
+		wait for CLK_Cycle;--20ns
+
 	end process;
-end TB;
+end mixed;

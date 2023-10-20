@@ -1,0 +1,33 @@
+[N
+4
+3
+5 mixed
+2
+6 tb_alu
+4
+13 HalfCycle_CLK
+1
+112 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches/work
+]
+[G
+1
+2
+3
+1
+4
+0
+0
+0
+0
+8 8
+-128
+-106
+-104
+0
+0
+0
+0
+0
+0
+0
+]
