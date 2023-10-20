@@ -7,7 +7,7 @@ entity ALU is
 		ShiftAmount : in std_logic_vector(4 downto 0);
 		BitsA_In: in STD_LOGIC_VECTOR(31 downto 0); --rs
 		BitsB_In: in STD_LOGIC_VECTOR(31 downto 0); --rt
-		Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
+		ALU_Out: out STD_LOGIC_VECTOR(31 downto 0);
 		OverFlow_Flag: out STD_LOGIC;
 		Zero_Flag: out STD_LOGIC;
 		Carry_Flag: out STD_LOGIC);
@@ -68,6 +68,7 @@ architecture Design of ALU is
 			Signed_Signal_Out: out STD_LOGIC);
 	end component;
 
+	--ALU control output
 	signal s_AddSubtract_Signal: STD_LOGIC;
 	signal s_LogicSelect_Signal: STD_LOGIC_VECTOR(1 downto 0);
 	signal s_InvertSelect_Signal: STD_LOGIC;
@@ -83,22 +84,28 @@ architecture Design of ALU is
 
 	signal s_Carry_Out: STD_LOGIC;
 
+	--and, or, xor, nor
 	signal s_AND_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_OR_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_XOR_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_InvertedLogic_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_Inverter_Out: STD_LOGIC_VECTOR(31 downto 0);
 
+	--logical component outputs
 	signal s_Arithmetic_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_Logic_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_Shifter_Out: STD_LOGIC_VECTOR(31 downto 0);
 
+	--mux outputs
 	signal s_ArithmeticLogicMux_Out: STD_LOGIC_VECTOR(31 downto 0);
 	signal s_ALUShifterMux_Out: STD_LOGIC_VECTOR(31 downto 0);
 
+	-- huh??
 	signal s_ZeroOneSelect_Signal: STD_LOGIC;
 	signal s_SLT_Out: STD_LOGIC_VECTOR(31 downto 0);
+
 begin
+
 	ALUControl: ALU_ControlUnit
 		port map(
 			ALU_Op,
@@ -110,10 +117,10 @@ begin
 			s_ALUShifterSelect_Signal,
 			s_Signed_Signal);
 
-	Shifter: Barrel_Shifter
+	Shifter: Barrel_Shifter --BACKWARDS??
 		port map(
 			ShiftAmount,
-			BitsB_In, --is rt correct?
+			BitsB_In,
 			s_Shift_RightLeft_Signal,
 			s_Shifter_Out);
 
@@ -129,13 +136,15 @@ begin
 			s_Zero_Flag,
 			s_Carry_Flag);
 
+	--Flag Setting
 	OverFlow_Flag <= s_OverFlow_Flag and s_Signed_Signal;
 	Zero_Flag <= s_Zero_Flag;
 	Carry_Flag <= s_Carry_Flag;
 
 	s_ZeroOneSelect_Signal <= s_Carry_Flag and (not s_Zero_Flag);
 
-	STL_Mux: NBit_2t1Mux
+	--Not sure how this is an option for the output
+	SLT_Mux: NBit_2t1Mux
 		generic map(32)
 		port map(
 			s_ZeroOneSelect_Signal,
@@ -143,6 +152,7 @@ begin
 			x"00000001",
 			s_SLT_Out);
 
+	--Bitwise Operations
 	s_AND_Out <= BitsA_In and BitsB_In;
 	s_OR_Out <= BitsA_In or BitsB_In;
 	s_XOR_Out <= BitsA_In xor BitsB_In;
@@ -151,37 +161,40 @@ begin
 		generic map(32)
 		port map(
 			s_LogicSelect_Signal,
-			s_SLT_Out,
-			s_AND_Out,
-			s_OR_Out,
-			s_XOR_Out,
-			s_Logic_Out);
+			s_SLT_Out, -- (why is stl connected here?)
+			s_AND_Out, --and
+			s_OR_Out, --or
+			s_XOR_Out, --xor
+			s_Logic_Out); --output of mux
 
+
+	--this is probably used for nor
 	s_InvertedLogic_Out <= not s_Logic_Out;
 
+	--Either outputs the normal bitwise or it outputs nor
 	Inverter_Mux: NBit_2t1Mux
 		generic map(32)
 		port map(
 			s_InvertSelect_Signal,
-			s_Logic_Out,
-			s_InvertedLogic_Out,
+			s_Logic_Out, --other bitwise
+			s_InvertedLogic_Out, --nor
 			s_Inverter_Out);
 
 	ArithmeticLogic_Mux: NBit_2t1Mux
 		generic map(32)
 		port map(
 			s_ArithmeticLogicSelect_Signal,
-			s_Arithmetic_Out,
-			s_Inverter_Out,
+			s_Inverter_Out, --0 (bitwise function output)
+			s_Arithmetic_Out,	--1 (add/sub output)
 			s_ArithmeticLogicMux_Out);
 
 	ALUShifter_Mux: NBit_2t1Mux
 		generic map(32)
 		port map(
 			s_ALUShifterSelect_Signal,
-			s_ArithmeticLogicMux_Out,
-			s_Shifter_Out,
-			s_ALUShifterMux_Out);
+			s_ArithmeticLogicMux_Out, --when sig is 0
+			s_Shifter_Out, --when sig is 1
+			s_ALUShifterMux_Out); --output of ALU
 
-	Bits_Out <= s_ALUShifterMux_Out;
+	ALU_Out <= s_ALUShifterMux_Out;
 end Design;

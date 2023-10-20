@@ -16,7 +16,7 @@ architecture mixed of TB_ALU is
             ShiftAmount : in std_logic_vector(4 downto 0);
             BitsA_In: in STD_LOGIC_VECTOR(31 downto 0); --rs
             BitsB_In: in STD_LOGIC_VECTOR(31 downto 0); --rt
-            Bits_Out: out STD_LOGIC_VECTOR(31 downto 0);
+            ALU_Out: out STD_LOGIC_VECTOR(31 downto 0);
             OverFlow_Flag: out STD_LOGIC;
             Zero_Flag: out STD_LOGIC;
             Carry_Flag: out STD_LOGIC);
@@ -26,7 +26,7 @@ architecture mixed of TB_ALU is
     signal s_ShiftAmount : std_logic_vector(4 downto 0) := "00000"; --shamt
     signal s_BitsA_In: STD_LOGIC_VECTOR(31 downto 0); --rs
     signal s_BitsB_In: STD_LOGIC_VECTOR(31 downto 0); --rt
-    signal s_Bits_Out: STD_LOGIC_VECTOR(31 downto 0);
+    signal s_ALU_Out: STD_LOGIC_VECTOR(31 downto 0);
     signal s_OverFlow_Flag: STD_LOGIC;
     signal s_Zero_Flag: STD_LOGIC;
     signal s_Carry_Flag: STD_LOGIC;
@@ -45,7 +45,7 @@ begin
             ShiftAmount => s_ShiftAmount,
             BitsA_In => s_BitsA_In,
             BitsB_In => s_BitsB_In,
-            Bits_Out => s_Bits_Out,
+            ALU_Out => s_ALU_Out,
             OverFlow_Flag => s_OverFlow_Flag,
             Zero_Flag => s_Zero_Flag,
             Carry_Flag => s_Carry_Flag
@@ -57,12 +57,12 @@ begin
 
 
         s_ALU_Op <= "0000"; --add
-        s_BitsA_In <= x"0000000F";
-        s_BitsB_In <= x"000000F0";
+        s_BitsA_In <= x"00000005";
+        s_BitsB_In <= x"000000F3";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "0000"; --add
-        s_BitsA_In <= x"FFFFFFF1";
+        s_BitsA_In <= x"FFFFFFFF";
         s_BitsB_In <= x"FFFFFFFF";
 		wait for CLK_Cycle;--20ns
 
@@ -133,37 +133,36 @@ begin
 
         s_ALU_Op <= "0111"; --sll
         s_ShiftAmount <= "00001";
-        s_BitsA_In <= x"11111111";
-        s_BitsB_In <= x"11111111";
+        s_BitsB_In <= x"FFFFFFFF";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "0111"; --sll
         s_ShiftAmount <= "11111";
-        s_BitsA_In <= x"11111111";
-        s_BitsB_In <= x"11111111";
+        s_BitsB_In <= x"FFFFFFFF";
+		wait for CLK_Cycle;--20ns
+
+        s_ALU_Op <= "0111"; --sll
+        s_ShiftAmount <= "11111";
+        s_BitsB_In <= x"0000FFFF";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "1000"; --srl
         s_ShiftAmount <= "00001";
-        s_BitsA_In <= x"11111111";
         s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "1000"; --srl
         s_ShiftAmount <= "11111";
-        s_BitsA_In <= x"11111111";
         s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "1001"; --sra
         s_ShiftAmount <= "11111";
-        s_BitsA_In <= x"11111111";
         s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
         s_ALU_Op <= "1001"; --sra
         s_ShiftAmount <= "00001";
-        s_BitsA_In <= x"11111111";
         s_BitsB_In <= x"11111111";
 		wait for CLK_Cycle;--20ns
 
@@ -187,22 +186,22 @@ begin
         s_BitsB_In <= x"00000002";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "1010"; --subu
+        s_ALU_Op <= "1011"; --subu
         s_BitsA_In <= x"00000002";
         s_BitsB_In <= x"00000002";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "1010"; --subu
+        s_ALU_Op <= "1011"; --subu
         s_BitsA_In <= x"FFFFFFFF";
         s_BitsB_In <= x"00000001";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "1011"; --lui
+        s_ALU_Op <= "1100"; --lui
         s_BitsA_In <= x"00000000";
         s_BitsB_In <= x"00000001";
 		wait for CLK_Cycle;--20ns
 
-        s_ALU_Op <= "1011"; --lui
+        s_ALU_Op <= "1100"; --lui
         s_BitsA_In <= x"FFFFFFFF";
         s_BitsB_In <= x"00000001";
 		wait for CLK_Cycle;--20ns
