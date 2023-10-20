@@ -301,7 +301,7 @@ begin
       ShiftAmount => s_Inst(10 downto 6),                        --in std_logic_vector(4 downto 0);
       BitsA_In => s_Read1,                             --in STD_LOGIC_VECTOR(31 downto 0);
       BitsB_In => s_ALUSrcMuxOut,                             --in STD_LOGIC_VECTOR(31 downto 0);
-      Bits_Out => oALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
+      ALU_Out => oALUOut,                             --out STD_LOGIC_VECTOR(31 downto 0);
       OverFlow_Flag => s_Ovfl,                        --out STD_LOGIC;
       Zero_Flag => s_Zero,                            --out STD_LOGIC;
       Carry_Flag => open --new sig??                            --out STD_LOGIC
