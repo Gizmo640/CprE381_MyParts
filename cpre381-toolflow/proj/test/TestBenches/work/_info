@@ -1,0 +1,148 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11e vcom 2023.2_2 2023.06, Jun  9 2023
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches
+T_opt
+!s110 1697772872
+VR<`^K1V>:?NH`REhGJGk<2
+04 6 5 work tb_alu mixed 1
+=1-7486e2289dba-6531f548-c96f2-46f42
+R0
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work +acc
+tCvgOpt 0
+n@_opt
+OL;O;2023.2_2;77
+Ealu
+Z2 w1697744508
+Z3 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
+Z4 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
+!i122 1
+R1
+Z5 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU.vhd
+Z6 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU.vhd
+l0
+L4 1
+VheYbJ]MM@M3MNjlbz@?TZ1
+!s100 ]RFEl?6m`5a@Im`6>SlMF3
+Z7 OL;C;2023.2_2;77
+32
+Z8 !s110 1697772549
+!i10b 1
+Z9 !s108 1697772549.000000
+Z10 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU.vhd|
+Z11 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU.vhd|
+!i113 0
+Z12 o-work work
+Z13 tExplicit 1 CvgOpt 0
+Adesign
+R3
+R4
+DEx4 work 3 alu 0 22 heYbJ]MM@M3MNjlbz@?TZ1
+!i122 1
+l101
+L16 172
+V_SnRVR^;lNl??jlU^bUU83
+!s100 S6X54GbQTma827FZDN:Yf3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 0
+R12
+R13
+Ealu_controlunit
+Z14 w1697761376
+R3
+R4
+!i122 0
+R1
+Z15 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU_ControlUnit.vhd
+Z16 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU_ControlUnit.vhd
+l0
+L4 1
+VmL4edeZ_kkj6:JS11Q?253
+!s100 VnOGWJE0OZc0K2:4:<djZ1
+R7
+32
+Z17 !s110 1697772548
+!i10b 1
+Z18 !s108 1697772548.000000
+Z19 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|
+Z20 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|
+!i113 0
+R12
+R13
+Adesign
+R3
+R4
+DEx4 work 15 alu_controlunit 0 22 mL4edeZ_kkj6:JS11Q?253
+!i122 0
+l19
+L16 29
+VcoMHL2G@I5cDi[mbz_8<W0
+!s100 68OEb<FdFOAg[YaAa1IPa1
+R7
+32
+R17
+!i10b 1
+R18
+R19
+R20
+!i113 0
+R12
+R13
+Etb_alu
+Z21 w1697772859
+R3
+R4
+!i122 5
+R1
+Z22 8/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches/TB_ALU.vhd
+Z23 F/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches/TB_ALU.vhd
+l0
+L4 1
+V899hGKdZH:n[X0BoDTUki3
+!s100 VA@ODPAIjP3zS^DlLCbla3
+R7
+32
+Z24 !s110 1697772865
+!i10b 1
+Z25 !s108 1697772865.000000
+Z26 !s90 -reportprogress|300|-work|work|/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches/TB_ALU.vhd|
+Z27 !s107 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/test/TestBenches/TB_ALU.vhd|
+!i113 0
+R12
+R13
+Amixed
+R3
+R4
+DEx4 work 6 tb_alu 0 22 899hGKdZH:n[X0BoDTUki3
+!i122 5
+l34
+L8 204
+V_W]@3E3jfdEnaD9:f2zfi3
+!s100 Kfj]JkZWV[gam[78NS1oC0
+R7
+32
+R24
+!i10b 1
+R25
+R26
+R27
+!i113 0
+R12
+R13
