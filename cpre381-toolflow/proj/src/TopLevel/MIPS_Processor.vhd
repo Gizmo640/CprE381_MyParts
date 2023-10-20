@@ -162,8 +162,8 @@ architecture structure of MIPS_Processor is
   --SIGNALS FOR MAPPING
   -- Required data memory signals
   signal s_DMemWr       : std_logic; -- TODO: use this signal as the final active high data memory write enable signal
-  signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input
-  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input (ALSO ALU OUT)
+  signal s_DMemAddr     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory address input (ALSO THE ALU OUTPUT)
+  signal s_DMemData     : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the final data memory data input
   signal s_DMemOut      : std_logic_vector(N-1 downto 0); -- TODO: use this signal as the data memory output
  
   -- Required register file signals 
@@ -310,7 +310,8 @@ begin
   --DMem address is the ALU output
   s_DMemAddr <= oALUOut;
 
-  s_BranchAndOut <= s_Branch and s_Zero; --ALU Zero and Branch signal
+ --ALU Zero and Branch signal
+  s_BranchAndOut <= s_Branch and s_Zero;
 
   DMemMux: NBit_2t1Mux
     port map(

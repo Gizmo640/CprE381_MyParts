@@ -19,19 +19,19 @@ architecture Design of ALU_ControlUnit is
 begin
 	with ALU_ControlUnit_In select
 	s_ControlBits <=
-		"00001001" when "0000",
-		"00001000" when "0001",
-		"00100000" when "0010",
-		"01000000" when "0011",
-		"01010000" when "0100",
-		"01100000" when "0101",
-		"00000000" when "0110",
-		"00000010" when "0111",
-		"00000110" when "1000",
-		"00000111" when "1001",
-		"10001001" when "1010",
-		"10001000" when "1011",
-		"00000010" when "1100",
+		"00001001" when "0000", --add
+		"00001000" when "0001", --addu
+		"00100000" when "0010", --and
+		"01000000" when "0011", --or
+		"01010000" when "0100",	--nor
+		"01100000" when "0101",	--xor
+		"00000000" when "0110",	--slt
+		"00000010" when "0111",	--sll
+		"00000110" when "1000", --srl
+		"00000111" when "1001", --sra
+		"10001001" when "1010", --sub
+		"10001000" when "1011",	--subu
+		"00000010" when "1100",	--lui
 		"11111111" when others;
 
 	AddSubtract_Signal_Out <= s_ControlBits(7);
