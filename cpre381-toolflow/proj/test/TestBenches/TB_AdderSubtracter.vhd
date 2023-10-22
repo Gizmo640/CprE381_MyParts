@@ -10,7 +10,7 @@ architecture TB of TB_AdderSubtracter is
 	signal CLK: std_logic;
 
 
-	constant N: INTEGER := 2;
+	constant N: INTEGER := 3;
 	component NBit_AdderSubtracter is
 		generic(N: INTEGER);
 		port(
@@ -46,18 +46,23 @@ begin
 
 	TEST_CASES: process begin
 		AddSubtract_Signal <= '0';
-		BitsA_In <= "00";
-		BitsB_In <= "00";
+		BitsA_In <= "000";
+		BitsB_In <= "000";
 		wait for CLK_Cycle;
 
 		AddSubtract_Signal <= '1';
-		BitsA_In <= "00";
-		BitsB_In <= "00";
+		BitsA_In <= "000";
+		BitsB_In <= "000";
 		wait for CLK_Cycle;
 
 		AddSubtract_Signal <= '0';
-		BitsA_In <= "01";
-		BitsB_In <= "10";
+		BitsA_In <= "001";
+		BitsB_In <= "010";
+		wait for CLK_Cycle;
+
+		AddSubtract_Signal <= '0';
+		BitsA_In <= "010";
+		BitsB_In <= "001";
 		wait for CLK_Cycle;
 
 		AddSubtract_Signal <= '0';

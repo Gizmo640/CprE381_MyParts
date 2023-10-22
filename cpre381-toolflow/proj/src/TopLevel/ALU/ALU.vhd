@@ -118,11 +118,11 @@ begin
 			s_ALUShifterSelect_Signal,
 			s_Signed_Signal);
 
-	--for lui
+	--For lui: shift amount is always 16 for lui instruction
 	s_ShiftAmount <=
 	"10000" when (ALU_Op = "1100") else ShiftAmount;
 
-	Shifter: Barrel_Shifter --BACKWARDS??
+	Shifter: Barrel_Shifter
 		port map(
 			s_ShiftAmount,
 			BitsB_In, --ALUSrc mux output (rt or immediate are shifted, never rs)
@@ -146,7 +146,9 @@ begin
 	Zero_Flag <= s_Zero_Flag;
 	Carry_Flag <= s_Carry_Flag;
 
-	s_ZeroOneSelect_Signal <= s_Carry_Flag and (not s_Zero_Flag);
+	--s_ZeroOneSelect_Signal <= s_Carry_Flag and (not s_Zero_Flag); --not working for negative numbers, add an or gate?
+	--my code better hehe
+	s_ZeroOneSelect_Signal <= '0' when (s_Arithmetic_Out(31) = '0') else '1';
 
 	--Not sure how this is an option for the output
 	SLT_Mux: NBit_2t1Mux
