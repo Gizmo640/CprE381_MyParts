@@ -32,6 +32,7 @@ architecture dataflow of Control is
     ZeroSign <=
     '0' when (Opcode = "001100") else --andi
     '0' when (Opcode = "001101") else --ori
+    '0' when (Opcode = "001110") else  --xori
     '1'; --everything else uses ZeroSigned extension
 
     Jump <=
