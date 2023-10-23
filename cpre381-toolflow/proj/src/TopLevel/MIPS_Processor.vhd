@@ -246,7 +246,7 @@ begin
              we   => s_DMemWr, --gets output from control signal MemWrite
              q    => s_DMemOut); --mapped to MemToRegMux
 
-  -- TODO: Implement the rest of your processor below this comment! 
+
   --REGISTER/ALU/DMEM LOGIC
 
   RegDstMux: NBit_2t1Mux
@@ -363,7 +363,7 @@ begin
 
     s_InstShift26t28 <= s_Inst(25 downto 0) & "00"; --shift left 2 (sig has bit width of 28)
 
-    s_JumpAddress <= s_Inst(27 downto 0) & s_PC_plus_4(31 downto 28);
+    s_JumpAddress <= s_PC_plus_4(31 downto 28) & s_InstShift26t28(27 downto 0); --
 
     s_shiftedSignExtenderOut <= s_ExtendedOut(29 downto 0) & "00"; --shift left 2 (sig has bitwidth of 32)
 
@@ -405,6 +405,7 @@ begin
 		  Output_Out => s_PCIn
     );
 
+  -- should we have this at the start???
   --PC (just a 32 bit dff)
   PC: PC_Register
     port map(

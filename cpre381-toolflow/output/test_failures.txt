@@ -1,1 +1,6 @@
-proj/mips/fa2022/base/beq_5.s
+proj/mips/fa2022/base/jal_0.s
+proj/mips/fa2022/base/jal_1.s
+proj/mips/fa2022/base/jal_2.s
+proj/mips/fa2022/base/jal_3.s
+proj/mips/fa2022/base/jal_4.s
+proj/mips/fa2022/base/jal_5.s
