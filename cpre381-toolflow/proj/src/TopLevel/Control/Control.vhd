@@ -60,8 +60,8 @@ architecture dataflow of Control is
     ALUOp <=
     "0000" when ((Opcode = "000000") and (Funct = "100000")) else  --add
     "0000" when (Opcode = "001000") else  --add (addi)
-    "0000" when (Opcode = "100011") else --lw
-    "0000" when (Opcode = "101011") else --sw
+    "0000" when (Opcode = "100011") else --add (lw)
+    "0000" when (Opcode = "101011") else --add (sw)
     "0001" when ((Opcode = "000000") and (Funct = "100001")) else  --addu
     "0001" when (Opcode = "001001") else --addu(addiu)
     "0010" when ((Opcode = "000000") and (Funct = "100100")) else  --and
@@ -77,10 +77,11 @@ architecture dataflow of Control is
     "1000" when ((Opcode = "000000") and (Funct = "000010")) else  -- srl 
     "1001" when ((Opcode = "000000") and (Funct = "000011")) else  -- sra
     "1010" when ((Opcode = "000000") and (Funct = "100010")) else  -- sub
+    "1010" when (Opcode = "000100") else   -- sub (beq)
+    "1010" when (Opcode = "000101") else   -- sub (bne)
     "1011" when ((Opcode = "000000") and (Funct = "100011")) else  -- subu
     "1100" when (Opcode = "001111") else   -- lui
-    -- "1110" when (Opcode = "000100") else   -- beq
-    "1111"; --idc
+    "1111"; --IDC
 
 
     ALUSrc <=
