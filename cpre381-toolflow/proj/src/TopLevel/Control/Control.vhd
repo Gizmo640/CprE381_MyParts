@@ -33,7 +33,7 @@ architecture dataflow of Control is
     '0' when (Opcode = "001100") else --andi
     '0' when (Opcode = "001101") else --ori
     '0' when (Opcode = "001110") else  --xori
-    '1'; --everything else uses ZeroSigned extension
+    '1'; --everything else uses Signed extension
 
     Jump <=
     '1' when (Opcode = "000010") else '0'; --jump

@@ -1,2 +1,1 @@
-proj/mips/fa2022/base/sra_4.s
-proj/mips/fa2022/base/sra_5.s
+proj/mips/fa2022/base/lw_0.s

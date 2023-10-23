@@ -6,6 +6,7 @@ entity Barrel_Shifter is
 	--generic(N: INTEGER);
 	port(
 		shiftAmount : in std_logic_vector(4 downto 0); 
+		UnsignedSigned: in std_logic;
 		BarrelInput : in std_logic_vector(31 downto 0); 
 		LeftOrRight : in std_logic; --0 is right and 1 is left
 		BarrelOutput : out std_logic_vector(31 downto 0));
@@ -22,7 +23,7 @@ architecture structure of Barrel_Shifter is
 	signal stage3MuxOutput : std_logic_vector(31 downto 0);
 	signal stage2MuxOutput : std_logic_vector(31 downto 0);
 	signal stage1MuxOutput : std_logic_vector(31 downto 0);
-	
+	signal s_UnsignedSigned : std_logic;
 
 
 	--component mux 2t1
@@ -36,6 +37,9 @@ architecture structure of Barrel_Shifter is
 
 	
 begin
+
+--check sign
+s_UnsignedSigned <= UnsignedSigned and BarrelInput(31);
 
 --CHOOSES RIGHT OR LEFT SHIFT (NORMAL INPUT OR REVERSED INPUT)
 	LEFT_OR_RIGHT: for i in 31 downto 0 generate
@@ -54,7 +58,7 @@ begin
 			MuxCascade: mux2t1
 					port map(
 							i_D0 => s_MuxLorR(i), --need a signal
-							i_D1 => '0',
+							i_D1 => s_UnsignedSigned,
 							i_S => shiftAmount(4),
 							o_0 => stage5MuxOutput(i)
 					);
@@ -78,7 +82,7 @@ begin
 			MuxCascade: mux2t1
 					port map(
 							i_D0 => stage5MuxOutput(i),
-							i_D1 => '0',
+							i_D1 => s_UnsignedSigned,
 							i_S => shiftAmount(3),
 							o_0 => stage4MuxOutput(i)
 					);
@@ -100,7 +104,7 @@ begin
 			MuxCascade: mux2t1
 					port map(
 							i_D0 => stage4MuxOutput(i),
-							i_D1 => '0',
+							i_D1 => s_UnsignedSigned,
 							i_S => shiftAmount(2),
 							o_0 => stage3MuxOutput(i)
 					);
@@ -122,7 +126,7 @@ begin
 			MuxCascade: mux2t1
 					port map(
 							i_D0 => stage3MuxOutput(i),
-							i_D1 => '0',
+							i_D1 => s_UnsignedSigned,
 							i_S => shiftAmount(1),
 							o_0 => stage2MuxOutput(i)
 
@@ -145,7 +149,7 @@ begin
 	Stage1UpperBit :  mux2t1
 					port map(
 							i_D0 => stage2MuxOutput(31),
-							i_D1 => '0',
+							i_D1 => s_UnsignedSigned,
 							i_S => shiftAmount(0),
 							o_0 => stage1MuxOutput(31)
 					);

@@ -49,11 +49,12 @@ architecture structure of MIPS_Processor is
 
   --Can shift left or right N Bits 
   component BarrelShifter is
-  	port(
-		    shiftAmount : in std_logic_vector(4 downto 0); 
-		    BarrelInput : in std_logic_vector(31 downto 0); 
-		    LeftOrRight : in std_logic; --0 is right and 1 is left
-		    BarrelOutput : out std_logic_vector(31 downto 0));
+    port(
+      shiftAmount : in std_logic_vector(4 downto 0); 
+      UnsignedSigned: in std_logic;
+      BarrelInput : in std_logic_vector(31 downto 0); 
+      LeftOrRight : in std_logic; --0 is right and 1 is left
+      BarrelOutput : out std_logic_vector(31 downto 0));
   end component;
 
   --Adder for Processor 
