@@ -11,16 +11,18 @@ architecture mixed of TB_BarrelShifter is
 	signal CLK: std_logic;
 
     component Barrel_Shifter is
-	port(
-		shiftAmount : in std_logic_vector(4 downto 0); 
-		BarrelInput : in std_logic_vector(31 downto 0); 
-		LeftOrRight : in std_logic; --0 is right and 1 is left
-		BarrelOutput : out std_logic_vector(31 downto 0));
+        port(
+            shiftAmount : in std_logic_vector(4 downto 0); 
+            UnsignedSigned: in std_logic; --chooses arithmetic or logical
+            BarrelInput : in std_logic_vector(31 downto 0); 
+            LeftOrRight : in std_logic; --0 is left and 1 is right
+            BarrelOutput : out std_logic_vector(31 downto 0));
     end component;
 
 
     --signals
     signal s_shiftAmount : std_logic_vector(4 downto 0);
+    signal s_UnsignedSigned : std_logic := '0';
     signal s_BarrelInput : std_logic_vector(31 downto 0);
     signal s_LeftOrRight : std_logic;
     signal s_BarrelOutput : std_logic_vector(31 downto 0);
@@ -39,6 +41,7 @@ begin
     DUT0: Barrel_Shifter
         port map(
             shiftAmount => s_shiftAmount,
+            UnsignedSigned => s_UnsignedSigned,
             BarrelInput => s_BarrelInput,
      	    LeftOrRight => s_LeftOrRight, --0 is left and 1 is right
             BarrelOutput => s_BarrelOutput
@@ -68,6 +71,21 @@ begin
     s_BarrelInput <= x"FFFFFFFF";
     s_shiftAmount <= "11111";
     wait for HalfCycle_CLK*2;
+
+    --TEST CASE 7
+    s_LeftOrRight <= '1';
+    s_UnsignedSigned <= '1';
+    s_BarrelInput <= x"80000000";
+    s_shiftAmount <= "00001";
+    wait for HalfCycle_CLK*2;
+
+    --TEST CASE 8
+    s_LeftOrRight <= '1';
+    s_UnsignedSigned <= '1';
+    s_BarrelInput <= x"80000000";
+    s_shiftAmount <= "11111";
+    wait for HalfCycle_CLK*2;
+
 
     --TEST CASE 4   expected output is x"FFFF0000"
     s_LeftOrRight <= '0';

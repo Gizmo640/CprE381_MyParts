@@ -15,25 +15,29 @@ architecture mixed of TB_Control is
 
     --Control 
     component Control is
-        port(
-        Opcode: in std_logic_vector(5 downto 0);
-      --  ControlOut: std_logic_vector(11 downto 0);
-        Jump: out std_logic; --bit 0
-        Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
-        Branch: out std_logic;   --bit 2
-        Link: out std_logic;     --bit 3
-        MemRead: out std_logic;  --bit 4
-        MemWrite: out std_logic; --bit 5
-        MemtoReg: out std_logic; --bit 6
-        ALUOp: out std_logic_vector(1 downto 0); --bit 8, bit 7
-        ALUSrc: out std_logic;   --bit 9
-        RegWrite: out std_logic; --bit 10
-        RegDst: out std_logic  --bit 11
-    );
+      port(
+          Opcode: in std_logic_vector(5 downto 0);
+          Funct: in std_logic_vector(5 downto 0);
+          ZeroSign: out std_logic;
+          Jump: out std_logic; --bit 0
+          Jr: out std_logic;   --bit 1 (does jr need to be an ALU control sig? It depends on the funct code)
+          Branch: out std_logic;   --bit 2
+          Link: out std_logic;     --bit 3
+          MemRead: out std_logic;  --bit 4
+          MemWrite: out std_logic; --bit 5
+          MemtoReg: out std_logic; --bit 6
+          ALUOp: out std_logic_vector(3 downto 0);
+          ALUSrc: out std_logic;   --bit 9
+          RegWrite: out std_logic; --bit 10
+          RegDst: out std_logic;  --bit 11
+          Halt: out std_logic
+      );
     end component;
 
     --signals
     signal Opcode : std_logic_vector(5 downto 0);
+    signal Funct  : std_logic_vector(5 downto 0);
+    signal s_ZeroSign : std_logic;
     signal s_Jump : std_logic;
     signal s_Jr : std_logic;
     signal s_Branch : std_logic;
@@ -41,10 +45,11 @@ architecture mixed of TB_Control is
     signal s_MemRead : std_logic;
     signal s_MemWrite : std_logic;
     signal s_MemtoReg : std_logic;
-    signal s_ALUOp : std_logic_vector(1 downto 0); 
+    signal s_ALUOp : std_logic_vector(3 downto 0); 
     signal s_ALUSrc : std_logic; 
     signal s_RegWrite : std_logic;
     signal s_RegDst : std_logic;
+    signal s_Halt : std_logic;
 
     begin
 	Clock: process begin
@@ -57,6 +62,8 @@ architecture mixed of TB_Control is
     --mapping components 
     DUT0: Control port map(
             Opcode,
+            Funct,
+            s_ZeroSign,
             s_Jump,
             s_Jr,
             s_Branch,
@@ -67,13 +74,39 @@ architecture mixed of TB_Control is
             s_ALUOp,
             s_ALUSrc,
             s_RegWrite,
-            s_RegDst
+            s_RegDst,
+            s_Halt
         );
 
 	TEST_CASES: process begin
 		wait for HalfCycle_CLK/2;
 
-        Opcode <= "000000"; -- Rtype 
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "100001"; --add
+        wait for CLK_Cycle;--20ns
+
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "100000"; --add
+        wait for CLK_Cycle;--20ns
+        
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "100100"; --add
+        wait for CLK_Cycle;--20ns
+
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "100101"; --add
+        wait for CLK_Cycle;--20ns
+
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "101010"; --add
+        wait for CLK_Cycle;--20ns
+
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "000000"; --add
+        wait for CLK_Cycle;--20ns
+
+        Opcode <= "000000"; -- Rtypes
+        Funct <= "000010"; --add
         wait for CLK_Cycle;--20ns
 
         Opcode <= "001000";--addi

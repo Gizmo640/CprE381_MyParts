@@ -148,7 +148,6 @@ begin
 	Zero_Flag <= s_Zero_Flag;
 	Carry_Flag <= s_Carry_Flag;
 
-	--s_ZeroOneSelect_Signal <= s_Carry_Flag and (not s_Zero_Flag); --not working for negative numbers, add an or gate?
 	--my code better hehe
 	s_ZeroOneSelect_Signal <= '0' when (s_Arithmetic_Out(31) = '0') else '1';
 

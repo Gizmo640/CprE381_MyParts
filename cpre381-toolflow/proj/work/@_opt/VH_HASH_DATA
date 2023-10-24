@@ -1,11 +1,11 @@
 [N
 4
 3
-5 mixed
+9 structure
 1
 95 /home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow/proj/work
 2
-17 tb_barrel_shifter
+13 tb_alucontrol
 4
 13 HalfCycle_CLK
 ]
