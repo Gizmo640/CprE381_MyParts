@@ -36,13 +36,13 @@ architecture dataflow of Control is
     '1'; --everything else uses Signed extension
 
     Jump <=
-    '1' when (Opcode = "000010") else '0'; --jump
+    '1' when ((Opcode = "000010") or (Opcode = "000011")) else '0'; --jump
 
     Jr <= --how to do for jr
     '1' when ((Opcode = "000000") and (Funct = "001000")) else '0'; --rtype
 
     Branch <=
-    '1' when (Opcode = "000010") else --beq
+    '1' when (Opcode = "000100") else --beq
     '1' when (Opcode = "000101") else '0'; --bne
 
     Link <=

@@ -204,6 +204,7 @@ architecture structure of MIPS_Processor is
   signal s_InstShift26t28   : std_logic_vector(27 downto 0); --this is the output of the "shift left 2" component in our schematic, we will concat this with the 4 highest bits of PC+4
   signal s_JumpSignalMuxOut : std_logic_vector(31 downto 0); --the jump address is calculated from shifted inst bits being concatonated with the highest bits of PC+4 (goes into JumpMux)
   signal s_ZeroSign     : std_logic; --used in our sign extender (0 for zeroext and 1 for signext)
+  signal s_I_ZeroSign     : std_logic; --used in our sign extender (0 for zeroext and 1 for signext)
 
   -- Required fetch logic signal -- for jump and branch instructions (control)
   --signals for the output of the Control Signal Block
@@ -217,8 +218,6 @@ architecture structure of MIPS_Processor is
   signal s_MemRead : std_logic; --mem read output 
   signal s_ALUOp : std_logic_vector(3 downto 0);
   signal s_PCIn: std_logic_vector(31 downto 0);
-
-  signal s_MuxOUT: std_logic_vector(31 downto 0);
 
   signal s_oALUOut         : std_logic_vector(N-1 downto 0);
 begin
@@ -316,16 +315,27 @@ begin
   --DMem address is the ALU output
   s_DMemAddr <= s_oALUOut;
   oALUOut <= s_oALUOut;
-  
+
+  s_I_ZeroSign <= not s_Zero;
+  BranchMux: NBit_2t1Mux
+    generic map(1) 
+    port map(
+      InputSelect_Signal => s_Branch,
+      InputA_In => s_I_ZeroSign,
+      InputB_In => s_Zero,
+      Output_Out => s_BranchAndOut
+    );
+
+
  --ALU Zero and Branch signal
-  s_BranchAndOut <= s_Branch and s_Zero;
+  -- s_BranchAndOut <= s_Branch and s_Zero;
 
   DMemMux: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_MemtoReg,
       InputA_In => s_DMemAddr, --ALU ouput signal
       InputB_In => s_DMemOut, --
-      Output_Out => s_MuxOUT -- write data input
+      Output_Out => s_RegWrData -- write data input
     );
 
 
@@ -400,21 +410,12 @@ begin
 		  Output_Out => s_JumpSignalMuxOut
     );
 
-
   MUXJrSelectSignal: NBit_2t1Mux
     port map(
       InputSelect_Signal => s_Jr,--from control unit
 		  InputA_In => s_JumpSignalMuxOut, --0
 		  InputB_In => s_Read1, --1 chooses the register (read1)
 		  Output_Out => s_PCIn
-    );
-
-      Link: NBit_2t1Mux
-    port map(
-      InputSelect_Signal => s_Link,--from control unit
-		  InputA_In => s_MuxOUT, --0
-		  InputB_In => s_PC_plus_4, --1 chooses the register (read1)
-		  Output_Out => s_RegWrData
     );
 
   -- should we have this at the start???
