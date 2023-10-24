@@ -210,7 +210,8 @@ architecture structure of MIPS_Processor is
   signal s_Jr           : std_logic; --jr mux select
   signal s_Jump         : std_logic; --jump mux select
   signal s_Link         : std_logic; --jal mux select
-  signal s_Branch       : std_logic; --& with s_Zero
+  signal s_Branch       : std_logic; --& with s_InvZero
+  signal s_InvZero      : std_logic; --for branching
   signal s_ALUSrc       : std_logic; --PUT THIS IS LAB REPORT
   signal s_RegDst : std_logic; --reg dest 
   signal s_MemtoReg : std_logic; --output of Control Unit
@@ -317,8 +318,12 @@ begin
   s_DMemAddr <= s_oALUOut;
   oALUOut <= s_oALUOut;
   
- --ALU Zero and Branch signal
-  s_BranchAndOut <= s_Branch and s_Zero;
+
+  --Conditional branch (beq or bne), change to mux later
+  s_InvZero <= (not s_Zero) when (s_Inst(31 downto 26) = "000101") else s_Zero;
+
+  --ALU Zero and Branch signal
+  s_BranchAndOut <= s_Branch and s_InvZero;
 
   DMemMux: NBit_2t1Mux
     port map(
@@ -354,7 +359,7 @@ begin
     --UNSURE ABOUT MAJORITY OF INPUTS FOR THE ADDER(EXCEPT BITS A, BITS B, BITS OUT)
     PCAdder: NBit_LookAheadAdder -- first adder in schematic
       port map(
-        Carry_In => '0',--??
+        Carry_In => '0',
         Carry_Out => open,
         BitsA_In => s_NextInstAddr, --PC
         BitsB_In => x"00000004", --hard code 4
@@ -417,7 +422,6 @@ begin
 		  Output_Out => s_RegWrData
     );
 
-  -- should we have this at the start???
   --PC (just a 32 bit dff)
   PC: PC_Register
     port map(

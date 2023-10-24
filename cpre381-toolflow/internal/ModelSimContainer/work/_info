@@ -10,639 +10,639 @@ z2
 cModel Technology
 Z0 d/home/lincolnh/lincolnh/cpre381/Project1/mips-single-cycle-processor/cpre381-toolflow
 Ealu
-Z1 w1698109818
+Z1 w1698019270
 Z2 DPx3 std 6 textio 0 22 LS[?81n5ZHWBI9JkBZTV<2
 Z3 DPx4 ieee 14 std_logic_1164 0 22 6<US`=mgl_dFdCEFF7J=m1
-!i122 199
-Z4 d/home/jesseg64/Documents/CprE_381/SingleCycle_Processor/cpre381-toolflow
-Z5 8proj/src/TopLevel/ALU/ALU.vhd
-Z6 Fproj/src/TopLevel/ALU/ALU.vhd
+!i122 210
+R0
+Z4 8proj/src/TopLevel/ALU/ALU.vhd
+Z5 Fproj/src/TopLevel/ALU/ALU.vhd
 l0
 L4 1
 VMVUf92o^INFN1WnRz`TGd3
 !s100 PiPm`=o3]gSg;`dDiXh:e1
-Z7 OL;C;2023.2_2;77
+Z6 OL;C;2023.2_2;77
 33
-Z8 !s110 1698120820
+Z7 !s110 1698160074
 !i10b 1
-Z9 !s108 1698120820.000000
-Z10 !s90 -2008|-work|internal/ModelSimContainer/work|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/ALU/ALU.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/Basic Gates/andg2.vhd|proj/src/TopLevel/Basic Gates/invg.vhd|proj/src/TopLevel/Basic Gates/org2.vhd|proj/src/TopLevel/Basic Gates/xorg2.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/Multiplexers/mux2t1.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/Decoders/5t32_Decoder.vhd|
-Z11 !s107 proj/src/TopLevel/Decoders/5t32_Decoder.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/mux2t1.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/Basic Gates/xorg2.vhd|proj/src/TopLevel/Basic Gates/org2.vhd|proj/src/TopLevel/Basic Gates/invg.vhd|proj/src/TopLevel/Basic Gates/andg2.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/ALU/ALU.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/mem.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|
+Z8 !s108 1698160074.000000
+Z9 !s90 -2008|-work|internal/ModelSimContainer/work|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/Multiplexers/mux2t1.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/Basic Gates/org2.vhd|proj/src/TopLevel/Basic Gates/andg2.vhd|proj/src/TopLevel/Basic Gates/xorg2.vhd|proj/src/TopLevel/Basic Gates/invg.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/Decoders/5t32_Decoder.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/ALU/ALU.vhd|
+Z10 !s107 proj/src/TopLevel/ALU/ALU.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/Decoders/5t32_Decoder.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/Basic Gates/invg.vhd|proj/src/TopLevel/Basic Gates/xorg2.vhd|proj/src/TopLevel/Basic Gates/andg2.vhd|proj/src/TopLevel/Basic Gates/org2.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/mux2t1.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/mem.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|
 !i113 0
-Z12 o-2008 -work internal/ModelSimContainer/work
-Z13 tExplicit 1 CvgOpt 0
+Z11 o-2008 -work internal/ModelSimContainer/work
+Z12 tExplicit 1 CvgOpt 0
 Adesign
 R2
 R3
-Z14 DEx4 work 3 alu 0 22 MVUf92o^INFN1WnRz`TGd3
-!i122 199
+Z13 DEx4 work 3 alu 0 22 MVUf92o^INFN1WnRz`TGd3
+!i122 210
 l109
-Z15 L16 194
-Z16 VeJBUfjKYEc38;k`az24801
-Z17 !s100 l3U6M^ij1k=mXX]K??[^50
-R7
+Z14 L16 194
+Z15 VeJBUfjKYEc38;k`az24801
+Z16 !s100 l3U6M^ij1k=mXX]K??[^50
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Ealu_controlunit
-R1
+Z17 w1698019217
 R2
 R3
-!i122 199
-R4
+!i122 210
+R0
 Z18 8proj/src/TopLevel/ALU/ALU_ControlUnit.vhd
 Z19 Fproj/src/TopLevel/ALU/ALU_ControlUnit.vhd
 l0
 L4 1
 V@<HH:K7FIWg2ET76@`i:^3
 !s100 VnOGWJE0OZc0K2:4:<djZ1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
 Z20 DEx4 work 15 alu_controlunit 0 22 @<HH:K7FIWg2ET76@`i:^3
-!i122 199
+!i122 210
 l19
 Z21 L16 29
 Z22 VI78>SC_@G0_;jazG9kczd0
 Z23 !s100 ]dJT[EC<;DnYU=:fKFN>c1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Eandg2
-R1
+Z24 w1575899276
 R2
 R3
-!i122 199
-R4
-Z24 8proj/src/TopLevel/Basic Gates/andg2.vhd
-Z25 Fproj/src/TopLevel/Basic Gates/andg2.vhd
+!i122 210
+R0
+Z25 8proj/src/TopLevel/Basic Gates/andg2.vhd
+Z26 Fproj/src/TopLevel/Basic Gates/andg2.vhd
 l0
-Z26 L23 1
+Z27 L23 1
 Vz300g:V@=nF5TZJfMXVWQ3
 !s100 0e<Rg^QbB^Y@JP[zKSc0[3
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
-Z27 DEx4 work 5 andg2 0 22 z300g:V@=nF5TZJfMXVWQ3
-!i122 199
+Z28 DEx4 work 5 andg2 0 22 z300g:V@=nF5TZJfMXVWQ3
+!i122 210
 l32
-Z28 L31 6
-Z29 V6I4h9Ic9l@3We23>DOX`i3
-Z30 !s100 CbBW?3Q;N[15?`QCEQ<@f2
-R7
+Z29 L31 6
+Z30 V6I4h9Ic9l@3We23>DOX`i3
+Z31 !s100 CbBW?3Q;N[15?`QCEQ<@f2
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Ebarrel_shifter
-R1
+Z32 w1698019332
 R2
 R3
-!i122 199
-R4
-Z31 8proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd
-Z32 Fproj/src/TopLevel/BarrelShifter/BarrelShifter.vhd
+!i122 210
+R0
+Z33 8proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd
+Z34 Fproj/src/TopLevel/BarrelShifter/BarrelShifter.vhd
 l0
 L5 1
 VH<H`]KZVJW8]PT4oVE5OR3
 !s100 fLi?9L;aJfa3SA3=n5g1W2
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Astructure
 R2
 R3
-Z33 DEx4 work 14 barrel_shifter 0 22 H<H`]KZVJW8]PT4oVE5OR3
-!i122 199
+Z35 DEx4 work 14 barrel_shifter 0 22 H<H`]KZVJW8]PT4oVE5OR3
+!i122 210
 l39
-Z34 L17 162
-Z35 VgkYN=_B?Mn5dn85dg]UPm3
-Z36 !s100 @7N6;m6_0g67Y:c9LQM9V3
-R7
+Z36 L17 162
+Z37 VgkYN=_B?Mn5dn85dg]UPm3
+Z38 !s100 @7N6;m6_0g67Y:c9LQM9V3
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Ebit32_32t1mux
-R1
-Z37 DPx4 work 10 mips_types 0 22 :e2jk;eGSSJ>_527ETY7@1
+Z39 w1697748610
+Z40 DPx4 work 10 mips_types 0 22 :e2jk;eGSSJ>_527ETY7@1
 R2
 R3
-!i122 199
-R4
-Z38 8proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd
-Z39 Fproj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd
+!i122 210
+R0
+Z41 8proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd
+Z42 Fproj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd
 l0
 L9 1
 VM7oG3lY3>C?bHNHoj]XP<3
 !s100 ;HUicN;mo@2:fnN5NlIT43
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
-R37
+R40
 R2
 R3
-Z40 DEx4 work 13 bit32_32t1mux 0 22 M7oG3lY3>C?bHNHoj]XP<3
-!i122 199
+Z43 DEx4 work 13 bit32_32t1mux 0 22 M7oG3lY3>C?bHNHoj]XP<3
+!i122 210
 l18
-Z41 L16 38
-Z42 V]dAKQ3nL5k3c<R:3UFfXi2
-Z43 !s100 YMZ1;]2=B6]78;ZW=dMA<0
-R7
+Z44 L16 38
+Z45 V]dAKQ3nL5k3c<R:3UFfXi2
+Z46 !s100 YMZ1;]2=B6]78;ZW=dMA<0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Econtrol
-Z44 w1698119926
+Z47 w1698159102
 R2
 R3
-!i122 199
-R4
-Z45 8proj/src/TopLevel/Control/Control.vhd
-Z46 Fproj/src/TopLevel/Control/Control.vhd
+!i122 210
+R0
+Z48 8proj/src/TopLevel/Control/Control.vhd
+Z49 Fproj/src/TopLevel/Control/Control.vhd
 l0
 L8 1
 VQi8@Ze`0SjTYlB>Oo`oDb2
 !s100 6318=PFGjeC:DllN@m3OR1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
-Z47 DEx4 work 7 control 0 22 Qi8@Ze`0SjTYlB>Oo`oDb2
-!i122 199
+Z50 DEx4 work 7 control 0 22 Qi8@Ze`0SjTYlB>Oo`oDb2
+!i122 210
 l30
-Z48 L29 80
-Z49 V_;RzlG<;6@Z7i=n1Ho8hm0
-Z50 !s100 fGim^cDL4I_1;olIT3MBB1
-R7
+Z51 L29 80
+Z52 V_;RzlG<;6@Z7i=n1Ho8hm0
+Z53 !s100 fGim^cDL4I_1;olIT3MBB1
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Edecoder_5t32
-R1
+Z54 w1697164657
 R2
 R3
-!i122 199
-R4
-Z51 8proj/src/TopLevel/Decoders/5t32_Decoder.vhd
-Z52 Fproj/src/TopLevel/Decoders/5t32_Decoder.vhd
+!i122 210
+R0
+Z55 8proj/src/TopLevel/Decoders/5t32_Decoder.vhd
+Z56 Fproj/src/TopLevel/Decoders/5t32_Decoder.vhd
 l0
 L4 1
 Vi70J47]FXa3UI2?Yh45@83
 !s100 ;lORHnnB?O`h:PblE2lOX3
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z53 DEx4 work 12 decoder_5t32 0 22 i70J47]FXa3UI2?Yh45@83
-!i122 199
+Z57 DEx4 work 12 decoder_5t32 0 22 i70J47]FXa3UI2?Yh45@83
+!i122 210
 l12
-Z54 L11 38
-Z55 VJaChk1A@mOWV]6TRNYIdn2
-Z56 !s100 gJL<?1nJAl[F78ccFD0z]2
-R7
+Z58 L11 38
+Z59 VJaChk1A@mOWV]6TRNYIdn2
+Z60 !s100 gJL<?1nJAl[F78ccFD0z]2
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Edff
-R1
+Z61 w1697135656
 R2
 R3
-!i122 199
-R4
-Z57 8proj/src/TopLevel/RegisterFile/DFlipFlop.vhd
-Z58 Fproj/src/TopLevel/RegisterFile/DFlipFlop.vhd
+!i122 210
+R0
+Z62 8proj/src/TopLevel/RegisterFile/DFlipFlop.vhd
+Z63 Fproj/src/TopLevel/RegisterFile/DFlipFlop.vhd
 l0
 L4 1
 V8T@C3T^iXHT4iO1>C1XGJ3
 !s100 `hDOfjU0iknO>SbOgGcdj2
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z59 DEx4 work 3 dff 0 22 8T@C3T^iXHT4iO1>C1XGJ3
-!i122 199
+Z64 DEx4 work 3 dff 0 22 8T@C3T^iXHT4iO1>C1XGJ3
+!i122 210
 l17
-Z60 L13 21
-Z61 VOP?acaC1zoGAzJd1MbX<Q3
-Z62 !s100 XU[Z>=`CVDzILo5BY@<<F0
-R7
+Z65 L13 21
+Z66 VOP?acaC1zoGAzJd1MbX<Q3
+Z67 !s100 XU[Z>=`CVDzILo5BY@<<F0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Eextender_16bit
-R1
+R61
 R2
 R3
-!i122 199
-R4
-Z63 8proj/src/TopLevel/Extender/16bit_Extender.vhd
-Z64 Fproj/src/TopLevel/Extender/16bit_Extender.vhd
+!i122 210
+R0
+Z68 8proj/src/TopLevel/Extender/16bit_Extender.vhd
+Z69 Fproj/src/TopLevel/Extender/16bit_Extender.vhd
 l0
 L4 1
 VQIel@QJI9?[G=N:V>FOoN1
 !s100 QAVPDa`Zf4=gzbiS]SB0o0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z65 DEx4 work 14 extender_16bit 0 22 QIel@QJI9?[G=N:V>FOoN1
-!i122 199
+Z70 DEx4 work 14 extender_16bit 0 22 QIel@QJI9?[G=N:V>FOoN1
+!i122 210
 l24
-Z66 L11 27
-Z67 V;UG4G6AMO9d0Dg=?3HXa]1
-Z68 !s100 ;e1;DIhL7RD;id8im2Q3?2
-R7
+Z71 L11 27
+Z72 V;UG4G6AMO9d0Dg=?3HXa]1
+Z73 !s100 ;e1;DIhL7RD;id8im2Q3?2
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Efulladder
-R1
+R61
 R2
 R3
-!i122 199
-R4
-Z69 8proj/src/TopLevel/Adder/FullAdder.vhd
-Z70 Fproj/src/TopLevel/Adder/FullAdder.vhd
+!i122 210
+R0
+Z74 8proj/src/TopLevel/Adder/FullAdder.vhd
+Z75 Fproj/src/TopLevel/Adder/FullAdder.vhd
 l0
 L4 1
 Vhg;DHNQ=5o?l3ZFkYf;iW2
 !s100 S:R<J0bNz?iD;>F1d_1Q>0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z71 DEx4 work 9 fulladder 0 22 hg;DHNQ=5o?l3ZFkYf;iW2
-!i122 199
+Z76 DEx4 work 9 fulladder 0 22 hg;DHNQ=5o?l3ZFkYf;iW2
+!i122 210
 l18
-Z72 L13 14
-Z73 V7D=gc3^=;?CQE]E4Q:76a3
-Z74 !s100 [[[G``]53YK41i:J40K2=0
-R7
+Z77 L13 14
+Z78 V7D=gc3^=;?CQE]E4Q:76a3
+Z79 !s100 [[[G``]53YK41i:J40K2=0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Einvg
-R1
+R24
 R2
 R3
-!i122 199
-R4
-Z75 8proj/src/TopLevel/Basic Gates/invg.vhd
-Z76 Fproj/src/TopLevel/Basic Gates/invg.vhd
+!i122 210
+R0
+Z80 8proj/src/TopLevel/Basic Gates/invg.vhd
+Z81 Fproj/src/TopLevel/Basic Gates/invg.vhd
 l0
-R26
+R27
 VIJkcZ1BXD`4RDZ?hjkbIF2
 !s100 5^0jfQ^dVk:bl_Za_KajG0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
-Z77 DEx4 work 4 invg 0 22 IJkcZ1BXD`4RDZ?hjkbIF2
-!i122 199
+Z82 DEx4 work 4 invg 0 22 IJkcZ1BXD`4RDZ?hjkbIF2
+!i122 210
 l31
-Z78 L30 6
-Z79 V@Kk;^@]_o6c=I4@>kUX2A3
-Z80 !s100 Q?`9^ToWC]zk1[=<LdPdE3
-R7
+Z83 L30 6
+Z84 V@Kk;^@]_o6c=I4@>kUX2A3
+Z85 !s100 Q?`9^ToWC]zk1[=<LdPdE3
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Emem
-Z81 w1697141909
-Z82 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
+Z86 w1697136918
+Z87 DPx4 ieee 11 numeric_std 0 22 F8@]:i<mFK7<TjIzKcTGi0
 R2
 R3
-!i122 199
-R4
-Z83 8proj/src/TopLevel/mem.vhd
-Z84 Fproj/src/TopLevel/mem.vhd
+!i122 210
+R0
+Z88 8proj/src/TopLevel/mem.vhd
+Z89 Fproj/src/TopLevel/mem.vhd
 l0
 L8 1
 V72U5Be5H]J^_hIf>:2SgQ2
 !s100 GF_U?1mjKdlzTC==@Eoi@2
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Artl
-R82
+R87
 R2
 R3
-Z85 DEx4 work 3 mem 0 22 72U5Be5H]J^_hIf>:2SgQ2
-!i122 199
+Z90 DEx4 work 3 mem 0 22 72U5Be5H]J^_hIf>:2SgQ2
+!i122 210
 l37
-Z86 L27 24
-Z87 V5c?J75VGOAknnABKPF61A1
-Z88 !s100 h2oZ:n@5VDnM^B7>cA]W22
-R7
+Z91 L27 24
+Z92 V5c?J75VGOAknnABKPF61A1
+Z93 !s100 h2oZ:n@5VDnM^B7>cA]W22
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Emips_processor
-Z89 w1698119892
-R37
+Z94 w1698159946
+R40
 R2
 R3
-!i122 199
-R4
-Z90 8proj/src/TopLevel/MIPS_Processor.vhd
-Z91 Fproj/src/TopLevel/MIPS_Processor.vhd
+!i122 210
+R0
+Z95 8proj/src/TopLevel/MIPS_Processor.vhd
+Z96 Fproj/src/TopLevel/MIPS_Processor.vhd
 l0
-Z92 L24 1
+Z97 L24 1
 VgS<kO6I;<hDn`3HW_oLZc3
 !s100 lGHYfPBoU@_XX7>dz7Wc<0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Astructure
-R37
+R40
 R2
 R3
-Z93 DEx4 work 14 mips_processor 0 22 gS<kO6I;<hDn`3HW_oLZc3
-!i122 199
-l224
-Z94 L36 396
-Z95 VDT9=n93A4lXJ3W8zO:Y302
-Z96 !s100 <?:XQWd3Z8@l[1kE=KMz@1
-R7
+Z98 DEx4 work 14 mips_processor 0 22 gS<kO6I;<hDn`3HW_oLZc3
+!i122 210
+l225
+Z99 L36 400
+Z100 V0MF08m:N0]`b]RO14G<X91
+Z101 !s100 F=n_;7mKUf[PMZfGT<MWA0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Pmips_types
 R2
 R3
-!i122 199
-R1
-R4
-Z97 8proj/src/MIPS_types.vhd
-Z98 Fproj/src/MIPS_types.vhd
+!i122 210
+Z102 w1697748358
+R0
+Z103 8proj/src/MIPS_types.vhd
+Z104 Fproj/src/MIPS_types.vhd
 l0
 L15 15
 V:e2jk;eGSSJ>_527ETY7@1
 !s100 W2?KJ2H]A[mGdCkkaO7^T1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Bbody
-R37
+R40
 R2
 R3
-!i122 199
+!i122 210
 l0
-Z99 L31 3
-Z100 VTQS6XlWdaNSCBJGR]kR>Z2
-Z101 !s100 h5IN3<Sj6<I[zl0lJHcX[1
-R7
+Z105 L31 3
+Z106 VTQS6XlWdaNSCBJGR]kR>Z2
+Z107 !s100 h5IN3<Sj6<I[zl0lJHcX[1
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Emux2t1
-R1
+Z108 w1693861143
 R2
 R3
-!i122 199
-R4
-Z102 8proj/src/TopLevel/Multiplexers/mux2t1.vhd
-Z103 Fproj/src/TopLevel/Multiplexers/mux2t1.vhd
+!i122 210
+R0
+Z109 8proj/src/TopLevel/Multiplexers/mux2t1.vhd
+Z110 Fproj/src/TopLevel/Multiplexers/mux2t1.vhd
 l0
 L11 1
 V4HLdb?644:P:;CgmACb0U2
 !s100 8W=hFbnn4FU1XJ=XLVnO<0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Astructural
 R2
 R3
-Z104 DEx4 work 6 mux2t1 0 22 4HLdb?644:P:;CgmACb0U2
-!i122 199
+Z111 DEx4 work 6 mux2t1 0 22 4HLdb?644:P:;CgmACb0U2
+!i122 210
 l51
-Z105 L21 56
-Z106 VZ^XJC:L9[>If@9MiHlPNC0
-Z107 !s100 ]fGTz5<JFEE<;1JTjYe@60
-R7
+Z112 L21 56
+Z113 VZ^XJC:L9[>If@9MiHlPNC0
+Z114 !s100 ]fGTz5<JFEE<;1JTjYe@60
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Pmypackage
 R2
 R3
 !i122 11
 w1697209874
 R0
-R38
-R39
+R41
+R42
 l0
 L4 3
 VIRVj6zn7eE=?Y::@O=iLo3
 !s100 ]mK;8?knQFPImKk^8Yj`G2
-R7
+R6
 33
 !s110 1697748554
 !i10b 1
@@ -650,503 +650,503 @@ R7
 !s90 -2008|-work|internal/ModelSimContainer/work|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/Decoders/5t32_Decoder.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/ALU/ALU.vhd|
 !s107 proj/src/TopLevel/ALU/ALU.vhd|proj/src/TopLevel/ALU/ALU_ControlUnit.vhd|proj/src/TopLevel/BarrelShifter/BarrelShifter.vhd|proj/src/TopLevel/Control/Control.vhd|proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd|proj/src/TopLevel/Adder/NBit_RippleAdder.vhd|proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd|proj/src/TopLevel/Adder/FullAdder.vhd|proj/src/TopLevel/Extender/16bit_Extender.vhd|proj/src/TopLevel/PC Register/PC_Register.vhd|proj/src/TopLevel/Decoders/5t32_Decoder.vhd|proj/src/TopLevel/RegisterFile/DFlipFlop.vhd|proj/src/TopLevel/RegisterFile/RegisterFile.vhd|proj/src/TopLevel/RegisterFile/NBit_Register.vhd|proj/src/TopLevel/Multiplexers/32Bit_32t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd|proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/mem.vhd|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|
 !i113 0
+R11
 R12
-R13
 Enbit_2t1mux
-R1
+Z115 w1697516439
 R2
 R3
-!i122 199
-R4
-Z108 8proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd
-Z109 Fproj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd
+!i122 210
+R0
+Z116 8proj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd
+Z117 Fproj/src/TopLevel/Multiplexers/NBit_2t1Mux.vhd
 l0
 L4 1
 VdDI5ZkAgb9Y^Jei4FHo7j1
 !s100 AkVnMF_N[MoiJ=3ahb8aS0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z110 DEx4 work 11 nbit_2t1mux 0 22 dDI5ZkAgb9Y^Jei4FHo7j1
-!i122 199
+Z118 DEx4 work 11 nbit_2t1mux 0 22 dDI5ZkAgb9Y^Jei4FHo7j1
+!i122 210
 l14
-Z111 L13 7
-Z112 V6kRP;N_8kI<N8FOWiLlo03
-Z113 !s100 []dMg>>c]CE5Jl[Bb5o2M1
-R7
+Z119 L13 7
+Z120 V6kRP;N_8kI<N8FOWiLlo03
+Z121 !s100 []dMg>>c]CE5Jl[Bb5o2M1
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Enbit_4t1mux
-R1
+R54
 R2
 R3
-!i122 199
-R4
-Z114 8proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd
-Z115 Fproj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd
+!i122 210
+R0
+Z122 8proj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd
+Z123 Fproj/src/TopLevel/Multiplexers/NBit_4t1Mux.vhd
 l0
 L4 1
 VCO6c[`gPdKGEYkDGHTNMP1
 !s100 j6oXdllSU3iRHMC`f]fFO2
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z116 DEx4 work 11 nbit_4t1mux 0 22 CO6c[`gPdKGEYkDGHTNMP1
-!i122 199
+Z124 DEx4 work 11 nbit_4t1mux 0 22 CO6c[`gPdKGEYkDGHTNMP1
+!i122 210
 l16
-Z117 L15 9
-Z118 VoHE^mjJ9j4A=k]BUFdfEA1
-Z119 !s100 64i[];QC_O0K[V^X8==fP0
-R7
+Z125 L15 9
+Z126 VoHE^mjJ9j4A=k]BUFdfEA1
+Z127 !s100 64i[];QC_O0K[V^X8==fP0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Enbit_addersubtracter
-R1
+R54
 R2
 R3
-!i122 199
-R4
-Z120 8proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd
-Z121 Fproj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd
+!i122 210
+R0
+Z128 8proj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd
+Z129 Fproj/src/TopLevel/Adder/NBit_AdderSubtracter.vhd
 l0
 L4 1
 VA?AcDgXD17`jnnlLbccCK1
 !s100 IN=4SnE[M1<C1QPm]5K]z1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z122 DEx4 work 20 nbit_addersubtracter 0 22 A?AcDgXD17`jnnlLbccCK1
-!i122 199
+Z130 DEx4 work 20 nbit_addersubtracter 0 22 A?AcDgXD17`jnnlLbccCK1
+!i122 210
 l33
-Z123 L17 33
-Z124 V57FFFSRJReUVS9<UkbmlJ1
-Z125 !s100 zoaFK;?3^=8f6C50bSg5[0
-R7
+Z131 L17 33
+Z132 V57FFFSRJReUVS9<UkbmlJ1
+Z133 !s100 zoaFK;?3^=8f6C50bSg5[0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Enbit_lookaheadadder
-R1
+R54
 R2
 R3
-!i122 199
-R4
-Z126 8proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd
-Z127 Fproj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd
+!i122 210
+R0
+Z134 8proj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd
+Z135 Fproj/src/TopLevel/Adder/NBit_LookAheadAdder.vhd
 l0
 L4 1
 VR[`Z9Mki`M]:70e^Rd0X>2
 !s100 _IZ0Ba_OiT`C_SFb9T@e_1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z128 DEx4 work 19 nbit_lookaheadadder 0 22 R[`Z9Mki`M]:70e^Rd0X>2
-!i122 199
+Z136 DEx4 work 19 nbit_lookaheadadder 0 22 R[`Z9Mki`M]:70e^Rd0X>2
+!i122 210
 l23
-Z129 L17 25
-Z130 V8i_MPc6CVDEG@[=;;k;^f3
-Z131 !s100 :1U_<SQBnGd`I8QCfkIWB2
-R7
+Z137 L17 25
+Z138 V8i_MPc6CVDEG@[=;;k;^f3
+Z139 !s100 :1U_<SQBnGd`I8QCfkIWB2
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Enbit_register
-R1
+R54
 R2
 R3
-!i122 199
-R4
-Z132 8proj/src/TopLevel/RegisterFile/NBit_Register.vhd
-Z133 Fproj/src/TopLevel/RegisterFile/NBit_Register.vhd
+!i122 210
+R0
+Z140 8proj/src/TopLevel/RegisterFile/NBit_Register.vhd
+Z141 Fproj/src/TopLevel/RegisterFile/NBit_Register.vhd
 l0
 L4 1
 VmnCNWZ]GPI^J69eoUZI[c3
 !s100 oOD@P8`2XICU7he@IRVgh0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z134 DEx4 work 13 nbit_register 0 22 mnCNWZ]GPI^J69eoUZI[c3
-!i122 199
+Z142 DEx4 work 13 nbit_register 0 22 mnCNWZ]GPI^J69eoUZI[c3
+!i122 210
 l23
-Z135 L14 20
-Z136 V^8?KI;G0;njaQQB?1gMWM2
-Z137 !s100 Ng?c`:A9G:@_EY9e8]UU<3
-R7
+Z143 L14 20
+Z144 V^8?KI;G0;njaQQB?1gMWM2
+Z145 !s100 Ng?c`:A9G:@_EY9e8]UU<3
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Enbit_rippleadder
-R1
+R61
 R2
 R3
-!i122 199
-R4
-Z138 8proj/src/TopLevel/Adder/NBit_RippleAdder.vhd
-Z139 Fproj/src/TopLevel/Adder/NBit_RippleAdder.vhd
+!i122 210
+R0
+Z146 8proj/src/TopLevel/Adder/NBit_RippleAdder.vhd
+Z147 Fproj/src/TopLevel/Adder/NBit_RippleAdder.vhd
 l0
 L4 1
 V3bPT8?e_53cmif94nMa1=1
 !s100 ]RZZXX7Lb03=W4F=PJ[2C0
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z140 DEx4 work 16 nbit_rippleadder 0 22 3bPT8?e_53cmif94nMa1=1
-!i122 199
+Z148 DEx4 work 16 nbit_rippleadder 0 22 3bPT8?e_53cmif94nMa1=1
+!i122 210
 l31
-Z141 L17 34
-Z142 V??k]az;KhH8jN4>MVmg]32
-Z143 !s100 DJf4=l00W]5Zb;Y67Z0Ll1
-R7
+Z149 L17 34
+Z150 V??k]az;KhH8jN4>MVmg]32
+Z151 !s100 DJf4=l00W]5Zb;Y67Z0Ll1
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Eorg2
-R1
+R24
 R2
 R3
-!i122 199
-R4
-Z144 8proj/src/TopLevel/Basic Gates/org2.vhd
-Z145 Fproj/src/TopLevel/Basic Gates/org2.vhd
+!i122 210
+R0
+Z152 8proj/src/TopLevel/Basic Gates/org2.vhd
+Z153 Fproj/src/TopLevel/Basic Gates/org2.vhd
 l0
-R26
+R27
 VaV[]T@E1l<VelaHoW:L;60
 !s100 hJAZ>EB8bm_e<^5IFaP9e1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
-Z146 DEx4 work 4 org2 0 22 aV[]T@E1l<VelaHoW:L;60
-!i122 199
+Z154 DEx4 work 4 org2 0 22 aV[]T@E1l<VelaHoW:L;60
+!i122 210
 l32
-R28
-Z147 V5bY8D]TWo0LHRH2I5]i[W0
-Z148 !s100 nma>Pa=mMW`KzzjeW=1[d1
-R7
+R29
+Z155 V5bY8D]TWo0LHRH2I5]i[W0
+Z156 !s100 nma>Pa=mMW`KzzjeW=1[d1
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Epc_register
-R1
+Z157 w1697748638
 R2
 R3
-!i122 199
-R4
-Z149 8proj/src/TopLevel/PC Register/PC_Register.vhd
-Z150 Fproj/src/TopLevel/PC Register/PC_Register.vhd
+!i122 210
+R0
+Z158 8proj/src/TopLevel/PC Register/PC_Register.vhd
+Z159 Fproj/src/TopLevel/PC Register/PC_Register.vhd
 l0
 L4 1
 V3L?h6<GR5zWoP9=hbWGQz3
 !s100 JDRc[VJe6Yd??En96WBCZ3
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
 R2
 R3
-Z151 DEx4 work 11 pc_register 0 22 3L?h6<GR5zWoP9=hbWGQz3
-!i122 199
+Z160 DEx4 work 11 pc_register 0 22 3L?h6<GR5zWoP9=hbWGQz3
+!i122 210
 l17
-R60
-Z152 VZ^Vl@?UDgN6G8bZ9g>6Z00
-Z153 !s100 cmlC[zoZ]4meRLFN:og9W0
-R7
+R65
+Z161 VZ^Vl@?UDgN6G8bZ9g>6Z00
+Z162 !s100 cmlC[zoZ]4meRLFN:og9W0
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Eregisterfile
-R1
-R37
+Z163 w1697748315
+R40
 R2
 R3
-!i122 199
-R4
-Z154 8proj/src/TopLevel/RegisterFile/RegisterFile.vhd
-Z155 Fproj/src/TopLevel/RegisterFile/RegisterFile.vhd
+!i122 210
+R0
+Z164 8proj/src/TopLevel/RegisterFile/RegisterFile.vhd
+Z165 Fproj/src/TopLevel/RegisterFile/RegisterFile.vhd
 l0
 L8 1
 Vj;7=89;iAgbjfV5]]6<0M0
 !s100 Qo=d]VMLE=fn6V:7=lD1B3
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adesign
-R37
+R40
 R2
 R3
-Z156 DEx4 work 12 registerfile 0 22 j;7=89;iAgbjfV5]]6<0M0
-!i122 199
+Z166 DEx4 work 12 registerfile 0 22 j;7=89;iAgbjfV5]]6<0M0
+!i122 210
 l48
-Z157 L21 68
-Z158 V0?zfDSe]B<LiR]lJPNn=R1
-Z159 !s100 R5eV40ZZom]R4;2:3TWlm3
-R7
+Z167 L21 68
+Z168 V0?zfDSe]B<LiR]lJPNn=R1
+Z169 !s100 R5eV40ZZom]R4;2:3TWlm3
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Eshift_left2
-Z160 w1697135656
+R61
 R2
 R3
 !i122 1
 R0
-Z161 8proj/src/OurParts/FetchLogic/shift_left2.vhd
-Z162 Fproj/src/OurParts/FetchLogic/shift_left2.vhd
+Z170 8proj/src/OurParts/FetchLogic/shift_left2.vhd
+Z171 Fproj/src/OurParts/FetchLogic/shift_left2.vhd
 l0
 L7 1
 VQeWYEgzLY]b`P@^TK2h9m1
 !s100 hkX=eiI>a9Mcm?eBRKiU:2
-R7
+R6
 33
-Z163 !s110 1697745713
+Z172 !s110 1697745713
 !i10b 1
-Z164 !s108 1697745713.000000
-Z165 !s90 -2008|-work|internal/ModelSimContainer/work|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/OurParts/Control/Control.vhd|proj/src/OurParts/Multiplexers/32Bit_32t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_4t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_2t1Mux.vhd|proj/src/OurParts/RegisterFile/NBit_Register.vhd|proj/src/OurParts/RegisterFile/RegisterFile.vhd|proj/src/OurParts/RegisterFile/DFlipFlop.vhd|proj/src/OurParts/ALU/ALU_ControlUnit.vhd|proj/src/OurParts/ALU/ALU.vhd|proj/src/OurParts/FetchLogic/shift_left2.vhd|proj/src/OurParts/Memory/mem.vhd|proj/src/OurParts/Extender/16bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_RegisterFile.vhd|proj/src/OurParts/TestBenches/TB_ALU_ControlUnit.vhd|proj/src/OurParts/TestBenches/TB_DFlipFlop.vhd|proj/src/OurParts/TestBenches/TB_RippleAdder.vhd|proj/src/OurParts/TestBenches/TB_LookAheadAdder.vhd|proj/src/OurParts/TestBenches/TB_DataMemory.vhd|proj/src/OurParts/TestBenches/TB_NBit_Register.vhd|proj/src/OurParts/TestBenches/TB_32Bit_32t1Mux.vhd|proj/src/OurParts/TestBenches/TB_5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_16Bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_Template.vhd|proj/src/OurParts/TestBenches/TB_Control.vhd|proj/src/OurParts/TestBenches/TB_AdderSubtracter.vhd|proj/src/OurParts/TestBenches/TB_BarrelShifter.vhd|proj/src/OurParts/Decoders/5t32_Decoder.vhd|proj/src/OurParts/Adder/NBit_RippleAdder.vhd|proj/src/OurParts/Adder/NBit_AdderSubtracter.vhd|proj/src/OurParts/Adder/FullAdder.vhd|proj/src/OurParts/Adder/NBit_LookAheadAdder.vhd|proj/src/OurParts/BarrelShifter/BarrelShifter.vhd|
-Z166 !s107 proj/src/OurParts/BarrelShifter/BarrelShifter.vhd|proj/src/OurParts/Adder/NBit_LookAheadAdder.vhd|proj/src/OurParts/Adder/FullAdder.vhd|proj/src/OurParts/Adder/NBit_AdderSubtracter.vhd|proj/src/OurParts/Adder/NBit_RippleAdder.vhd|proj/src/OurParts/Decoders/5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_BarrelShifter.vhd|proj/src/OurParts/TestBenches/TB_AdderSubtracter.vhd|proj/src/OurParts/TestBenches/TB_Control.vhd|proj/src/OurParts/TestBenches/TB_Template.vhd|proj/src/OurParts/TestBenches/TB_16Bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_32Bit_32t1Mux.vhd|proj/src/OurParts/TestBenches/TB_NBit_Register.vhd|proj/src/OurParts/TestBenches/TB_DataMemory.vhd|proj/src/OurParts/TestBenches/TB_LookAheadAdder.vhd|proj/src/OurParts/TestBenches/TB_RippleAdder.vhd|proj/src/OurParts/TestBenches/TB_DFlipFlop.vhd|proj/src/OurParts/TestBenches/TB_ALU_ControlUnit.vhd|proj/src/OurParts/TestBenches/TB_RegisterFile.vhd|proj/src/OurParts/Extender/16bit_Extender.vhd|proj/src/OurParts/Memory/mem.vhd|proj/src/OurParts/FetchLogic/shift_left2.vhd|proj/src/OurParts/ALU/ALU.vhd|proj/src/OurParts/ALU/ALU_ControlUnit.vhd|proj/src/OurParts/RegisterFile/DFlipFlop.vhd|proj/src/OurParts/RegisterFile/RegisterFile.vhd|proj/src/OurParts/RegisterFile/NBit_Register.vhd|proj/src/OurParts/Multiplexers/NBit_2t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_4t1Mux.vhd|proj/src/OurParts/Multiplexers/32Bit_32t1Mux.vhd|proj/src/OurParts/Control/Control.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/mem.vhd|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|
+Z173 !s108 1697745713.000000
+Z174 !s90 -2008|-work|internal/ModelSimContainer/work|internal/testpy/tb.vhd|proj/src/MIPS_types.vhd|proj/src/TopLevel/mem.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/OurParts/Control/Control.vhd|proj/src/OurParts/Multiplexers/32Bit_32t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_4t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_2t1Mux.vhd|proj/src/OurParts/RegisterFile/NBit_Register.vhd|proj/src/OurParts/RegisterFile/RegisterFile.vhd|proj/src/OurParts/RegisterFile/DFlipFlop.vhd|proj/src/OurParts/ALU/ALU_ControlUnit.vhd|proj/src/OurParts/ALU/ALU.vhd|proj/src/OurParts/FetchLogic/shift_left2.vhd|proj/src/OurParts/Memory/mem.vhd|proj/src/OurParts/Extender/16bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_RegisterFile.vhd|proj/src/OurParts/TestBenches/TB_ALU_ControlUnit.vhd|proj/src/OurParts/TestBenches/TB_DFlipFlop.vhd|proj/src/OurParts/TestBenches/TB_RippleAdder.vhd|proj/src/OurParts/TestBenches/TB_LookAheadAdder.vhd|proj/src/OurParts/TestBenches/TB_DataMemory.vhd|proj/src/OurParts/TestBenches/TB_NBit_Register.vhd|proj/src/OurParts/TestBenches/TB_32Bit_32t1Mux.vhd|proj/src/OurParts/TestBenches/TB_5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_16Bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_Template.vhd|proj/src/OurParts/TestBenches/TB_Control.vhd|proj/src/OurParts/TestBenches/TB_AdderSubtracter.vhd|proj/src/OurParts/TestBenches/TB_BarrelShifter.vhd|proj/src/OurParts/Decoders/5t32_Decoder.vhd|proj/src/OurParts/Adder/NBit_RippleAdder.vhd|proj/src/OurParts/Adder/NBit_AdderSubtracter.vhd|proj/src/OurParts/Adder/FullAdder.vhd|proj/src/OurParts/Adder/NBit_LookAheadAdder.vhd|proj/src/OurParts/BarrelShifter/BarrelShifter.vhd|
+Z175 !s107 proj/src/OurParts/BarrelShifter/BarrelShifter.vhd|proj/src/OurParts/Adder/NBit_LookAheadAdder.vhd|proj/src/OurParts/Adder/FullAdder.vhd|proj/src/OurParts/Adder/NBit_AdderSubtracter.vhd|proj/src/OurParts/Adder/NBit_RippleAdder.vhd|proj/src/OurParts/Decoders/5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_BarrelShifter.vhd|proj/src/OurParts/TestBenches/TB_AdderSubtracter.vhd|proj/src/OurParts/TestBenches/TB_Control.vhd|proj/src/OurParts/TestBenches/TB_Template.vhd|proj/src/OurParts/TestBenches/TB_16Bit_Extender.vhd|proj/src/OurParts/TestBenches/TB_5t32_Decoder.vhd|proj/src/OurParts/TestBenches/TB_32Bit_32t1Mux.vhd|proj/src/OurParts/TestBenches/TB_NBit_Register.vhd|proj/src/OurParts/TestBenches/TB_DataMemory.vhd|proj/src/OurParts/TestBenches/TB_LookAheadAdder.vhd|proj/src/OurParts/TestBenches/TB_RippleAdder.vhd|proj/src/OurParts/TestBenches/TB_DFlipFlop.vhd|proj/src/OurParts/TestBenches/TB_ALU_ControlUnit.vhd|proj/src/OurParts/TestBenches/TB_RegisterFile.vhd|proj/src/OurParts/Extender/16bit_Extender.vhd|proj/src/OurParts/Memory/mem.vhd|proj/src/OurParts/FetchLogic/shift_left2.vhd|proj/src/OurParts/ALU/ALU.vhd|proj/src/OurParts/ALU/ALU_ControlUnit.vhd|proj/src/OurParts/RegisterFile/DFlipFlop.vhd|proj/src/OurParts/RegisterFile/RegisterFile.vhd|proj/src/OurParts/RegisterFile/NBit_Register.vhd|proj/src/OurParts/Multiplexers/NBit_2t1Mux.vhd|proj/src/OurParts/Multiplexers/NBit_4t1Mux.vhd|proj/src/OurParts/Multiplexers/32Bit_32t1Mux.vhd|proj/src/OurParts/Control/Control.vhd|proj/src/TopLevel/MIPS_Processor.vhd|proj/src/TopLevel/mem.vhd|proj/src/MIPS_types.vhd|internal/testpy/tb.vhd|
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
 DEx4 work 11 shift_left2 0 22 QeWYEgzLY]b`P@^TK2h9m1
 !i122 1
 l15
-R111
+R119
 VZ8zG1DW0mz;eBnn;Q]IzJ1
 !s100 zAzEk_`57^jE<@9hNmK5o1
-R7
+R6
 33
-R163
+R172
 !i10b 1
-R164
-R165
-R166
+R173
+R174
+R175
 !i113 0
+R11
 R12
-R13
 Etb
-Z167 w1698109815
-Z168 DPx3 std 3 env 0 22 QPZJVBPkV?55nUWhDzFik0
-Z169 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
+Z176 w1697635536
+Z177 DPx3 std 3 env 0 22 QPZJVBPkV?55nUWhDzFik0
+Z178 DPx4 ieee 16 std_logic_textio 0 22 C8j>g0lzF^EAA]5<S6PY32
 R2
 R3
-!i122 199
-R4
-Z170 8internal/testpy/tb.vhd
-Z171 Finternal/testpy/tb.vhd
+!i122 210
+R0
+Z179 8internal/testpy/tb.vhd
+Z180 Finternal/testpy/tb.vhd
 l0
-R92
+R97
 VmnW?FF:Ib87hj>e3NzoaR2
 !s100 J8cbzZD^Tj2:AHVPB^Ch:2
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Amixed
-R168
-R169
+R177
+R178
 R2
 R3
-Z172 DEx4 work 2 tb 0 22 mnW?FF:Ib87hj>e3NzoaR2
-!i122 199
+Z181 DEx4 work 2 tb 0 22 mnW?FF:Ib87hj>e3NzoaR2
+!i122 210
 l56
-Z173 L31 127
-Z174 V8b52hZOUTz;mGPlR1XoM@1
-Z175 !s100 Q?C5mH^o;6?]2EDH4@`oS3
-R7
+Z182 L31 127
+Z183 V8b52hZOUTz;mGPlR1XoM@1
+Z184 !s100 Q?C5mH^o;6?]2EDH4@`oS3
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Exorg2
-R1
+R24
 R2
 R3
-!i122 199
-R4
-Z176 8proj/src/TopLevel/Basic Gates/xorg2.vhd
-Z177 Fproj/src/TopLevel/Basic Gates/xorg2.vhd
+!i122 210
+R0
+Z185 8proj/src/TopLevel/Basic Gates/xorg2.vhd
+Z186 Fproj/src/TopLevel/Basic Gates/xorg2.vhd
 l0
-R26
+R27
 V>8:W_a_Yo8nfe6MMcbgE73
 !s100 zGkHVGJ]HQ5RboN2N>KzN1
-R7
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
 Adataflow
 R2
 R3
-Z178 DEx4 work 5 xorg2 0 22 >8:W_a_Yo8nfe6MMcbgE73
-!i122 199
+Z187 DEx4 work 5 xorg2 0 22 >8:W_a_Yo8nfe6MMcbgE73
+!i122 210
 l32
-R28
-Z179 Vn2QZ9MNeUiN4G2Yb@g3:J0
-Z180 !s100 2<f]d3XziROLh_[:_6mNg2
-R7
+R29
+Z188 Vn2QZ9MNeUiN4G2Yb@g3:J0
+Z189 !s100 2<f]d3XziROLh_[:_6mNg2
+R6
 33
-R8
+R7
 !i10b 1
+R8
 R9
 R10
-R11
 !i113 0
+R11
 R12
-R13
