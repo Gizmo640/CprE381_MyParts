@@ -1,9 +1,0 @@
-﻿Working Steps:Doyle
-
-1. git pull			(updates your folder with changes in the repo)
-2. *make changes*
-3. git status			(will show you the changes you have made)
-4. git add or rm changes to repo	(add .) adds all files
-5. git commit -m “msg”			(commit your changes to repo and add a message)
-6. git status			(check if it worked)
-7. git push			(send updates to repo)
